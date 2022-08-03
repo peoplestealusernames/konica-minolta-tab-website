@@ -31,7 +31,11 @@ export function TabShow(props: {
                         backgroundColor: (i % 2) == 0 ? "grey" : "black"
                     }}
                 >
-                    <span style={{ float: "left" }}>
+                    <span style={{
+                        float: "left",
+                        marginLeft: "2px",
+                        marginRight: "5px"
+                    }}>
                         {i}:
                     </span>
                     <span >
