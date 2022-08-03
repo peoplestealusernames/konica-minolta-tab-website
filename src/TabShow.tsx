@@ -36,7 +36,7 @@ export function TabShow(props: {
                         marginLeft: "2px",
                         marginRight: "5px"
                     }}>
-                        {i.toString().padStart(2, "0")}:
+                        {(i + 1).toString().padStart(2, "0")}:
                     </span>
                     <span >
                         {e}
