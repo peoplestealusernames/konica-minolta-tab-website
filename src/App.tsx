@@ -4,14 +4,18 @@ import './App.css';
 
 function App() {
   return (
-    <div>
+    <div className='App'>
       <textarea
         style={{
           display: "flex",
           width: "50vw",
           height: "100vh",
           backgroundColor: "black",
-          color: "white"
+          color: "white",
+          fontSize: "150%",
+          border: "none",
+          padding: "0px",
+          margin: "0px"
         }}
       />
     </div>
