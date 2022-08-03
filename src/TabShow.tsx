@@ -16,7 +16,8 @@ export function TabShow(props: {
         }}>
             <div style={{
                 padding: "1px",
-                backgroundColor: "black"
+                backgroundColor: "black",
+                fontSize: "20px",
             }}>
                 {props.title}
             </div>
@@ -24,6 +25,7 @@ export function TabShow(props: {
                 return <div
                     key={i}
                     style={{
+                        fontSize: "12px",
                         padding: "1px",
                         backgroundColor: (i % 2) == 0 ? "grey" : "black"
                     }}
