@@ -83,9 +83,15 @@ function App() {
           style={{
             display: "flex",
             flexDirection: "row",
+            color: "white",
+            backgroundColor: "black",
+            border: "3px solid gold",
+            height: "fit-content"
           }}
         >
-          <span>
+          <span style={{
+            padding: "1px"
+          }}>
             Type Model:<br />(ex: C754 or C759)
           </span>
           <input
@@ -102,10 +108,9 @@ function App() {
           />
           <div style={{
             display: "flex",
-            backgroundColor: "black",
-            color: "white",
-            border: "2px solid white",
-            height: "30px",
+            backgroundColor: "grey",
+            color: "black",
+            border: "3px solid white",
             alignItems: "center",
             alignContent: "center",
             justifyItems: "center",
