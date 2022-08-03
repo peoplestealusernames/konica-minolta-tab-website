@@ -1,4 +1,5 @@
-﻿[DriverInfo]
+﻿export default
+    `[DriverInfo]
 model="KONICA MINOLTA C759SeriesPCL"
 version="5.3.0.EIT1_00"
 versionnum=1
@@ -969,3 +970,4 @@ nLowDensity=0
 nSmoothing=1
 sizServerPaper.cx=2159
 sizServerPaper.cy=2794
+`
