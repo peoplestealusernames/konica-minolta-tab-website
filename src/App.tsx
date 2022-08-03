@@ -13,8 +13,6 @@ function App() {
       >
         <textarea
           onChange={(e) => {
-            console.log("test");
-
             const text = e.target.value
             setinput(text ? text : "")
           }}
