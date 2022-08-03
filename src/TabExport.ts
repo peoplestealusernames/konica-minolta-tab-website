@@ -1,6 +1,6 @@
 ﻿export default
     `[DriverInfo]\r
-model="KONICA MINOLTA C75{PrinterN}SeriesPCL"\r
+model="KONICA MINOLTA {Model}SeriesPCL"\r
 version="5.3.0.EIT1_00"\r
 versionnum=1\r
 system="Windows NT x64"\r
