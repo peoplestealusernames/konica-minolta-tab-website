@@ -11,8 +11,8 @@ function App() {
   const [tabs, settabs] = useState<string[][]>([])
   const [Model, setModel] = useState("C754")
 
-  useEffect(() => {
-    const lines = input.split("\n")
+  function TextChange(newInput: string) {
+    const lines = newInput.split("\n")
     const newTab: string[][] = []
 
     const lastLine = lines[lines.length - 1]
@@ -30,7 +30,7 @@ function App() {
     })
 
     settabs(newTab)
-  }, [input])
+  }
 
   function DownloadClick() {
     const TabFiles = MakeTabs(tabs, Model)
@@ -56,7 +56,7 @@ function App() {
         <textarea
           onChange={(e) => {
             const text = e.target.value
-            setinput(text ? text : "")
+            TextChange(text ? text : "")
           }}
           style={{
             border: "2px solid white",
