@@ -36,10 +36,6 @@ function App() {
     TabFiles.forEach(downloadKSF)
   }
 
-  function ModelChange(e: any) {
-
-  }
-
   function downloadKSF(tabString: fileReturn) {
     const element = document.createElement("a");
     const file = new Blob(["\ufeff" + tabString.write], { type: 'text/plain' });
@@ -91,7 +87,10 @@ function App() {
         >
           <input
             value={ModelN}
-            onChange={ModelChange}
+            onChange={(e) => {
+              const val = e.target.value
+              setModelN(val ? val : "")
+            }}
             type="text"
           />
           <div style={{
