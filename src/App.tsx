@@ -21,6 +21,10 @@ function App() {
             padding: "0px",
             margin: "0px"
           }}
+          autoComplete="off"
+          autoCorrect="off"
+          autoCapitalize="off"
+          spellCheck="false"
         />
       </div>
     </div>
