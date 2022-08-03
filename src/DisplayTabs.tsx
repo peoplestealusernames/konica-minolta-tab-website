@@ -43,6 +43,8 @@ export function DisplayTabs(props: {
                     return <TabShow
                         title={
                             `${tabN + 1}`.padStart(pad, "0")
+                            +
+                            `/${props.tabs.length}`
                         }
                         tabs={tab}
                     />
