@@ -13,7 +13,7 @@ export function DisplayTabs(props: {
     }, [props.tabs])
 
     return <div style={{
-        display: "inline-flex",
+        display: "flex",
         flexDirection: "row",
         flexWrap: "wrap",
         padding: "0px",
