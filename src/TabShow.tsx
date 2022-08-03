@@ -11,7 +11,7 @@ export function TabShow(props: {
             flexDirection: "column",
             padding: "0px",
             margin: "0px",
-            border: "1px soild white",
+            border: '3px solid white',
             color: "white",
         }}>
             <div style={{
