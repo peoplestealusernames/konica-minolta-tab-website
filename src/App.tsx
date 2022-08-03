@@ -53,7 +53,20 @@ function App() {
           spellCheck="false"
         />
       </div>
-      <DisplayTabs tabs={tabs} />
+      <div style={{
+        display: "flex",
+        width: "50vw",
+        flexDirection: "column",
+      }}>
+        <div style={{
+          backgroundColor: "black",
+          color: "white",
+          border: "2px solid white"
+        }}>
+          Download
+        </div>
+        <DisplayTabs tabs={tabs} />
+      </div>
     </div>
   );
 }
