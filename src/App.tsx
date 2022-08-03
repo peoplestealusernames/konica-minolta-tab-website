@@ -37,14 +37,14 @@ function App() {
             setinput(text ? text : "")
           }}
           style={{
+            border: "2px solid white",
             display: "flex",
-            width: "50vw",
-            height: "100vh",
+            width: "calc(50vw - 12px)",
+            height: "calc(100vh - 12px)",
             backgroundColor: "black",
             color: "white",
             fontSize: "150%",
-            border: "none",
-            padding: "0px",
+            padding: "4px",
             margin: "0px"
           }}
           autoComplete="off"
