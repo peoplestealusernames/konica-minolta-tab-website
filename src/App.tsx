@@ -79,9 +79,15 @@ function App() {
         flexDirection: "column",
       }}>
         <div style={{
+          display: "flex",
           backgroundColor: "black",
           color: "white",
-          border: "2px solid white"
+          border: "2px solid white",
+          height: "30px",
+          alignItems: "center",
+          alignContent: "center",
+          justifyItems: "center",
+          justifyContent: "center"
         }}
           onClick={DownloadClick}
         >
