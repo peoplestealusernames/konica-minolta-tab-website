@@ -32,7 +32,7 @@ function App() {
   }, [input])
 
   function DownloadClick() {
-    const TabFiles = MakeTabs(tabs)
+    const TabFiles = MakeTabs(tabs, Model)
     TabFiles.forEach(downloadKSF)
   }
 
