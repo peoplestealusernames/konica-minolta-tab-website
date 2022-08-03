@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { TabShow } from './TabShow';
 
 function App() {
   const [input, setinput] = useState<string>("")
@@ -51,8 +52,21 @@ function App() {
           spellCheck="false"
         />
       </div>
-      <div>
-        {input}
+      <div style={{
+        display: "flex",
+        flexDirection: "column",
+        padding: "0px",
+        margin: "0px",
+        border: "1px soild white",
+        color: "white",
+      }}>
+        {tabs.map((tabSection, i) => {
+          return <TabShow
+            title={`Tab ${i + 1}/${tabs.length}`}
+            key={i}
+            tabs={tabSection}
+          />
+        })}
       </div>
     </div>
   );
