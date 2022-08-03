@@ -20,7 +20,8 @@ export function DisplayTabs(props: {
         margin: "0px",
         border: "1px soild white",
         color: "white",
-        maxWidth: "50vw"
+        maxWidth: "50vw",
+        overflowY: "scroll",
     }}>
         {props.tabs.map((tabSection, i) => {
             const TabNString = (i + 1).toString().padStart(pad, "0")
