@@ -30,6 +30,7 @@ function App() {
     })
 
     settabs(newTab)
+    setinput(lines.join("\n"))
   }
 
   function DownloadClick() {
@@ -54,6 +55,7 @@ function App() {
       }}
       >
         <textarea
+          value={input}
           onChange={(e) => {
             const text = e.target.value
             TextChange(text ? text : "")
