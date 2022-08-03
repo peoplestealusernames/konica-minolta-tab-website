@@ -87,6 +87,10 @@ function App() {
         >
           <input
             value={Model}
+            style={{
+              width: "45px",
+              textAlign: "right",
+            }}
             onChange={(e) => {
               const val = e.target.value
               setModel(val ? val : "")
