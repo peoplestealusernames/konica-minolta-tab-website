@@ -16,6 +16,7 @@ export function TabShow(props: {
         }}>
             <div style={{
                 padding: "1px",
+                borderBottom: '4px solid white',
                 backgroundColor: "black",
                 fontSize: "20px",
             }}>
@@ -25,7 +26,7 @@ export function TabShow(props: {
                 return <div
                     key={i}
                     style={{
-                        fontSize: "12px",
+                        fontSize: "11px",
                         backgroundColor: (i % 2) == 0 ? "grey" : "black"
                     }}
                 >{e}</div>
