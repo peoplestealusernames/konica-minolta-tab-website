@@ -13,6 +13,7 @@ export function TabShow(props: {
             margin: "0px",
             border: '3px solid white',
             color: "white",
+            height: "fit-content"
         }}>
             <div style={{
                 padding: "1px",
