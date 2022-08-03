@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [input, setinput] = useState<string>("")
+
   return (
     <div className='App'>
       <div style={{
@@ -10,6 +12,12 @@ function App() {
       }}
       >
         <textarea
+          onChange={(e) => {
+            console.log("test");
+
+            const text = e.target.value
+            setinput(text ? text : "")
+          }}
           style={{
             display: "flex",
             width: "50vw",
@@ -26,6 +34,9 @@ function App() {
           autoCapitalize="off"
           spellCheck="false"
         />
+      </div>
+      <div>
+        {input}
       </div>
     </div>
   );
