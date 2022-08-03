@@ -3,7 +3,7 @@
 
 export function TabShow(props: {
     title: string,
-    tabs: string
+    tabs: string[]
 }) {
     return (
         <div style={{
@@ -21,7 +21,7 @@ export function TabShow(props: {
             }}>
                 {props.title}
             </div>
-            {props.tabs.split("\n").map((e, i) => {
+            {props.tabs.map((e, i) => {
                 return <div
                     key={i}
                     style={{
