@@ -4,6 +4,7 @@ import './App.css';
 import { TabShow } from './TabShow';
 import { DisplayTabs } from './DisplayTabs';
 import { fileReturn, MakeTabs } from './MakeTabs';
+import { GrDownload } from "react-icons/gr"
 
 function App() {
   const [input, setinput] = useState<string>("")
@@ -119,7 +120,7 @@ function App() {
           }}
             onClick={DownloadClick}
           >
-            Download
+            <GrDownload size={20} />
           </div>
         </div>
         <DisplayTabs tabs={tabs} />
