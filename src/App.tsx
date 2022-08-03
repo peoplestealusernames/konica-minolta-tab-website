@@ -37,7 +37,7 @@ function App() {
 
   function downloadKSF(tabString: fileReturn) {
     const element = document.createElement("a");
-    const file = new Blob([tabString.write], { type: 'text/plain' });
+    const file = new Blob(["\ufeff" + tabString.write], { type: 'text/plain' });
     element.href = URL.createObjectURL(file);
     element.download = tabString.name;
     document.body.appendChild(element); // Required for this to work in FireFox
