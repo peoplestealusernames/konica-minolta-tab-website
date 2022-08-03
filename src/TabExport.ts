@@ -969,5 +969,4 @@ bDraftPrint=0\r
 nLowDensity=0\r
 nSmoothing=1\r
 sizServerPaper.cx=2159\r
-sizServerPaper.cy=2794\r
-`
+sizServerPaper.cy=279`
