@@ -23,8 +23,9 @@ export function DisplayTabs(props: {
         maxWidth: "50vw"
     }}>
         {props.tabs.map((tabSection, i) => {
+            const TabNString = (i + 1).toString().padStart(pad, "0")
             return <TabShow
-                title={`Tab ${i + 1}/${props.tabs.length}`}
+                title={`Tab ${TabNString}/${props.tabs.length}`}
                 key={i}
                 tabs={tabSection}
             />
