@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import { TabShow } from './TabShow';
 import { DisplayTabs } from './DisplayTabs';
+import { fileReturn, MakeTabs } from './MakeTabs';
 
 function App() {
   const [input, setinput] = useState<string>("")
@@ -30,14 +31,15 @@ function App() {
   }, [input])
 
   function DownloadClick() {
-    downloadKSF("test")
+    const TabFiles = MakeTabs(tabs)
+    TabFiles.forEach(downloadKSF)
   }
 
-  function downloadKSF(tabString: string) {
+  function downloadKSF(tabString: fileReturn) {
     const element = document.createElement("a");
-    const file = new Blob([tabString], { type: 'text/plain' });
+    const file = new Blob([tabString.write], { type: 'text/plain' });
     element.href = URL.createObjectURL(file);
-    element.download = "myFile.txt";
+    element.download = tabString.name;
     document.body.appendChild(element); // Required for this to work in FireFox
     element.click();
     document.body.removeChild(element)
