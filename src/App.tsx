@@ -8,6 +8,7 @@ import { fileReturn, MakeTabs } from './MakeTabs';
 function App() {
   const [input, setinput] = useState<string>("")
   const [tabs, settabs] = useState<string[][]>([])
+  const [ModelN, setModelN] = useState("C754")
 
   useEffect(() => {
     const lines = input.split("\n")
@@ -33,6 +34,10 @@ function App() {
   function DownloadClick() {
     const TabFiles = MakeTabs(tabs)
     TabFiles.forEach(downloadKSF)
+  }
+
+  function ModelChange(e: any) {
+
   }
 
   function downloadKSF(tabString: fileReturn) {
@@ -78,20 +83,33 @@ function App() {
         width: "50vw",
         flexDirection: "column",
       }}>
-        <div style={{
-          display: "flex",
-          backgroundColor: "black",
-          color: "white",
-          border: "2px solid white",
-          height: "30px",
-          alignItems: "center",
-          alignContent: "center",
-          justifyItems: "center",
-          justifyContent: "center"
-        }}
-          onClick={DownloadClick}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+          }}
         >
-          Download
+          <input
+            value={ModelN}
+            onChange={ModelChange}
+            type="text"
+          />
+          <div style={{
+            display: "flex",
+            backgroundColor: "black",
+            color: "white",
+            border: "2px solid white",
+            height: "30px",
+            alignItems: "center",
+            alignContent: "center",
+            justifyItems: "center",
+            justifyContent: "center",
+            flex: 1
+          }}
+            onClick={DownloadClick}
+          >
+            Download
+          </div>
         </div>
         <DisplayTabs tabs={tabs} />
       </div>
