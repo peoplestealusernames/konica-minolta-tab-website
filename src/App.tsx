@@ -16,6 +16,11 @@ function App() {
     const newTab: string[][] = []
 
     lines.map((line, i) => {
+      if (line.length > 20) {
+        line = line.slice(0, 20)
+        lines[i] = line
+      }
+
       const n = i % 20
       const t = (Math.floor(i / 20))
 
