@@ -85,6 +85,9 @@ function App() {
             flexDirection: "row",
           }}
         >
+          <span>
+            Type Model:<br />(ex: C754 or C759)
+          </span>
           <input
             value={Model}
             style={{
