@@ -8,7 +8,7 @@ import { fileReturn, MakeTabs } from './MakeTabs';
 function App() {
   const [input, setinput] = useState<string>("")
   const [tabs, settabs] = useState<string[][]>([])
-  const [ModelN, setModelN] = useState("C754")
+  const [Model, setModel] = useState("C754")
 
   useEffect(() => {
     const lines = input.split("\n")
@@ -86,10 +86,10 @@ function App() {
           }}
         >
           <input
-            value={ModelN}
+            value={Model}
             onChange={(e) => {
               const val = e.target.value
-              setModelN(val ? val : "")
+              setModel(val ? val : "")
             }}
             type="text"
           />
