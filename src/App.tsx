@@ -12,6 +12,10 @@ function App() {
     const lines = input.split("\n")
     const newTab: string[][] = []
 
+    const lastLine = lines[lines.length - 1]
+    if (lastLine === "")
+      lines.pop()
+
     lines.map((line, i) => {
       const n = i % 20
       const t = (Math.floor(i / 20))
