@@ -15,7 +15,7 @@ export function MakeTabs(tabNames: string[][]): fileReturn[] {
         }
 
         files.push({
-            name: `./Out/Tabs_${k + 1}_of_${tabNames.length}.KSF`,
+            name: `Tabs_${k + 1}_of_${tabNames.length}.KSF`,
             write: stri
         })
     }
