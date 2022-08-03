@@ -29,6 +29,19 @@ function App() {
     settabs(newTab)
   }, [input])
 
+  function DownloadClick() {
+    downloadKSF("test")
+  }
+
+  function downloadKSF(tabString: string) {
+    const element = document.createElement("a");
+    const file = new Blob([tabString], { type: 'text/plain' });
+    element.href = URL.createObjectURL(file);
+    element.download = "myFile.txt";
+    document.body.appendChild(element); // Required for this to work in FireFox
+    element.click();
+  }
+
   return (
     <div className='App'>
       <div style={{
@@ -66,7 +79,9 @@ function App() {
           backgroundColor: "black",
           color: "white",
           border: "2px solid white"
-        }}>
+        }}
+          onClick={DownloadClick}
+        >
           Download
         </div>
         <DisplayTabs tabs={tabs} />
