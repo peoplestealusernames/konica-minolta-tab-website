@@ -40,6 +40,7 @@ function App() {
     element.download = "myFile.txt";
     document.body.appendChild(element); // Required for this to work in FireFox
     element.click();
+    document.body.removeChild(element)
   }
 
   return (
