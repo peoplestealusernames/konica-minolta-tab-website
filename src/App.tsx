@@ -70,7 +70,7 @@ function App() {
             Import paths
           </span>
           <span
-            onClick={() => { setinput(input.split("\n").sort(sortWithNumber).join("\n")) }}
+            onClick={() => { EditorChange(input.split("\n").sort(sortWithNumber).join("\n")) }}
           >
             Sort tab names
           </span>
