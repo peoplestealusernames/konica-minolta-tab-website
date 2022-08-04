@@ -7,6 +7,8 @@ export function Editor(props: {
 }) {
     const [input, setinput] = useState<string>("")
 
+    const inputRef = React.createRef<HTMLTextAreaElement>()
+
     const onChange = props.onChange ? props.onChange : () => { }
 
     function TextChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
@@ -31,6 +33,7 @@ export function Editor(props: {
     }}
     >
         <textarea
+            ref={inputRef}
             value={input}
             onChange={TextChange}
             style={{
