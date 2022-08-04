@@ -9,8 +9,10 @@ export function Editor(props: {
 
     const onChange = props.onChange ? props.onChange : () => { }
 
-    function TextChange(newInput: string) {
-        const lines = newInput.split("\n")
+    function TextChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
+        const element = e.target
+        const current = e.target.value
+        const lines = current.split("\n")
 
         lines.map((line, i) => {
             if (line.length > 20) {
@@ -29,10 +31,7 @@ export function Editor(props: {
     >
         <textarea
             value={input}
-            onChange={(e) => {
-                const text = e.target.value
-                TextChange(text ? text : "")
-            }}
+            onChange={TextChange}
             style={{
                 border: "2px solid white",
                 display: "flex",
