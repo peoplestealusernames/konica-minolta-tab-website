@@ -20,7 +20,9 @@ export function DownloadTabs(props: {
         element.href = URL.createObjectURL(file);
         element.download = tabString.name;
         document.body.appendChild(element); // Required for this to work in FireFox
-        element.click();
+        setTimeout(() => {
+            element.click();
+        }, 100);
         setTimeout(() => {
             document.body.removeChild(element)
         }, 10000);
