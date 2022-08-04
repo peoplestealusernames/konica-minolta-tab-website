@@ -8,10 +8,12 @@ import { GrDownload } from "react-icons/gr"
 import { DownloadTabs } from './DownloadTabs';
 import { Editor } from './Editor';
 import { TabOption } from './TabOptions';
+import { PastePopup } from './PastePopup';
 
 function App() {
   const [tabs, settabs] = useState<string[][]>([])
   const [Model, setModel] = useState("C754")
+  const [pastePopup, setpastePopup] = useState(true)
 
   function EditorChange(text: string) {
     const lines = text.split("\n")
@@ -32,6 +34,7 @@ function App() {
 
   return (
     <div className='App'>
+      <PastePopup active={pastePopup} setActive={setpastePopup} />
       <div style={{
         display: "flex",
         overflowY: "scroll",
@@ -52,6 +55,7 @@ function App() {
             justifyContent: "center",
             alignContent: "center"
           }}
+          onClick={() => { setpastePopup(true) }}
         >
           Import paths
         </div>
