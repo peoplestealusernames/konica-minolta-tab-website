@@ -94,7 +94,8 @@ function App() {
           }}
         >
           <span style={{
-            padding: "1px"
+            padding: "1px",
+            userSelect: "none"
           }}>
             Type Model:<br />(ex: C754 or C759)
           </span>
