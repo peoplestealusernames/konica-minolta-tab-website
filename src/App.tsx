@@ -7,13 +7,18 @@ import { fileReturn, MakeTabs } from './MakeTabs';
 import { GrDownload } from "react-icons/gr"
 import { DownloadTabs } from './DownloadTabs';
 import { Editor } from './Editor';
-import { TabOption } from './TabOptions';
+import { Options, TabOption } from './TabOptions';
 import { PastePopup } from './PastePopup';
 
 function App() {
   const [tabs, settabs] = useState<string[][]>([])
   const [pastePopup, setpastePopup] = useState(false)
   const [input, setinput] = useState<string>("Enter tab names")
+
+  const [options, setoptions] = useState<Options>({
+    Model: "C754",
+    FontSize: 16
+  })
 
   function EditorChange(text: string) {
     setinput(text)
@@ -67,10 +72,7 @@ function App() {
         flex: 1,
         flexDirection: "column",
       }}>
-        <TabOption tabs={tabs} options={{
-          Model: "C754",
-          FontSize: 16
-        }} />
+        <TabOption tabs={tabs} onChange={setoptions} options={options} />
         <DisplayTabs tabs={tabs} />
       </div>
     </div>
