@@ -52,18 +52,28 @@ function App() {
         <div
           style={{
             display: "flex",
+            flexDirection: "column",
             border: "4px solid white",
             backgroundColor: "grey",
             color: "black",
             fontSize: "150%",
-            padding: "4px",
-            margin: "0px",
+            padding: "0px",
             justifyContent: "center",
             alignContent: "center"
           }}
-          onClick={() => { setpastePopup(true) }}
         >
-          Import paths
+          <span style={{
+            borderBottom: "4px solid white"
+          }}
+            onClick={() => { setpastePopup(true) }}
+          >
+            Import paths
+          </span>
+          <span
+            onClick={() => { setinput(input.split("\n").sort(sortWithNumber).join("\n")) }}
+          >
+            Sort tab names
+          </span>
         </div>
         <Editor value={input} onChange={EditorChange} />
       </div>
