@@ -62,7 +62,10 @@ export function Editor(props: {
     })
 
     return <div style={{
+        display: "flex",
         overflowY: "scroll",
+        width: "50vw",
+        height: "100vh",
     }}
     >
         <textarea
@@ -70,10 +73,9 @@ export function Editor(props: {
             value={input}
             onChange={TextChange}
             style={{
-                border: "2px solid white",
                 display: "flex",
-                width: "calc(50vw - 12px)",
-                height: "calc(100vh - 12px)",
+                border: "2px solid white",
+                flexGrow: 1,
                 backgroundColor: "black",
                 color: "white",
                 fontSize: "150%",
