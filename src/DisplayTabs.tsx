@@ -41,11 +41,11 @@ export function DisplayTabs(props: {
                     ...{
                         backgroundColor: "white",
                         color: "black",
-                        borderTopLeftRadius: "25px",
-                        borderTopRightRadius: "25px",
+                        borderTopLeftRadius: "40px",
+                        borderTopRightRadius: "40px",
                         border: "2px solid grey",
                         paddingTop: "1px",
-                        paddingBottom: "5px",
+                        height: "50px"
                     }, ...tabProp
                 }
                 }
