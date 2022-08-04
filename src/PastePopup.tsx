@@ -2,7 +2,7 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Popup } from "./components/popup/Popup";
 import { StyledTab } from "./components/popup/StyledTab";
 import { Editor } from "./Editor";
-
+import path from "path-browserify";
 
 export function PastePopup(props: {
     active: boolean
@@ -12,17 +12,9 @@ export function PastePopup(props: {
     const [paths, setpaths] = useState<string>("")
 
     function GeneratePaths() {
-        const out = paths.split("\n").map((e, i) => {
-            let file = e.split("/").pop()
-            if (!file)
-                return ""
-
-            const prefixi = file.lastIndexOf(".")
-            if (prefixi !== -1)
-                file = file.slice(0, prefixi)
-
-            return file
-        })
+        const out = paths.split("\n").map((e, i) =>
+            path.basename(e)
+        )
 
         props.setInput(out.join("\n"))
         props.setActive(false)
