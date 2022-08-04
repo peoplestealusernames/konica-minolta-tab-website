@@ -39,7 +39,8 @@ function App() {
         flexDirection: "column",
       }}>
         <TabOption tabs={tabs} options={{
-          Model: "C759"
+          Model: "C759",
+          FontSize: 20
         }} />
         <DisplayTabs tabs={tabs} />
       </div>
