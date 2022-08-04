@@ -73,7 +73,7 @@ function App() {
         flexDirection: "column",
       }}>
         <TabOption tabs={tabs} onChange={setoptions} options={options} />
-        <DisplayTabs tabs={tabs} />
+        <DisplayTabs tabs={tabs} Options={options} />
       </div>
     </div>
   );

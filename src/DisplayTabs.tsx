@@ -4,6 +4,7 @@ import { TabShow } from "./TabShow"
 
 export function DisplayTabs(props: {
     tabs: string[][]
+    Options: Options
 }) {
     const [pad, setpad] = useState<number>(0)
 
