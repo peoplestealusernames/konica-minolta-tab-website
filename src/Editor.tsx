@@ -15,6 +15,8 @@ export function Editor(props: {
     const lineLength = props.lineLength ? props.lineLength : 20
     const onChange = props.onChange ? props.onChange : () => { }
 
+    useEffect(() => { setinput(props.value ? props.value : "") }, [props.value])
+
     function TextChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
         e.preventDefault()
         const element = e.target
