@@ -38,8 +38,8 @@ export function TabOption(props: {
                 let val = parseInt(e.target.value)
                 if (val > 999) {
                     val = 999
-                } else if (val < 0) {
-                    val = 0
+                } else if (val < 1) {
+                    val = 1
                 }
                 setoptions({ ...options, FontSize: val })
             }}
