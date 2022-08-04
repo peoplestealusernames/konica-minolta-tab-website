@@ -28,6 +28,15 @@ export function TabOption(props: {
             height: "fit-content"
         }}
     >
+        <span style={{
+            display: "flex",
+            padding: "1px",
+            userSelect: "none",
+            justifyContent: "center",
+            alignItems: "center"
+        }}>
+            Font Size:
+        </span>
         <input
             value={options.FontSize}
             style={{
