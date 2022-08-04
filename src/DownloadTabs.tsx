@@ -14,7 +14,7 @@ export function DownloadTabs(props: {
         TabFiles.forEach((tabString, i) => {
             setTimeout(() => {
                 downloadKSF(tabString)
-            }, 100 * i)
+            }, 200 * i + 100)
         })
     }
 
@@ -26,7 +26,7 @@ export function DownloadTabs(props: {
         document.body.appendChild(element); // Required for this to work in FireFox
         setTimeout(() => {
             element.click();
-        }, 100);
+        }, 200);
         setTimeout(() => {
             document.body.removeChild(element)
         }, 10000);
