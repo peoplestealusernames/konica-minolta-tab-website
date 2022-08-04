@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className='App'>
-      <PastePopup setInput={setinput} active={pastePopup} setActive={setpastePopup} />
+      <PastePopup setInput={EditorChange} active={pastePopup} setActive={setpastePopup} />
       <div style={{
         display: "flex",
         overflowY: "scroll",
