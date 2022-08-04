@@ -29,23 +29,25 @@ export function Editor(props: {
             }
         })
 
+        const Out = lines.join("\n")
+
         newStart = updatePos(current, newStart)
         newEnd = updatePos(current, newEnd)
 
         setSEnd(newEnd)
         setSStart(newStart)
 
-        const Out = lines.join("\n")
         setinput(Out)
         onChange(Out)
     }
 
     function updatePos(text: string, i: number) {
-        const lastLine = text.lastIndexOf("\n", i)
-        if (i - lastLine > 20) {
-            return 19 + lastLine
-        } else if (lastLine === -1) {
+        const lastLine = text.lastIndexOf("\n", i - 1)
+
+        if (lastLine === -1) {
             return i > 20 ? 20 : i
+        } else if (i - lastLine >= 21) {
+            return lastLine + 21
         }
 
         return i
