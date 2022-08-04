@@ -1,3 +1,4 @@
+import React from "react";
 import { GrDownload } from "react-icons/gr";
 import { MakeTabs, fileReturn } from "./MakeTabs";
 
@@ -6,6 +7,7 @@ export function DownloadTabs(props: {
     Tabs: string[][]//[group][1-20][tab]
     Model: string,
     size?: number
+    style?: React.CSSProperties
 }) {
     function DownloadClick() {
         const TabFiles = MakeTabs(props.Tabs, props.Model)
@@ -24,15 +26,17 @@ export function DownloadTabs(props: {
 
     return (
         <div style={{
-            display: "flex",
-            backgroundColor: "grey",
-            color: "black",
-            border: "3px solid white",
-            alignItems: "center",
-            alignContent: "center",
-            justifyItems: "center",
-            justifyContent: "center",
-            flex: 1
+            ...{
+                display: "flex",
+                backgroundColor: "grey",
+                color: "black",
+                border: "3px solid white",
+                alignItems: "center",
+                alignContent: "center",
+                justifyItems: "center",
+                justifyContent: "center",
+                flex: 1
+            }, ...props.style
         }}
             onClick={DownloadClick}
         >
