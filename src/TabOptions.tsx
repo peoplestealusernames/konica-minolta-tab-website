@@ -79,6 +79,21 @@ export function TabOption(props: {
             }}
             type="text"
         />
+        <span style={{
+            padding: "1px",
+            userSelect: "none"
+        }}>
+            Tab cut:
+        </span>
+        <select
+            value={options.Cut} onChange={(Cut) => {
+                setoptions({ ...options, Cut: parseInt(Cut.target.value) as Options["Cut"] })
+            }}
+        >
+            <option value="5">5</option>
+            <option value="8">8</option>
+            <option value="10">10</option>
+        </select>
         <DownloadTabs
             Tabs={props.tabs}
             Options={options}
