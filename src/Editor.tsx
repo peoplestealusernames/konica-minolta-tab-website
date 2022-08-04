@@ -21,8 +21,9 @@ export function Editor(props: {
             }
         })
 
-        setinput(lines.join("\n"))
-        onChange(lines.join("\n"))
+        const Out = lines.join("\n")
+        setinput(Out)
+        onChange(Out)
     }
 
     return <div style={{
