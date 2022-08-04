@@ -7,8 +7,25 @@ import { Editor } from "./Editor";
 export function PastePopup(props: {
     active: boolean
     setActive: Dispatch<SetStateAction<boolean>>,
+    setInput?: (input: string) => void
 }) {
     const [paths, setpaths] = useState<string>("")
+
+    function GeneratePaths() {
+        const out = paths.split("\n").map((e, i) => {
+            let file = e.split("/").pop()
+            if (!file)
+                return ""
+
+            const prefixi = file.lastIndexOf(".")
+            if (prefixi !== -1)
+                file = file.slice(0, prefixi)
+
+            return file
+        })
+
+        //props.setInput(out)
+    }
 
     return <Popup
         active={props.active}
@@ -27,7 +44,7 @@ export function PastePopup(props: {
                 border: "2px solid white",
                 width: "fit-content"
             }}
-
+                onClick={() => GeneratePaths()}
             >
                 Generate Names
             </div>
