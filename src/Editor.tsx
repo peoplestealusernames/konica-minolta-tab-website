@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react"
 export function Editor(props: {
     value?: string
     onChange?: (value: string) => void
+    lineLength?: number //TODO: if -1 remove limit
 }) {
     const [input, setinput] = useState<string>("")
     const [SStart, setSStart] = useState(0)
@@ -11,6 +12,7 @@ export function Editor(props: {
 
     const inputRef = React.createRef<HTMLTextAreaElement>()
 
+    const lineLength = props.lineLength ? props.lineLength : 20
     const onChange = props.onChange ? props.onChange : () => { }
 
     function TextChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
@@ -23,8 +25,8 @@ export function Editor(props: {
         let newEnd = element.selectionEnd
 
         lines.map((line, i) => {
-            if (line.length > 20) {
-                line = line.slice(0, 20)
+            if (line.length > lineLength) {
+                line = line.slice(0, lineLength)
                 lines[i] = line
             }
         })
@@ -45,9 +47,9 @@ export function Editor(props: {
         const lastLine = text.lastIndexOf("\n", i - 1)
 
         if (lastLine === -1) {
-            return i > 20 ? 20 : i
-        } else if (i - lastLine >= 21) {
-            return lastLine + 21
+            return i > lineLength ? lineLength : i
+        } else if (i - lastLine >= lineLength + 1) {
+            return lastLine + lineLength + 1
         }
 
         return i
