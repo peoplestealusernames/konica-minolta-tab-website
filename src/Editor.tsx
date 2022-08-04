@@ -64,7 +64,7 @@ export function Editor(props: {
     return <div style={{
         display: "flex",
         overflowY: "scroll",
-        width: "50vw",
+        width: "300px",
         height: "100vh",
     }}
     >
@@ -80,7 +80,7 @@ export function Editor(props: {
                 color: "white",
                 fontSize: "150%",
                 padding: "4px",
-                margin: "0px"
+                margin: "0px",
             }}
             autoComplete="off"
             autoCorrect="off"
