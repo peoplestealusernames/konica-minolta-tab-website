@@ -14,7 +14,8 @@ export function DisplayTabs(props: {
         setpad(count.toString().length)
 
         settabProp({
-            width: `calc(${100 / props.Options.Cut}%)`,
+            width: `calc(${100 / props.Options.Cut}% - 4px)`,
+            fontSize: `${props.Options.FontSize * 2}px`,
         })
     }, [props.tabs])
 
@@ -38,16 +39,19 @@ export function DisplayTabs(props: {
                         key={i}
                         style={{
                             ...{
-                                display: "flex",
-                                fontSize: "11px",
-                                backgroundColor: (i % 2) == 0 ? "grey" : "black",
+                                backgroundColor: "white",
+                                color: "black",
+                                borderTopLeftRadius: "25px",
+                                borderTopRightRadius: "25px",
+                                border: "2px solid black"
                             }, ...tabProp
-                        }}
+                        }
+                        }
                     >
                         {e}
                     </div>
                 })
             }
         })}
-    </div>
+    </div >
 }
