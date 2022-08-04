@@ -12,9 +12,7 @@ export function DownloadTabs(props: {
     function DownloadClick() {
         const TabFiles = MakeTabs(props.Tabs, props.Model)
         TabFiles.forEach((tabString, i) => {
-            setTimeout(() => {
-                downloadKSF(tabString)
-            }, 200 * i + 100)
+            downloadKSF(tabString)
         })
     }
 
@@ -24,9 +22,7 @@ export function DownloadTabs(props: {
         element.href = URL.createObjectURL(file);
         element.download = tabString.name;
         document.body.appendChild(element); // Required for this to work in FireFox
-        setTimeout(() => {
-            element.click();
-        }, 200);
+        element.click();
         setTimeout(() => {
             document.body.removeChild(element)
         }, 10000);
