@@ -45,7 +45,8 @@ export function DisplayTabs(props: {
                         borderTopRightRadius: "40px",
                         border: "2px solid grey",
                         paddingTop: "1px",
-                        height: "50px"
+                        height: "50px",
+                        fontWeight: "bold"
                     }, ...tabProp
                 }
                 }
