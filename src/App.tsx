@@ -13,8 +13,10 @@ import { PastePopup } from './PastePopup';
 function App() {
   const [tabs, settabs] = useState<string[][]>([])
   const [pastePopup, setpastePopup] = useState(true)
+  const [input, setinput] = useState<string>("")
 
   function EditorChange(text: string) {
+    setinput(text)
     const lines = text.split("\n")
     const newTab: string[][] = []
 
@@ -58,7 +60,7 @@ function App() {
         >
           Import paths
         </div>
-        <Editor onChange={EditorChange} />
+        <Editor value={input} onChange={EditorChange} />
       </div>
       <div style={{
         display: "flex",
