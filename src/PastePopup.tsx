@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Popup } from "./components/popup/Popup";
 import { StyledTab } from "./components/popup/StyledTab";
 import { Editor } from "./Editor";
@@ -27,6 +27,10 @@ export function PastePopup(props: {
         props.setInput(out.join("\n"))
         props.setActive(false)
     }
+
+    useEffect(() => {
+        setpaths("")
+    }, [props.active])
 
     return <Popup
         active={props.active}
