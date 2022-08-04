@@ -11,7 +11,7 @@ export function Editor(props: {
 
     function TextChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
         const element = e.target
-        const current = e.target.value
+        const current = element.value
         const lines = current.split("\n")
 
         lines.map((line, i) => {
