@@ -4,7 +4,8 @@ import { MakeTabs, fileReturn } from "./MakeTabs";
 
 export function DownloadTabs(props: {
     Tabs: string[][]//[group][1-20][tab]
-    Model: string
+    Model: string,
+    size?: number
 }) {
     function DownloadClick() {
         const TabFiles = MakeTabs(props.Tabs, props.Model)
@@ -35,7 +36,7 @@ export function DownloadTabs(props: {
         }}
             onClick={DownloadClick}
         >
-            <GrDownload size={20} />
+            <GrDownload size={props.size} />
         </div>
     )
 }
