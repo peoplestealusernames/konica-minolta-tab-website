@@ -25,6 +25,7 @@ export function PastePopup(props: {
         })
 
         props.setInput(out.join("\n"))
+        props.setActive(false)
     }
 
     return <Popup
