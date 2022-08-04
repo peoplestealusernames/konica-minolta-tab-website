@@ -37,8 +37,24 @@ function App() {
         overflowY: "scroll",
         width: "300px",
         height: "100vh",
+        flexDirection: "column",
       }}
       >
+        <div
+          style={{
+            display: "flex",
+            border: "4px solid white",
+            backgroundColor: "grey",
+            color: "black",
+            fontSize: "150%",
+            padding: "4px",
+            margin: "0px",
+            justifyContent: "center",
+            alignContent: "center"
+          }}
+        >
+          Import paths
+        </div>
         <Editor onChange={EditorChange} />
       </div>
       <div style={{
