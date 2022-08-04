@@ -5,6 +5,7 @@ export function Editor(props: {
     value?: string
     onChange?: (value: string) => void
     lineLength?: number //TODO: if -1 remove limit
+    style?: React.CSSProperties
 }) {
     const [input, setinput] = useState<string>("")
     const [SStart, setSStart] = useState(0)
@@ -78,6 +79,7 @@ export function Editor(props: {
             fontSize: "150%",
             padding: "4px",
             margin: "0px",
+            ...props.style
         }}
         autoComplete="off"
         autoCorrect="off"
