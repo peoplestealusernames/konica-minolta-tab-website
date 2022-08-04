@@ -1,24 +1,28 @@
+import { CSSProperties } from "react"
 
 
 
 export function TabShow(props: {
     title: string,
-    tabs: string[]
+    tabs: string[],
+    style?: CSSProperties
 }) {
     return (
         <div style={{
-            display: "flex",
-            flexDirection: "column",
-            padding: "0px",
-            margin: "0px",
-            border: '3px solid white',
-            color: "white",
-            height: "fit-content"
+            ...{
+                display: "flex",
+                flexDirection: "column",
+                padding: "0px",
+                margin: "0px",
+                border: '3px solid white',
+                color: "white",
+                backgroundColor: "black",
+                height: "fit-content"
+            }, ...props.style
         }}>
             <div style={{
                 padding: "1px",
                 borderBottom: '4px solid white',
-                backgroundColor: "black",
                 fontSize: "20px",
             }}>
                 {props.title}
