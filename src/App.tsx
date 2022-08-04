@@ -12,8 +12,8 @@ import { PastePopup } from './PastePopup';
 
 function App() {
   const [tabs, settabs] = useState<string[][]>([])
-  const [pastePopup, setpastePopup] = useState(true)
-  const [input, setinput] = useState<string>("")
+  const [pastePopup, setpastePopup] = useState(false)
+  const [input, setinput] = useState<string>("Enter tab names")
 
   function EditorChange(text: string) {
     setinput(text)
