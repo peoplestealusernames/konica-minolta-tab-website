@@ -5,6 +5,7 @@ import { DownloadTabs } from "./DownloadTabs"
 export type Options = {
     Model: string
     FontSize: number
+    Cut: 5 | 10 | 8
 }
 
 export function TabOption(props: {
