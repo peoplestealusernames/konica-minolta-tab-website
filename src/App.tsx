@@ -35,7 +35,7 @@ function App() {
       <Editor onChange={EditorChange} />
       <div style={{
         display: "flex",
-        width: "50vw",
+        flex: 1,
         flexDirection: "column",
       }}>
         <TabOption tabs={tabs} options={{
