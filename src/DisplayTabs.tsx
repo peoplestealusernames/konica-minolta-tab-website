@@ -46,10 +46,10 @@ export function DisplayTabs(props: {
                         border: "2px solid grey",
                         paddingTop: "1px",
                         height: "50px",
-                        fontWeight: "bold"
+                        fontWeight: "bold",
+                        whiteSpace: "nowrap"
                     }, ...tabProp
-                }
-                }
+                }}
             >
                 {e}
             </div>)
