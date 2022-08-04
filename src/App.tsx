@@ -97,7 +97,17 @@ function App() {
             }}
             type="text"
           />
-          <DownloadTabs Tabs={tabs} Model={Model} />
+          <DownloadTabs
+            Tabs={tabs}
+            Model={Model}
+            style={{
+              backgroundColor: "grey",
+              color: "black",
+              border: "3px solid white",
+              flex: 1
+            }}
+            size={20}
+          />
         </div>
         <DisplayTabs tabs={tabs} />
       </div>
