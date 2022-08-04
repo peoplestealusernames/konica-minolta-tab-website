@@ -19,8 +19,8 @@ export function Editor(props: {
         const current = element.value
         const lines = current.split("\n")
 
-        const newStart = element.selectionStart
-        const newEnd = element.selectionEnd
+        let newStart = element.selectionStart
+        let newEnd = element.selectionEnd
 
         lines.map((line, i) => {
             if (line.length > 20) {
@@ -28,6 +28,9 @@ export function Editor(props: {
                 lines[i] = line
             }
         })
+
+        newStart = updatePos(current, newStart)
+        newEnd = updatePos(current, newEnd)
 
         setSEnd(newEnd)
         setSStart(newStart)
@@ -37,13 +40,26 @@ export function Editor(props: {
         onChange(Out)
     }
 
+    function updatePos(text: string, i: number) {
+        const lastLine = text.lastIndexOf("\n", i)
+        if (i - lastLine > 20) {
+            return 19 + lastLine
+        } else if (lastLine === -1) {
+            return i > 20 ? 20 : i
+        }
+
+        return i
+    }
+
     useEffect(() => {
         const element = inputRef.current
         if (!element)
             return
 
+        console.log("A");
+
         element.setSelectionRange(SStart, SEnd)
-    }, [setSEnd, setSStart])
+    }, [SEnd, SStart])
 
 
     return <div style={{
