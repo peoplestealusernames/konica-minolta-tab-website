@@ -7,7 +7,7 @@ import { Editor } from "./Editor";
 export function PastePopup(props: {
     active: boolean
     setActive: Dispatch<SetStateAction<boolean>>,
-    setInput?: (input: string) => void
+    setInput: (input: string) => void
 }) {
     const [paths, setpaths] = useState<string>("")
 
@@ -24,7 +24,7 @@ export function PastePopup(props: {
             return file
         })
 
-        //props.setInput(out)
+        props.setInput(out.join("\n"))
     }
 
     return <Popup
