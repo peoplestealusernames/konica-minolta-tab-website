@@ -28,14 +28,10 @@ export function DownloadTabs(props: {
         <div style={{
             ...{
                 display: "flex",
-                backgroundColor: "grey",
-                color: "black",
-                border: "3px solid white",
                 alignItems: "center",
                 alignContent: "center",
                 justifyItems: "center",
                 justifyContent: "center",
-                flex: 1
             }, ...props.style
         }}
             onClick={DownloadClick}
