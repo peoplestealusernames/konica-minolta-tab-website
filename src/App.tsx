@@ -6,22 +6,17 @@ import { DisplayTabs } from './DisplayTabs';
 import { fileReturn, MakeTabs } from './MakeTabs';
 import { GrDownload } from "react-icons/gr"
 import { DownloadTabs } from './DownloadTabs';
+import { Editor } from './Editor';
 
 function App() {
-  const [input, setinput] = useState<string>("")
   const [tabs, settabs] = useState<string[][]>([])
   const [Model, setModel] = useState("C754")
 
-  function TextChange(newInput: string) {
-    const lines = newInput.split("\n")
+  function EditorChange(text: string) {
+    const lines = text.split("\n")
     const newTab: string[][] = []
 
     lines.map((line, i) => {
-      if (line.length > 20) {
-        line = line.slice(0, 20)
-        lines[i] = line
-      }
-
       const n = i % 20
       const t = (Math.floor(i / 20))
 
@@ -32,38 +27,11 @@ function App() {
     })
 
     settabs(newTab)
-    setinput(lines.join("\n"))
   }
 
   return (
     <div className='App'>
-      <div style={{
-        overflowY: "scroll",
-      }}
-      >
-        <textarea
-          value={input}
-          onChange={(e) => {
-            const text = e.target.value
-            TextChange(text ? text : "")
-          }}
-          style={{
-            border: "2px solid white",
-            display: "flex",
-            width: "calc(50vw - 12px)",
-            height: "calc(100vh - 12px)",
-            backgroundColor: "black",
-            color: "white",
-            fontSize: "150%",
-            padding: "4px",
-            margin: "0px"
-          }}
-          autoComplete="off"
-          autoCorrect="off"
-          autoCapitalize="off"
-          spellCheck="false"
-        />
-      </div>
+      <Editor onChange={EditorChange} />
       <div style={{
         display: "flex",
         width: "50vw",
