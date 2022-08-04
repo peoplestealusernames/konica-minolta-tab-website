@@ -10,13 +10,15 @@ export function DisplayTabs(props: {
     const [tabProp, settabProp] = useState<React.CSSProperties>({})
 
     useEffect(() => {
-        const count = props.tabs.length
-        setpad(count.toString().length)
-
         settabProp({
             width: `calc(${100 / props.Options.Cut}% - 4px)`,
             fontSize: `${props.Options.FontSize * 2}px`,
         })
+    }, [props.Options])
+
+    useEffect(() => {
+        const count = props.tabs.length
+        setpad(count.toString().length)
     }, [props.tabs])
 
     return <div style={{
