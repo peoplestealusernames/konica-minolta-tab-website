@@ -20,6 +20,8 @@ export function DisplayTabs(props: {
         margin: "0px",
         border: "1px soild white",
         color: "white",
+        justifyContent: "start",
+        alignContent: "start",
         flex: 1,
         overflowY: "scroll",
     }}>
