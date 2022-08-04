@@ -32,6 +32,7 @@ export function DownloadTabs(props: {
                 alignContent: "center",
                 justifyItems: "center",
                 justifyContent: "center",
+                userSelect: "none"
             }, ...props.style
         }}
             onClick={DownloadClick}
