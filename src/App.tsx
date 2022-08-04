@@ -12,7 +12,6 @@ import { PastePopup } from './PastePopup';
 
 function App() {
   const [tabs, settabs] = useState<string[][]>([])
-  const [Model, setModel] = useState("C754")
   const [pastePopup, setpastePopup] = useState(true)
 
   function EditorChange(text: string) {
