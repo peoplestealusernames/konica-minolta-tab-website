@@ -35,8 +35,13 @@ export function TabOption(props: {
                 textAlign: "right",
             }}
             onChange={(e) => {
-                const val = parseInt(e.target.value)
-                setoptions({ ...options, FontSize: val ? val : 0 })
+                let val = parseInt(e.target.value)
+                if (val > 999) {
+                    val = 999
+                } else if (val < 0) {
+                    val = 0
+                }
+                setoptions({ ...options, FontSize: val })
             }}
             type="number"
         />
