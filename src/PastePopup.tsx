@@ -14,7 +14,23 @@ export function PastePopup(props: {
         active={props.active}
         setActive={props.setActive}
     >
-        <StyledTab title="Paste paths">
+        <StyledTab style={{
+            flexDirection: "column",
+            alignItems: "center"
+        }}
+            title="Paste paths"
+        >
+            <div style={{
+                display: "flex",
+                color: "white",
+                margin: "2px",
+                border: "2px solid white",
+                width: "fit-content"
+            }}
+
+            >
+                Generate Names
+            </div>
             <Editor lineLength={1000} value={paths} onChange={setpaths} />
         </StyledTab>
     </Popup>
