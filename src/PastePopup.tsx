@@ -2,7 +2,6 @@ import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { Popup } from "./components/popup/Popup";
 import { StyledTab } from "./components/popup/StyledTab";
 import { Editor } from "./Editor";
-import path from "path-browserify";
 
 export function PastePopup(props: {
     active: boolean
