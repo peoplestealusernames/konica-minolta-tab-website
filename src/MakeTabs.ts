@@ -9,10 +9,13 @@ export function MakeTabs(tabNames: string[][], options: Options): fileReturn[] {
     for (let k = 0; k < tabNames.length; k++) {
         let stri = TabString
         stri = stri.replaceAll("{Name}", `Tabs_${k + 1}/${tabNames.length}`)
-        stri = stri.replace("{Count}", tabNames[k].length.toString())
+        stri = stri.replaceAll("{Count}", tabNames[k].length.toString())
 
-        stri = stri.replace("{Model}", options.Model)
-        stri = stri.replace("{FontSize}", options.FontSize.toString())
+        console.log(options);
+
+        stri = stri.replaceAll("{Model}", options.Model)
+        stri = stri.replaceAll("{FontSize}", options.FontSize.toString())
+        stri = stri.replaceAll("{TabCut}", options.Cut.toString())
 
         for (let i = 0; i < tabNames[k].length; i++) {
             stri = stri.replace(`{${i + 1}}`, tabNames[k][i])
