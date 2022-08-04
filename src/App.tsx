@@ -32,7 +32,15 @@ function App() {
 
   return (
     <div className='App'>
-      <Editor onChange={EditorChange} />
+      <div style={{
+        display: "flex",
+        overflowY: "scroll",
+        width: "300px",
+        height: "100vh",
+      }}
+      >
+        <Editor onChange={EditorChange} />
+      </div>
       <div style={{
         display: "flex",
         flex: 1,

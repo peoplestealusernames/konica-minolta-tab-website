@@ -61,31 +61,23 @@ export function Editor(props: {
         element.setSelectionRange(SStart, SEnd)
     })
 
-    return <div style={{
-        display: "flex",
-        overflowY: "scroll",
-        width: "300px",
-        height: "100vh",
-    }}
-    >
-        <textarea
-            ref={inputRef}
-            value={input}
-            onChange={TextChange}
-            style={{
-                display: "flex",
-                border: "2px solid white",
-                flexGrow: 1,
-                backgroundColor: "black",
-                color: "white",
-                fontSize: "150%",
-                padding: "4px",
-                margin: "0px",
-            }}
-            autoComplete="off"
-            autoCorrect="off"
-            autoCapitalize="off"
-            spellCheck="false"
-        />
-    </div>
+    return <textarea
+        ref={inputRef}
+        value={input}
+        onChange={TextChange}
+        style={{
+            display: "flex",
+            border: "2px solid white",
+            flexGrow: 1,
+            backgroundColor: "black",
+            color: "white",
+            fontSize: "150%",
+            padding: "4px",
+            margin: "0px",
+        }}
+        autoComplete="off"
+        autoCorrect="off"
+        autoCapitalize="off"
+        spellCheck="false"
+    />
 }
