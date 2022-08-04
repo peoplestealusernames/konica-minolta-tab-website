@@ -32,26 +32,22 @@ export function DisplayTabs(props: {
         flex: 1,
         overflowY: "scroll",
     }}>
-        {props.tabs.map((tabSection, i) => {
-            {
-                return tabSection.map((e, i) => {
-                    return <div
-                        key={i}
-                        style={{
-                            ...{
-                                backgroundColor: "white",
-                                color: "black",
-                                borderTopLeftRadius: "25px",
-                                borderTopRightRadius: "25px",
-                                border: "2px solid black"
-                            }, ...tabProp
-                        }
-                        }
-                    >
-                        {e}
-                    </div>
-                })
-            }
-        })}
+        {props.tabs.map((tabSection, i) =>
+            tabSection.map((e, i) => <div
+                key={i}
+                style={{
+                    ...{
+                        backgroundColor: "white",
+                        color: "black",
+                        borderTopLeftRadius: "25px",
+                        borderTopRightRadius: "25px",
+                        border: "2px solid black"
+                    }, ...tabProp
+                }
+                }
+            >
+                {e}
+            </div>)
+        )}
     </div >
 }
