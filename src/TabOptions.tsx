@@ -8,6 +8,15 @@ export type Options = {
     Cut: 5 | 10 | 8
 }
 
+const SelectionStyle: React.CSSProperties = {
+    display: "flex",
+    padding: "1px",
+    userSelect: "none",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: "2px"
+}
+
 export function TabOption(props: {
     options: Options
     tabs: string[][]
@@ -32,16 +41,10 @@ export function TabOption(props: {
             color: "white",
             backgroundColor: "black",
             border: "3px solid gold",
-            height: "fit-content"
+            height: "fit-content",
         }}
     >
-        <span style={{
-            display: "flex",
-            padding: "1px",
-            userSelect: "none",
-            justifyContent: "center",
-            alignItems: "center"
-        }}>
+        <span style={SelectionStyle}>
             Font Size:
         </span>
         <input
@@ -61,17 +64,14 @@ export function TabOption(props: {
             }}
             type="number"
         />
-        <span style={{
-            padding: "1px",
-            userSelect: "none"
-        }}>
+        <span style={SelectionStyle}>
             Type Model:<br />(ex: C754 or C759)
         </span>
         <input
             value={options.Model}
             style={{
+                ...SelectionStyle,
                 width: "45px",
-                textAlign: "right",
             }}
             onChange={(e) => {
                 const val = e.target.value
@@ -79,10 +79,7 @@ export function TabOption(props: {
             }}
             type="text"
         />
-        <span style={{
-            padding: "1px",
-            userSelect: "none"
-        }}>
+        <span style={SelectionStyle}>
             Tab cut:
         </span>
         <select
