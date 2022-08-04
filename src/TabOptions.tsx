@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { DownloadTabs } from "./DownloadTabs"
 
 
@@ -18,6 +18,12 @@ export function TabOption(props: {
     function setModel(Model: string) {
         setoptions({ ...options, Model })
     }
+
+    useEffect(() => {
+        if (props.onChange)
+            props.onChange({ ...options })
+    }, [options])
+
 
     return <div
         style={{
