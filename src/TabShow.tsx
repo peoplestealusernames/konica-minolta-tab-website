@@ -1,11 +1,9 @@
-import { CSSProperties } from "react"
-
 
 
 export function TabShow(props: {
     title: string,
     tabs: string[],
-    style?: CSSProperties
+    style?: React.CSSProperties
 }) {
     return (
         <div style={{
