@@ -47,7 +47,7 @@ export function TabOption(props: {
         />
         <DownloadTabs
             Tabs={props.tabs}
-            Model={options.Model}
+            Options={options}
             style={{
                 backgroundColor: "grey",
                 color: "black",

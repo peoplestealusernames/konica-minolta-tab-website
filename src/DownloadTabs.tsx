@@ -1,16 +1,17 @@
 import React from "react";
 import { GrDownload } from "react-icons/gr";
 import { MakeTabs, fileReturn } from "./MakeTabs";
+import { Options } from "./TabOptions";
 
 
 export function DownloadTabs(props: {
     Tabs: string[][]//[group][1-20][tab]
-    Model: string,
+    Options: Options,
     size?: number
     style?: React.CSSProperties
 }) {
     function DownloadClick() {
-        const TabFiles = MakeTabs(props.Tabs, props.Model)
+        const TabFiles = MakeTabs(props.Tabs, props.Options)
         TabFiles.forEach((tabString, i) => {
             downloadKSF(tabString)
         })
