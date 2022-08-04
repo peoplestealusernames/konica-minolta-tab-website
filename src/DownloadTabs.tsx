@@ -21,7 +21,9 @@ export function DownloadTabs(props: {
         element.download = tabString.name;
         document.body.appendChild(element); // Required for this to work in FireFox
         element.click();
-        document.body.removeChild(element)
+        setTimeout(() => {
+            document.body.removeChild(element)
+        }, 10000);
     }
 
     return (
