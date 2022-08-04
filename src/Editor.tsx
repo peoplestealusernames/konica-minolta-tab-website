@@ -56,11 +56,8 @@ export function Editor(props: {
         if (!element)
             return
 
-        console.log("A");
-
         element.setSelectionRange(SStart, SEnd)
-    }, [SEnd, SStart])
-
+    })
 
     return <div style={{
         overflowY: "scroll",
