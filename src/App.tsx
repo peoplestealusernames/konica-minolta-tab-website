@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { TabShow } from './TabShow';
 import { DisplayTabs } from './DisplayTabs';
 import { fileReturn, MakeTabs } from './MakeTabs';
 import { GrDownload } from "react-icons/gr"
