@@ -28,6 +28,18 @@ export function TabOption(props: {
             height: "fit-content"
         }}
     >
+        <input
+            value={options.FontSize}
+            style={{
+                width: "45px",
+                textAlign: "right",
+            }}
+            onChange={(e) => {
+                const val = parseInt(e.target.value)
+                setoptions({ ...options, FontSize: val ? val : 0 })
+            }}
+            type="number"
+        />
         <span style={{
             padding: "1px",
             userSelect: "none"
