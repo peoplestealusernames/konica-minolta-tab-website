@@ -20,7 +20,7 @@ export function DisplayTabs(props: {
         margin: "0px",
         border: "1px soild white",
         color: "white",
-        maxWidth: "50vw",
+        flex: 1,
         overflowY: "scroll",
     }}>
         {props.tabs.map((tabSection, i) => {
