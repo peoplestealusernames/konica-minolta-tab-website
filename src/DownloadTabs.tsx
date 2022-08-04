@@ -11,7 +11,11 @@ export function DownloadTabs(props: {
 }) {
     function DownloadClick() {
         const TabFiles = MakeTabs(props.Tabs, props.Model)
-        TabFiles.forEach(downloadKSF)
+        TabFiles.forEach((tabString, i) => {
+            setTimeout(() => {
+                downloadKSF(tabString)
+            }, 100 * i)
+        })
     }
 
     function downloadKSF(tabString: fileReturn) {
