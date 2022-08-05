@@ -29,7 +29,7 @@ export function DisplayTabs(props: {
         alignContent: "start",
         overflowY: "scroll",
         width: "1000px",
-        paddingTop: "14px",
+        paddingTop: "16px",
         marginTop: "4px",
         zIndex: 1,
     }}>
