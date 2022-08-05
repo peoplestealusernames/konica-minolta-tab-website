@@ -3,7 +3,7 @@ import React from "react";
 
 export function StyledTab(props: {
     children?: React.ReactNode
-    title?: string
+    title?: string | React.ReactNode
     style?: React.CSSProperties
     titleStyle?: React.CSSProperties
     masterStyle?: React.CSSProperties
