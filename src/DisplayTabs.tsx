@@ -6,7 +6,6 @@ export function DisplayTabs(props: {
     tabs: string[][]
     Options: Options
 }) {
-    const [pad, setpad] = useState<number>(0)
     const [tabProp, settabProp] = useState<React.CSSProperties>({})
 
     useEffect(() => {
@@ -15,11 +14,6 @@ export function DisplayTabs(props: {
             fontSize: `${props.Options.FontSize * 2}px`,
         })
     }, [props.Options])
-
-    useEffect(() => {
-        const count = props.tabs.length
-        setpad(count.toString().length)
-    }, [props.tabs])
 
     return <div style={{
         display: "flex",
