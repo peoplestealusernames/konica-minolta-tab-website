@@ -8,6 +8,7 @@ import { Editor } from './Editor';
 import { Options, TabOption } from './TabOptions';
 import { PastePopup } from './PastePopup';
 import { TopBar } from './components/TopBar';
+import { ContextButton } from './components/ContextButton';
 
 function App() {
   const [tabs, settabs] = useState<string[][]>([])
@@ -43,7 +44,11 @@ function App() {
   return (
     <div className='App'>
       <TopBar tabs={tabs} options={options} />
-      <PastePopup setInput={EditorChange} active={pastePopup} setActive={setpastePopup} />
+      <PastePopup
+        setInput={EditorChange}
+        active={pastePopup}
+        onClose={() => setpastePopup(false)}
+      />
       <div className='Area' style={{
         position: "relative",
         display: "flex",
@@ -75,7 +80,6 @@ function App() {
           width: "300px",
           height: "100%",
           flexDirection: "column",
-          overflowY: "scroll",
           userSelect: "none",
         }}
         >
@@ -99,11 +103,11 @@ function App() {
             >
               Import paths
             </span>
-            <span
-              onClick={() => { EditorChange(input.split("\n").sort(sortWithNumber).join("\n")) }}
+            <ContextButton
+              onMouseDown={() => { EditorChange(input.split("\n").sort(sortWithNumber).join("\n")) }}
             >
               Sort tab names
-            </span>
+            </ContextButton>
           </div>
         </div>
         <TabOption tabs={tabs} onChange={setoptions} options={options} />

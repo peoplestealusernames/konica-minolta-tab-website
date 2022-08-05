@@ -6,10 +6,12 @@ import { Editor } from "./Editor";
 
 export function PastePopup(props: {
     active: boolean
-    setActive: Dispatch<SetStateAction<boolean>>,
+    onClose?: () => void
     setInput: (input: string) => void
 }) {
     const [paths, setpaths] = useState<string>("")
+
+    const onClose = props.onClose ? props.onClose : () => { }
 
     function GeneratePaths() {
         const out = paths.split("\n").map((e, i) => {
@@ -25,7 +27,7 @@ export function PastePopup(props: {
         })
 
         props.setInput(out.join("\n"))
-        props.setActive(false)
+        onClose()
     }
 
     useEffect(() => {
@@ -34,7 +36,7 @@ export function PastePopup(props: {
 
     return <Popup
         active={props.active}
-        setActive={props.setActive}
+        onClose={() => onClose()}
         closeStyle={{ right: "20px", top: "20px", width: "30px", height: "30px" }}
     >
         <StyledTab style={{
