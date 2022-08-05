@@ -35,6 +35,7 @@ export function PastePopup(props: {
     return <Popup
         active={props.active}
         setActive={props.setActive}
+        closeStyle={{ right: "20px", top: "20px", width: "30px", height: "30px" }}
     >
         <StyledTab style={{
             flexDirection: "column",
@@ -43,7 +44,9 @@ export function PastePopup(props: {
             masterStyle={{
                 borderRadius: "50px",
                 padding: "15px",
-                backgroundColor: "#282c34"
+                backgroundColor: "#282c34",
+                border: "none",
+                boxShadow: `0px 0px 2px 5px lightgrey, 0px 0px 6px 7px black`,
             }}
             title={
                 <ContextButton style={{
