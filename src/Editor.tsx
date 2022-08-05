@@ -62,9 +62,11 @@ export function Editor(props: {
         const element = inputRef.current
         if (!element)
             return
+        element.click()
+        element.focus()
 
         element.setSelectionRange(SStart, SEnd)
-    })
+    }, [SStart, SEnd])
 
     return <textarea
         ref={inputRef}
