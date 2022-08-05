@@ -14,6 +14,8 @@ function App() {
   const [pastePopup, setpastePopup] = useState(false)
   const [input, setinput] = useState<string>("Enter tab names")
 
+  const [selectLine, setselectLine] = useState<number>(1)
+
   const [options, setoptions] = useState<Options>({
     Model: "C754",
     FontSize: 16,
@@ -76,7 +78,7 @@ function App() {
             Sort tab names
           </span>
         </div>
-        <Editor value={input} onChange={EditorChange} />
+        <Editor selectedLine={selectLine} value={input} onChange={EditorChange} />
       </div>
       <div style={{
         display: "flex",
