@@ -18,7 +18,7 @@ export function DisplayTabs(props: {
 
     return <div style={{
         display: "flex",
-        height: "100%",
+        flexGrow: 1,
         flexDirection: "row",
         flexWrap: "wrap",
         padding: "4px",
@@ -34,23 +34,25 @@ export function DisplayTabs(props: {
         zIndex: 1,
     }}>
         {props.tabs.map((tabSection, tabi) =>
-            <div style={{
-                display: "flex",
-                flexDirection: "row",
-                flexWrap: "wrap",
-                padding: "6px",
-                paddingTop: "0px",
-                margin: "0px",
-                border: "1px soild white",
-                color: "white",
-                justifyContent: "start",
-                alignContent: "start",
-                width: "1000px",
-                marginTop: "-15px",
-                backgroundColor: "#282c34",
-                zIndex: tabi,
-                overflow: "visible"
-            }}>
+            <div
+                key={tabi}
+                style={{
+                    display: "flex",
+                    flexDirection: "row",
+                    flexWrap: "wrap",
+                    padding: "6px",
+                    paddingTop: "0px",
+                    margin: "0px",
+                    border: "1px soild white",
+                    color: "white",
+                    justifyContent: "start",
+                    alignContent: "start",
+                    width: "1000px",
+                    marginTop: "-15px",
+                    backgroundColor: "#282c34",
+                    zIndex: tabi,
+                    overflow: "clip"
+                }}>
                 <span style={{
                     display: "flex",
                     width: "100%",

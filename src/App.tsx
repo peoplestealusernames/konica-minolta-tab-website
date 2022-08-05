@@ -50,6 +50,7 @@ function App() {
         flexGrow: 1,
         textAlign: "center",
         flexDirection: "row",
+        overflow: "auto"
       }}>
         <Editor style={{
           maxWidth: "350px",
@@ -107,7 +108,7 @@ function App() {
         </div>
         <div style={{
           display: "flex",
-          flex: 1,
+          maxHeight: "100%",
           flexDirection: "column",
         }}>
           <TabOption tabs={tabs} onChange={setoptions} options={options} />
