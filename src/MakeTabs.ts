@@ -3,6 +3,25 @@ import { Options } from "./TabOptions"
 
 export type fileReturn = { name: string, write: string }
 
+export function DownloadTabs(Tabs: string[][], Option: Options) {
+    const TabFiles = MakeTabs(Tabs, Option)
+    TabFiles.forEach((tabString, i) => {
+        DownloadKSF(tabString)
+    })
+}
+
+export function DownloadKSF(tabString: fileReturn) {
+    const element = document.createElement("a");
+    const file = new Blob(["\ufeff" + tabString.write], { type: 'text/plain' });
+    element.href = URL.createObjectURL(file);
+    element.download = tabString.name;
+    document.body.appendChild(element); // Required for this to work in FireFox
+    element.click();
+    setTimeout(() => {
+        document.body.removeChild(element)
+    }, 10000);
+}
+
 export function MakeTabs(tabNames: string[][], options: Options): fileReturn[] {
     const files: fileReturn[] = []
 

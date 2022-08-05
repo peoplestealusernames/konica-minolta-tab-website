@@ -4,7 +4,6 @@ import './App.css';
 import { DisplayTabs } from './DisplayTabs';
 import { fileReturn, MakeTabs } from './MakeTabs';
 import { GrDownload } from "react-icons/gr"
-import { DownloadTabs } from './DownloadTabs';
 import { Editor } from './Editor';
 import { Options, TabOption } from './TabOptions';
 import { PastePopup } from './PastePopup';
@@ -43,7 +42,7 @@ function App() {
 
   return (
     <div className='App'>
-      <TopBar />
+      <TopBar tabs={tabs} options={options} />
       <PastePopup setInput={EditorChange} active={pastePopup} setActive={setpastePopup} />
       <div className='Area' style={{
         position: "relative",
@@ -53,8 +52,18 @@ function App() {
         flexDirection: "row",
       }}>
         <Editor style={{
-          maxWidth: "300px",
+          maxWidth: "350px",
+          margin: "30px",
+          border: "none",
+          borderRadius: "15px",
+          padding: "10px",
+          transition: "box-shadow 200ms linear",
+          boxShadow: `0px 0px 2px 3px lightgrey`,
+          outline: "none",
         }}
+          focusStyle={{
+            boxShadow: `0px 0px 2px 3px red`,
+          }}
           selectedLine={selectLine}
           value={input}
           onChange={EditorChange}

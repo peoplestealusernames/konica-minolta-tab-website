@@ -1,6 +1,4 @@
 import { useEffect, useState } from "react"
-import { DownloadTabs } from "./DownloadTabs"
-
 
 export type Options = {
     Model: string
@@ -91,16 +89,5 @@ export function TabOption(props: {
             <option value="8">8</option>
             <option value="10">10</option>
         </select>
-        <DownloadTabs
-            Tabs={props.tabs}
-            Options={options}
-            style={{
-                backgroundColor: "grey",
-                color: "black",
-                border: "3px solid white",
-                flex: 1
-            }}
-            size={20}
-        />
     </div>
 }

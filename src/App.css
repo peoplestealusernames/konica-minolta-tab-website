@@ -1,4 +1,5 @@
 .App {
+  font-family: 'Times New Roman';
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -8,6 +9,7 @@
   min-width: 100vw;
   min-height: 100vh;
   border: none;
+  scrollbar-color: grey;
 }
 
 .App-logo {
