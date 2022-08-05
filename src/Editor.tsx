@@ -8,6 +8,7 @@ export function Editor(props: {
     style?: React.CSSProperties
     focusStyle?: React.CSSProperties
     selectedLine?: number
+    placeholder?: string,
 }) {
     const [input, setinput] = useState<string>("")
     const [SStart, setSStart] = useState(0)
@@ -122,5 +123,6 @@ export function Editor(props: {
         spellCheck="false"
         onFocus={() => setFocus(true)}
         onBlur={() => setFocus(false)}
+        placeholder={props.placeholder}
     />
 }
