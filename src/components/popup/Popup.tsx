@@ -30,30 +30,36 @@ export function Popup(props: {
     }, [props])
 
     return (<div>
-        {
-            props.active &&
-            <div style={{
-                position: "fixed",
-                top: "0px",
-                left: "0px",
-            }}>
-                <BlurBackground>
-                    <CenterDiv styleOverride={{ width: "100vw", height: "100vh" }}>
-                        <span style={{
-                            display: "flex",
-                            position: "relative",
-                            width: "fit-content",
-                            height: "fit-content"
-                        }}>
-                            {
-                                !props.dissableCloseButton &&
-                                <CloseButton onClose={() => { props.setActive(false) }} />
-                            }
-                            {props.children}
-                        </span>
-                    </CenterDiv>
-                </BlurBackground>
-            </div >
+        <div style={{
+            position: "fixed",
+            display: "flex",
+            top: "0px",
+            left: "0px",
+            transition: "200ms linear",
+            transform: props.active ?
+                "translateY(0px) scale(100%)" :
+                "translateY(100vh) scale(0%)",
+            zIndex: 1000
+        }}>
+            {props.active &&
+                <CenterDiv styleOverride={{ width: "100vw", height: "100vh" }}>
+                    <span style={{
+                        display: "flex",
+                        position: "relative",
+                        width: "fit-content",
+                        height: "fit-content"
+                    }}>
+                        {
+                            !props.dissableCloseButton &&
+                            <CloseButton onClose={() => { props.setActive(false) }} />
+                        }
+                        {props.children}
+                    </span>
+                </CenterDiv>
+            }
+        </div >
+        {props.active &&
+            <BlurBackground style={{ zIndex: 999 }} />
         }
     </div >)
 }
