@@ -50,7 +50,8 @@ export function DisplayTabs(props: {
                         fontWeight: "bold",
                         whiteSpace: "nowrap",
                         marginRight: "-20px",
-                        borderBottom: "none"
+                        borderBottom: "none",
+                        userSelect: "none",
                     }, ...tabProp
                 }}
             >
