@@ -1,22 +1,20 @@
+import React from "react";
 import { MdOutlineClose } from "react-icons/md";
 
 export function CloseButton(props: {
     onClose: () => void
+    stye?: React.CSSProperties
 }) {
     return (
-        < div style={{
+        <MdOutlineClose style={{
             position: "absolute",
             right: "3px",
             top: "3px",
+            color: "grey",
+            ...props.stye
         }}
+            size={20}
             onClick={props.onClose}
-        >
-            <MdOutlineClose style={{
-                position: "absolute",
-                top: "0px",
-                right: "0px",
-                color: "grey"
-            }} size={20} />
-        </div >
+        />
     )
 }

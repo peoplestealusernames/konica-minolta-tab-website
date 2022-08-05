@@ -9,6 +9,7 @@ export function Popup(props: {
     setActive: Dispatch<SetStateAction<boolean>>,
     dissableCloseButton?: boolean;
     children?: React.ReactNode
+    closeStyle?: React.CSSProperties
 }) {
 
 
@@ -49,9 +50,11 @@ export function Popup(props: {
                         width: "fit-content",
                         height: "fit-content"
                     }}>
-                        {
-                            !props.dissableCloseButton &&
-                            <CloseButton onClose={() => { props.setActive(false) }} />
+                        {!props.dissableCloseButton &&
+                            <CloseButton
+                                stye={props.closeStyle}
+                                onClose={() => { props.setActive(false) }}
+                            />
                         }
                         {props.children}
                     </span>
