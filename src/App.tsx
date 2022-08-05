@@ -86,7 +86,7 @@ function App() {
         flexDirection: "column",
       }}>
         <TabOption tabs={tabs} onChange={setoptions} options={options} />
-        <DisplayTabs tabs={tabs} Options={options} />
+        <DisplayTabs tabs={tabs} Options={options} selectedLine={selectLine} setSelectedLine={setselectLine} />
       </div>
     </div>
   );
