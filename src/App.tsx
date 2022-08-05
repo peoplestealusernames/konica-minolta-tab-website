@@ -92,5 +92,5 @@ function App() {
 export default App;
 
 function sortWithNumber(a: string, b: string) {
-  return a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' })
+  return a.localeCompare(b, undefined, { numeric: true })
 }
