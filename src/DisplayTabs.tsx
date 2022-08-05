@@ -26,8 +26,8 @@ export function DisplayTabs(props: {
         color: "white",
         justifyContent: "start",
         alignContent: "start",
-        flex: 1,
         overflowY: "scroll",
+        width: "1250px"
     }}>
         {props.tabs.map((tabSection, tabi) =>
             tabSection.map((e, i) => <div
