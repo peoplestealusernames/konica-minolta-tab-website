@@ -45,7 +45,7 @@ export function DisplayTabs(props: {
                 style={{
                     ...{
                         zIndex: tabSection.length - i,
-                        backgroundColor: "white",
+                        backgroundColor: (tabi * 20 + i) === selectedLine ? "yellow" : "white",
                         color: "black",
                         borderTopLeftRadius: "40px",
                         borderTopRightRadius: "40px",
