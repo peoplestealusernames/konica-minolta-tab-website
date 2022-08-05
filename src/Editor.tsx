@@ -18,6 +18,35 @@ export function Editor(props: {
     const onChange = props.onChange ? props.onChange : () => { }
 
     useEffect(() => { setinput(props.value ? props.value : "") }, [props.value])
+    useEffect(() => { if (props.selectedLine !== undefined) SelectLine(props.selectedLine) }, [props.selectedLine])
+
+    function SelectLine(lineIndex: number) {
+        const lines = input.split("\n")
+
+        if (lines.length == 1) {
+            setSStart(0)
+            setSEnd(input.length - 1)
+            return
+        }
+
+        if (lineIndex > lines.length)
+            lineIndex = lines.length - 1
+
+        let Start = 0
+        for (let i = 0; i < lineIndex; i++) {
+            Start = input.indexOf("\n", Start + 1)
+        }
+
+        let End = input.indexOf("\n", Start + 1)
+        if (End === -1)
+            End = input.length
+
+        if (Start === -1)
+            Start = 0
+
+        setSStart(Start)
+        setSEnd(End)
+    }
 
     function TextChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
         e.preventDefault()
