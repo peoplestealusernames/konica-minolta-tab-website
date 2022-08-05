@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useEffect } from "react";
 import { BlurBackground } from "./BlurBackground";
 import { CenterDiv } from "./CenterDiv";
-import { CloseButton } from "./CloseButton";
+import { CloseButton } from "./CloseButton"
 
 
 export function Popup(props: {
