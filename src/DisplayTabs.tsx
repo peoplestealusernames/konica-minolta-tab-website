@@ -12,7 +12,7 @@ export function DisplayTabs(props: {
     const [tabProp, settabProp] = useState<React.CSSProperties>({})
 
     useEffect(() => {
-        setselectedLine(props.selectedLine ? props.selectedLine : -1)
+        setselectedLine(props.selectedLine !== undefined ? props.selectedLine : -1)
     }, [props.selectedLine])
 
     useEffect(() => {
