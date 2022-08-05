@@ -5,9 +5,15 @@ import { Options } from "./TabOptions"
 export function DisplayTabs(props: {
     tabs: string[][]
     Options: Options
+    selectedLine?: number
     setSelectedLine?: (line: number) => void
 }) {
+    const [selectedLine, setselectedLine] = useState<number>(-1)
     const [tabProp, settabProp] = useState<React.CSSProperties>({})
+
+    useEffect(() => {
+        setselectedLine(props.selectedLine ? props.selectedLine : -1)
+    }, [props.selectedLine])
 
     useEffect(() => {
         settabProp({
