@@ -23,7 +23,6 @@ export function DisplayTabs(props: {
         flexWrap: "wrap",
         padding: "4px",
         margin: "0px",
-        border: "1px soild white",
         color: "white",
         justifyContent: "start",
         alignContent: "start",
@@ -43,12 +42,11 @@ export function DisplayTabs(props: {
                     padding: "6px",
                     paddingTop: "0px",
                     margin: "0px",
-                    border: "1px soild white",
                     color: "white",
                     justifyContent: "start",
                     alignContent: "start",
                     width: "1000px",
-                    marginTop: "-15px",
+                    marginBottom: "-16px",
                     backgroundColor: "#282c34",
                     zIndex: tabi,
                     overflow: "clip"
@@ -63,8 +61,6 @@ export function DisplayTabs(props: {
                     border: "2px solid white",
                     fontSize: "20px",
                     fontWeight: "bold",
-                    borderRadius: "20px",
-                    marginBottom: "4px",
                     marginLeft: "-6px",
                     marginRight: "-6px",
                 }}>
@@ -88,14 +84,13 @@ export function DisplayTabs(props: {
                             borderTopLeftRadius: "40px",
                             borderTopRightRadius: "40px",
                             paddingTop: "1px",
-                            height: "80px",
                             fontWeight: "bold",
                             whiteSpace: "nowrap",
                             marginRight: "-20px",
-                            borderBottom: "none",
-                            userSelect: "none",
+                            height: "94px",
+                            backgroundImage: "linear-gradient(to bottom, white 0%, white 32px, grey 45px, black 100%)",
                             boxShadow: "0px 0px 4px 4px grey",
-                            marginBottom: "-34px"
+                            marginBottom: "-52px",
                         }, ...tabProp
                     }}
                 >
