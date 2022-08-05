@@ -8,6 +8,7 @@ import { DownloadTabs } from './DownloadTabs';
 import { Editor } from './Editor';
 import { Options, TabOption } from './TabOptions';
 import { PastePopup } from './PastePopup';
+import { TopBar } from './components/TopBar';
 
 function App() {
   const [tabs, settabs] = useState<string[][]>([])
@@ -42,53 +43,68 @@ function App() {
 
   return (
     <div className='App'>
+      <TopBar />
       <PastePopup setInput={EditorChange} active={pastePopup} setActive={setpastePopup} />
-      <div style={{
+      <div className='Area' style={{
+        position: "relative",
         display: "flex",
-        overflowY: "scroll",
-        width: "300px",
-        height: "100vh",
-        flexDirection: "column",
-        userSelect: "none"
-      }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            border: "4px solid white",
-            backgroundColor: "grey",
-            color: "black",
-            fontSize: "150%",
-            padding: "0px",
-            justifyContent: "center",
-            alignContent: "center"
-          }}
-        >
-          <span style={{
-            borderBottom: "4px solid white"
-          }}
-            onClick={() => { setpastePopup(true) }}
-          >
-            Import paths
-          </span>
-          <span
-            onClick={() => { EditorChange(input.split("\n").sort(sortWithNumber).join("\n")) }}
-          >
-            Sort tab names
-          </span>
-        </div>
-        <Editor selectedLine={selectLine} value={input} onChange={EditorChange} />
-      </div>
-      <div style={{
-        display: "flex",
-        flex: 1,
-        flexDirection: "column",
+        flexGrow: 1,
+        textAlign: "center",
+        flexDirection: "row",
       }}>
-        <TabOption tabs={tabs} onChange={setoptions} options={options} />
-        <DisplayTabs tabs={tabs} Options={options} setSelectedLine={setselectLine} />
+        <Editor style={{
+          maxWidth: "300px",
+        }}
+          selectedLine={selectLine}
+          value={input}
+          onChange={EditorChange}
+        />
+        <div style={{
+          display: "flex",
+          width: "300px",
+          height: "100%",
+          flexDirection: "column",
+          overflowY: "scroll",
+          userSelect: "none",
+        }}
+        >
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              border: "4px solid white",
+              backgroundColor: "grey",
+              color: "black",
+              fontSize: "150%",
+              padding: "0px",
+              justifyContent: "center",
+              alignContent: "center"
+            }}
+          >
+            <span style={{
+              borderBottom: "4px solid white"
+            }}
+              onClick={() => { setpastePopup(true) }}
+            >
+              Import paths
+            </span>
+            <span
+              onClick={() => { EditorChange(input.split("\n").sort(sortWithNumber).join("\n")) }}
+            >
+              Sort tab names
+            </span>
+          </div>
+        </div>
+        <div style={{
+          display: "flex",
+          flex: 1,
+          flexDirection: "column",
+        }}>
+          <TabOption tabs={tabs} onChange={setoptions} options={options} />
+          <DisplayTabs tabs={tabs} Options={options} setSelectedLine={setselectLine} />
+        </div>
       </div>
-    </div>
+    </div >
   );
 }
 
