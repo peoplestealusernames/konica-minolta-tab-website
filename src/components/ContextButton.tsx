@@ -7,9 +7,9 @@ export function ContextButton(props: {
     contextStyle?: React.CSSProperties
     style?: React.CSSProperties
     toggle?: boolean
-    setButtonState?: Dispatch<SetStateAction<boolean>>
     onMouseDown?: () => void
-    setHoverState?: Dispatch<SetStateAction<boolean>>
+    onMouseUp?: () => void
+    onMouse?: (state: boolean) => void
     onHover?: (Hover: boolean) => void
     pressedStyle?: React.CSSProperties
     hoverStyle?: React.CSSProperties
@@ -21,12 +21,14 @@ export function ContextButton(props: {
     const [Hover, setHoverState] = useState<boolean>(false)
     const [Pressed, setPressedState] = useState<boolean>(false)
 
+    const PonMouseDown = props.onMouseDown ? props.onMouseDown : () => { }
+    const PonMouseUp = props.onMouseUp ? props.onMouseUp : () => { }
+    const PonMouse = props.onMouse ? props.onMouse : () => { }
+    const PonHover = props.onHover ? props.onHover : () => { }
+
     function setHover(state: boolean) {
         setHoverState(state)
-        if (props.setHoverState)
-            props.setHoverState(state)
-        if (props.onHover)
-            props.onHover(state)
+        PonHover(state)
     }
 
     function setPressed(state: boolean) {
@@ -36,11 +38,15 @@ export function ContextButton(props: {
         state = !Pressed
 
         setPressedState(state)
-        if (props.setButtonState)
-            props.setButtonState(state)
-        if (props.onMouseDown)
+
+        try {
             if (state)
-                props.onMouseDown()
+                PonMouseDown()
+            else
+                PonMouseUp()
+        } catch (e) { console.error(e) }
+
+        PonMouse(state)
     }
 
     return (
