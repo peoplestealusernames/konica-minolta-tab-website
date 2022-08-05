@@ -7,7 +7,6 @@ export function DisplayTabs(props: {
     Options: Options
     setSelectedLine?: (line: number) => void
 }) {
-    const [selectedLine, setselectedLine] = useState<number>(-1)
     const [tabProp, settabProp] = useState<React.CSSProperties>({})
 
     useEffect(() => {
@@ -40,7 +39,7 @@ export function DisplayTabs(props: {
                 style={{
                     ...{
                         zIndex: tabSection.length - i,
-                        backgroundColor: (tabi * 20 + i) === selectedLine ? "yellow" : "white",
+                        backgroundColor: "white",
                         color: "black",
                         borderTopLeftRadius: "40px",
                         borderTopRightRadius: "40px",
