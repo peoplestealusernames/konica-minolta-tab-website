@@ -11,7 +11,7 @@ export function DisplayTabs(props: {
 
     useEffect(() => {
         settabProp({
-            width: `calc(${100 / props.Options.Cut}% - 4px)`,
+            width: `calc(${100 / props.Options.Cut}% + 8px)`,
             fontSize: `${props.Options.FontSize * 2}px`,
         })
     }, [props.Options])
@@ -43,11 +43,13 @@ export function DisplayTabs(props: {
                         color: "black",
                         borderTopLeftRadius: "40px",
                         borderTopRightRadius: "40px",
-                        border: "2px solid grey",
+                        border: "4px solid grey",
                         paddingTop: "1px",
                         height: "50px",
                         fontWeight: "bold",
-                        whiteSpace: "nowrap"
+                        whiteSpace: "nowrap",
+                        marginRight: "-20px",
+                        borderBottom: "none"
                     }, ...tabProp
                 }}
             >
