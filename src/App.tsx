@@ -107,7 +107,7 @@ function App() {
           </div>
         </div>
         <TabOption tabs={tabs} onChange={setoptions} options={options} />
-        <DisplayTabs tabs={tabs} Options={options} />
+        <DisplayTabs tabs={tabs} Options={options} setSelectedLine={setselectLine} />
       </div>
     </div >
   );
