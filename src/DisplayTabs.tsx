@@ -28,9 +28,8 @@ export function DisplayTabs(props: {
         alignContent: "start",
         overflowY: "scroll",
         width: "1000px",
-        paddingTop: "16px",
-        marginTop: "4px",
         zIndex: 1,
+        userSelect: "none",
     }}>
         {props.tabs.map((tabSection, tabi) =>
             <div
@@ -46,7 +45,7 @@ export function DisplayTabs(props: {
                     justifyContent: "start",
                     alignContent: "start",
                     width: "1000px",
-                    marginBottom: "-16px",
+                    marginBottom: "-10px",
                     backgroundColor: "#282c34",
                     zIndex: tabi,
                     overflow: "clip"
@@ -63,6 +62,7 @@ export function DisplayTabs(props: {
                     fontWeight: "bold",
                     marginLeft: "-6px",
                     marginRight: "-6px",
+                    marginBottom: "3px",
                 }}>
                     Tab File:
                     ({tabi + 1}/{props.tabs.length})
@@ -72,6 +72,8 @@ export function DisplayTabs(props: {
                 </span>
                 {tabSection.map((e, i) => <div
                     onClick={() => {
+                        console.log(props.setSelectedLine);
+
                         if (props.setSelectedLine)
                             props.setSelectedLine(tabi * 20 + i)
                     }}

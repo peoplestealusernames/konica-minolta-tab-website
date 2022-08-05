@@ -47,7 +47,7 @@ function App() {
       <div className='Area' style={{
         position: "relative",
         display: "flex",
-        flexGrow: 1,
+        height: "100%",
         textAlign: "center",
         flexDirection: "row",
         overflow: "auto"
@@ -106,14 +106,8 @@ function App() {
             </span>
           </div>
         </div>
-        <div style={{
-          display: "flex",
-          maxHeight: "100%",
-          flexDirection: "column",
-        }}>
-          <TabOption tabs={tabs} onChange={setoptions} options={options} />
-          <DisplayTabs tabs={tabs} Options={options} setSelectedLine={setselectLine} />
-        </div>
+        <TabOption tabs={tabs} onChange={setoptions} options={options} />
+        <DisplayTabs tabs={tabs} Options={options} />
       </div>
     </div >
   );

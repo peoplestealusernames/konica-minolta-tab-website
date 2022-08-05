@@ -114,8 +114,9 @@ export function Editor(props: {
             fontSize: "150%",
             padding: "4px",
             margin: "0px",
+            overflow: "scroll",
             ...props.style,
-            ...(focus ? props.focusStyle : {})
+            ...(focus ? props.focusStyle : {}),
         }}
         autoComplete="off"
         autoCorrect="off"
