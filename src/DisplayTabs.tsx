@@ -11,7 +11,7 @@ export function DisplayTabs(props: {
 
     useEffect(() => {
         settabProp({
-            width: `calc(${100 / props.Options.Cut}% + 8px)`,
+            width: `calc(${100 / props.Options.Cut}% + 14px)`,
             fontSize: `${props.Options.FontSize * 2}px`,
         })
     }, [props.Options])
