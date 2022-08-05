@@ -39,20 +39,34 @@ export function PastePopup(props: {
             flexDirection: "column",
             alignItems: "center"
         }}
-            title="Paste paths"
+            title={
+                <div style={{
+                    display: "flex",
+                    color: "white",
+                    margin: "2px",
+                    border: "4px solid white",
+                    borderRadius: "10px",
+                    padding: "10px",
+                    fontSize: "20px"
+                }}
+                    onClick={() => GeneratePaths()}
+                >
+                    Generate Names
+                </div>
+            }
         >
-            <div style={{
-                display: "flex",
-                color: "white",
-                margin: "2px",
-                border: "2px solid white",
-                width: "fit-content"
-            }}
-                onClick={() => GeneratePaths()}
-            >
-                Generate Names
-            </div>
-            <Editor lineLength={1000} value={paths} onChange={setpaths} />
+            <Editor
+                lineLength={1000}
+                value={paths}
+                onChange={setpaths}
+                style={{
+                    overflow: "auto",
+                    padding: "5px",
+                    whiteSpace: "pre",
+                    width: "75vw",
+                    height: "75vh",
+                }}
+            />
         </StyledTab>
     </Popup>
 }
