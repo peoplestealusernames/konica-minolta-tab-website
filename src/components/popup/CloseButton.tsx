@@ -11,9 +11,10 @@ export function CloseButton(props: {
             right: "3px",
             top: "3px",
             color: "grey",
+            height: "20px",
+            width: "20px",
             ...props.stye
         }}
-            size={20}
             onClick={props.onClose}
         />
     )
