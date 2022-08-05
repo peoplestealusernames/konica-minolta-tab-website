@@ -6,6 +6,7 @@ export function Editor(props: {
     onChange?: (value: string) => void
     lineLength?: number //TODO: if -1 remove limit
     style?: React.CSSProperties
+    selectedLine?: number
 }) {
     const [input, setinput] = useState<string>("")
     const [SStart, setSStart] = useState(0)
