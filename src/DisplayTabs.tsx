@@ -5,6 +5,7 @@ import { Options } from "./TabOptions"
 export function DisplayTabs(props: {
     tabs: string[][]
     Options: Options
+    setSelectedLine?: (line: number) => void
 }) {
     const [tabProp, settabProp] = useState<React.CSSProperties>({})
 
@@ -28,8 +29,12 @@ export function DisplayTabs(props: {
         flex: 1,
         overflowY: "scroll",
     }}>
-        {props.tabs.map((tabSection, i) =>
+        {props.tabs.map((tabSection, tabi) =>
             tabSection.map((e, i) => <div
+                onClick={() => {
+                    if (props.setSelectedLine)
+                        props.setSelectedLine(tabi * 20 + i)
+                }}
                 key={i}
                 style={{
                     ...{
