@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { ContextButton } from "./components/ContextButton";
 import { Popup } from "./components/popup/Popup";
 import { StyledTab } from "./components/popup/StyledTab";
 import { Editor } from "./Editor";
@@ -37,22 +38,32 @@ export function PastePopup(props: {
     >
         <StyledTab style={{
             flexDirection: "column",
-            alignItems: "center"
+            alignItems: "center",
         }}
+            masterStyle={{
+                borderRadius: "50px",
+                padding: "15px",
+                backgroundColor: "#282c34"
+            }}
             title={
-                <div style={{
+                <ContextButton style={{
                     display: "flex",
                     color: "white",
                     margin: "2px",
                     border: "4px solid white",
                     borderRadius: "10px",
                     padding: "10px",
-                    fontSize: "20px"
+                    fontSize: "40px",
+                    backgroundColor: "black",
+                    transition: "color 100ms linear"
                 }}
-                    onClick={() => GeneratePaths()}
+                    hoverStyle={{
+                        color: "green"
+                    }}
+                    onMouseDown={() => GeneratePaths()}
                 >
                     Generate Names
-                </div>
+                </ContextButton>
             }
         >
             <Editor
@@ -61,11 +72,24 @@ export function PastePopup(props: {
                 onChange={setpaths}
                 style={{
                     overflow: "auto",
-                    padding: "5px",
+                    paddingLeft: "25px",
+                    paddingRight: "25px",
                     whiteSpace: "pre",
                     width: "75vw",
-                    height: "75vh",
+                    height: "60vh",
+                    borderRadius: "25px",
+                    outline: "none",
+                    border: "none",
+                    transition: "box-shadow 200ms linear",
+                    boxShadow: `0px 0px 2px 3px lightgrey`,
                 }}
+                focusStyle={{
+                    boxShadow: `0px 0px 2px 3px red`,
+                }}
+                placeholder={"Paste file paths here\n" +
+                    "ex: C:\\\\b\\a\\c.txt or /a/b/c.pdf\n" +
+                    "On windows file explorer\n" +
+                    "select files -> shift right click -> copy all paths -> paste here"}
             />
         </StyledTab>
     </Popup>
