@@ -13,7 +13,7 @@ import { TopBar } from './components/TopBar';
 function App() {
   const [tabs, settabs] = useState<string[][]>([])
   const [pastePopup, setpastePopup] = useState(false)
-  const [input, setinput] = useState<string>("Enter tab names")
+  const [input, setinput] = useState<string>("")
 
   const [selectLine, setselectLine] = useState<number>(1)
 
@@ -58,6 +58,7 @@ function App() {
           selectedLine={selectLine}
           value={input}
           onChange={EditorChange}
+          placeholder={"Type tabs here."}
         />
         <div style={{
           display: "flex",
