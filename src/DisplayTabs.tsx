@@ -20,14 +20,15 @@ export function DisplayTabs(props: {
         display: "flex",
         flexDirection: "row",
         flexWrap: "wrap",
-        padding: "0px",
+        padding: "4px",
         margin: "0px",
         border: "1px soild white",
         color: "white",
         justifyContent: "start",
         alignContent: "start",
         overflowY: "scroll",
-        width: "1250px"
+        width: "1000px",
+        zIndex: 1,
     }}>
         {props.tabs.map((tabSection, tabi) =>
             tabSection.map((e, i) => <div
@@ -43,14 +44,15 @@ export function DisplayTabs(props: {
                         color: "black",
                         borderTopLeftRadius: "40px",
                         borderTopRightRadius: "40px",
-                        border: "4px solid grey",
                         paddingTop: "1px",
-                        height: "50px",
+                        height: "60px",
                         fontWeight: "bold",
                         whiteSpace: "nowrap",
                         marginRight: "-20px",
                         borderBottom: "none",
                         userSelect: "none",
+                        boxShadow: "0px 0px 4px 4px grey",
+                        marginBottom: "-12px"
                     }, ...tabProp
                 }}
             >
