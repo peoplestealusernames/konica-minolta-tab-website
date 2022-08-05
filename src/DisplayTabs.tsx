@@ -18,6 +18,7 @@ export function DisplayTabs(props: {
 
     return <div style={{
         display: "flex",
+        height: "100%",
         flexDirection: "row",
         flexWrap: "wrap",
         padding: "4px",
@@ -28,36 +29,74 @@ export function DisplayTabs(props: {
         alignContent: "start",
         overflowY: "scroll",
         width: "1000px",
+        paddingTop: "14px",
+        marginTop: "4px",
         zIndex: 1,
     }}>
         {props.tabs.map((tabSection, tabi) =>
-            tabSection.map((e, i) => <div
-                onClick={() => {
-                    if (props.setSelectedLine)
-                        props.setSelectedLine(tabi * 20 + i)
-                }}
-                key={i}
-                style={{
-                    ...{
-                        zIndex: tabi * props.tabs[0].length + i,
-                        backgroundColor: "white",
-                        color: "black",
-                        borderTopLeftRadius: "40px",
-                        borderTopRightRadius: "40px",
-                        paddingTop: "1px",
-                        height: "60px",
-                        fontWeight: "bold",
-                        whiteSpace: "nowrap",
-                        marginRight: "-20px",
-                        borderBottom: "none",
-                        userSelect: "none",
-                        boxShadow: "0px 0px 4px 4px grey",
-                        marginBottom: "-12px"
-                    }, ...tabProp
-                }}
-            >
-                {e}
-            </div>)
+            <div style={{
+                display: "flex",
+                flexDirection: "row",
+                flexWrap: "wrap",
+                padding: "6px",
+                paddingTop: "0px",
+                margin: "0px",
+                border: "1px soild white",
+                color: "white",
+                justifyContent: "start",
+                alignContent: "start",
+                width: "1000px",
+                marginTop: "-15px",
+                backgroundColor: "#282c34",
+                zIndex: tabi,
+                overflow: "visible"
+            }}>
+                <span style={{
+                    display: "flex",
+                    width: "100%",
+                    height: "30px",
+                    justifyContent: "center",
+                    alignItems: "center",
+                    backgroundColor: "black",
+                    border: "2px solid white",
+                    marginBottom: "4px",
+                    marginLeft: "-6px",
+                    marginRight: "-6px",
+                }}>
+                    Tab File:
+                    ({tabi + 1}/{props.tabs.length})
+                    Tabs: ({tabi * props.tabs[0].length + 1}
+                    -
+                    {tabi * props.tabs[0].length + props.tabs[tabi].length})
+                </span>
+                {tabSection.map((e, i) => <div
+                    onClick={() => {
+                        if (props.setSelectedLine)
+                            props.setSelectedLine(tabi * 20 + i)
+                    }}
+                    key={i}
+                    style={{
+                        ...{
+                            zIndex: i,
+                            backgroundColor: "white",
+                            color: "black",
+                            borderTopLeftRadius: "40px",
+                            borderTopRightRadius: "40px",
+                            paddingTop: "1px",
+                            height: "80px",
+                            fontWeight: "bold",
+                            whiteSpace: "nowrap",
+                            marginRight: "-20px",
+                            borderBottom: "none",
+                            userSelect: "none",
+                            boxShadow: "0px 0px 4px 4px grey",
+                            marginBottom: "-34px"
+                        }, ...tabProp
+                    }}
+                >
+                    {e}
+                </div>)}
+            </div >
         )}
     </div >
 }
