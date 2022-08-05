@@ -6,11 +6,13 @@ export function Editor(props: {
     onChange?: (value: string) => void
     lineLength?: number //TODO: if -1 remove limit
     style?: React.CSSProperties
+    focusStyle?: React.CSSProperties
     selectedLine?: number
 }) {
     const [input, setinput] = useState<string>("")
     const [SStart, setSStart] = useState(0)
     const [SEnd, setSEnd] = useState(0)
+    const [focus, setFocus] = useState(false)
 
     const inputRef = React.createRef<HTMLTextAreaElement>()
 
@@ -111,11 +113,14 @@ export function Editor(props: {
             fontSize: "150%",
             padding: "4px",
             margin: "0px",
-            ...props.style
+            ...props.style,
+            ...(focus ? props.focusStyle : {})
         }}
         autoComplete="off"
         autoCorrect="off"
         autoCapitalize="off"
         spellCheck="false"
+        onFocus={() => setFocus(true)}
+        onBlur={() => setFocus(false)}
     />
 }
