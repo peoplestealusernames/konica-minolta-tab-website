@@ -17,6 +17,8 @@ export function DisplayTabs(props: {
     }, [props.Options])
 
     return <div style={{
+        position: "fixed",
+        right: "0px",
         display: "flex",
         flexGrow: 1,
         flexDirection: "row",
