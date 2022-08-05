@@ -72,8 +72,6 @@ export function DisplayTabs(props: {
                 </span>
                 {tabSection.map((e, i) => <div
                     onClick={() => {
-                        console.log(props.setSelectedLine);
-
                         if (props.setSelectedLine)
                             props.setSelectedLine(tabi * 20 + i)
                     }}
