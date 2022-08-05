@@ -39,6 +39,7 @@ export function DisplayTabs(props: {
                 key={i}
                 style={{
                     ...{
+                        zIndex: tabSection.length - i,
                         backgroundColor: "white",
                         color: "black",
                         borderTopLeftRadius: "40px",
