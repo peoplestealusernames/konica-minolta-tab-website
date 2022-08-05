@@ -47,6 +47,7 @@ function App() {
         width: "300px",
         height: "100vh",
         flexDirection: "column",
+        userSelect: "none"
       }}
       >
         <div
