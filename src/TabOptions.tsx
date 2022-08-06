@@ -17,8 +17,8 @@ const SelectionStyle: React.CSSProperties = {
     width: "150px",
     textAlign: "center",
     fontSize: "16px",
-    padding: "0px",
-    margin: "0px",
+    padding: "0",
+    margin: "0",
     borderRadius: "10px",
     transition: "box-shadow 250ms ease-out",
 }
@@ -38,12 +38,12 @@ const ButtonStyle: React.CSSProperties = {
     width: "200px",
     margin: "4px",
     borderRadius: "5px",
-    boxShadow: "0px 0px 1px 0px white",
+    boxShadow: "0 0 1px 0 white",
     padding: "5px",
 }
 
 const HoverStyle: React.CSSProperties = {
-    boxShadow: "0px 0px 1px 0px white, 0px 0px 1px 1px red",
+    boxShadow: "0 0 1px 0 white, 0 0 1px 1px red",
 }
 
 export function TabOption(props: {

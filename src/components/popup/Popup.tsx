@@ -44,11 +44,11 @@ export function Popup(props: {
         <div style={{
             position: "fixed",
             display: "flex",
-            top: "0px",
-            left: "0px",
+            top: "0",
+            left: "0",
             transition: "200ms linear",
             transform: active ?
-                "translateY(0px) scale(100%)" :
+                "translateY(0) scale(100%)" :
                 "translateY(100vh) scale(0%)",
             zIndex: 1000
         }}>

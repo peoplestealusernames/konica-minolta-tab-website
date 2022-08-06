@@ -18,13 +18,13 @@ export function DisplayTabs(props: {
 
     return <div style={{
         position: "fixed",
-        right: "0px",
+        right: "0",
         display: "flex",
         flexGrow: 1,
         flexDirection: "row",
         flexWrap: "wrap",
         padding: "4px",
-        margin: "0px",
+        margin: "0",
         color: "white",
         justifyContent: "start",
         alignContent: "start",
@@ -41,8 +41,8 @@ export function DisplayTabs(props: {
                     flexDirection: "row",
                     flexWrap: "wrap",
                     padding: "6px",
-                    paddingTop: "0px",
-                    margin: "0px",
+                    paddingTop: "0",
+                    margin: "0",
                     color: "white",
                     justifyContent: "start",
                     alignContent: "start",
@@ -91,7 +91,7 @@ export function DisplayTabs(props: {
                             marginRight: "-20px",
                             height: "94px",
                             backgroundImage: "linear-gradient(to bottom, white 0%, white 32px, grey 45px, black 100%)",
-                            boxShadow: "0px 0px 4px 4px grey",
+                            boxShadow: "0 0 4px 4px grey",
                             marginBottom: "-52px",
                         }, ...tabProp
                     }}

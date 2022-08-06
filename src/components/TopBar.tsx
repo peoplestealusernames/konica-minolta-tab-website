@@ -21,7 +21,7 @@ export function TopBar(props: {
         justifyContent: "center",
         background: "black",
         marginBottom: "6px",
-        boxShadow: "0px 1px 5px 5px white",
+        boxShadow: "0 1px 5px 5px white",
         userSelect: "none"
     }}>
         <div className='Logo' style={{

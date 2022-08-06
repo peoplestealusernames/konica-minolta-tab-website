@@ -109,7 +109,7 @@ export function Editor(props: {
             color: "white",
             fontSize: "150%",
             padding: "4px",
-            margin: "0px",
+            margin: "0",
             overflowY: "scroll",
             ...props.style,
             ...(focus ? props.focusStyle : {}),

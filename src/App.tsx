@@ -71,7 +71,7 @@ function App() {
           outline: "none",
         }}
           focusStyle={{
-            boxShadow: `0px 0px 5px 3px red`,
+            boxShadow: `0 0 5px 3px red`,
           }}
           selectedLine={selectLine}
           value={input}
@@ -99,12 +99,12 @@ function App() {
           >
             <ContextButton style={{
               transition: "box-shadow 250ms linear",
-              boxShadow: "0px 0px 1px 0px white",
+              boxShadow: "0 0 1px 0 white",
               borderRadius: "10px"
             }}
               hoverStyle={{
                 color: "inherit",
-                boxShadow: "0px 0px 1px 0px white, 0px 0px 2px 2px red",
+                boxShadow: "0 0 1px 0 white, 0 0 2px 2px red",
               }}
               onMouseDown={() => { setpastePopup(true) }}
             >
@@ -112,11 +112,11 @@ function App() {
             </ContextButton>
             <ContextButton style={{
               transition: "box-shadow 250ms linear",
-              boxShadow: "0px 0px 1px 0px white",
+              boxShadow: "0 0 1px 0 white",
               borderRadius: "10px"
             }}
               hoverStyle={{
-                boxShadow: "0px 0px 1px 0px white, 0px 0px 2px 2px red",
+                boxShadow: "0 0 1px 0 white, 0 0 2px 2px red",
               }}
               onMouseDown={() => { EditorChange(input.split("\n").sort(sortWithNumber).join("\n")) }}
             >
