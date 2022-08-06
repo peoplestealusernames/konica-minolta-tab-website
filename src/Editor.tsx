@@ -11,8 +11,7 @@ export function Editor(props: {
     placeholder?: string,
 }) {
     const [input, setinput] = useState<string>("")
-    const [SStart, setSStart] = useState(0)
-    const [SEnd, setSEnd] = useState(0)
+    const [Selected, setSelected] = useState<[number, number]>([0, 0])
     const [focus, setFocus] = useState(false)
 
     const inputRef = React.createRef<HTMLTextAreaElement>()
@@ -27,8 +26,7 @@ export function Editor(props: {
         const lines = input.split("\n")
 
         if (lines.length == 1) {
-            setSStart(0)
-            setSEnd(input.length - 1)
+            setSelected([0, input.length - 1])
             return
         }
 
@@ -47,8 +45,7 @@ export function Editor(props: {
         if (Start === -1)
             Start = 0
 
-        setSStart(Start)
-        setSEnd(End)
+        setSelected([Start, End])
     }
 
     function TextChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
@@ -72,8 +69,7 @@ export function Editor(props: {
         newStart = updatePos(current, newStart)
         newEnd = updatePos(current, newEnd)
 
-        setSEnd(newEnd)
-        setSStart(newStart)
+        setSelected([newStart, newEnd])
 
         setinput(Out)
         onChange(Out)
@@ -98,8 +94,8 @@ export function Editor(props: {
         element.click()
         element.focus()
 
-        element.setSelectionRange(SStart, SEnd)
-    }, [SStart, SEnd])
+        element.setSelectionRange(Selected[0], Selected[1])
+    }, [Selected])
 
     return <textarea
         ref={inputRef}
