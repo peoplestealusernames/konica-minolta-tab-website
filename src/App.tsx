@@ -9,6 +9,7 @@ import { Options, TabOption } from './TabOptions';
 import { PastePopup } from './PastePopup';
 import { TopBar } from './components/TopBar';
 import { ContextButton } from './components/ContextButton';
+import { MiddleTab } from './components/MiddleTab';
 
 function App() {
   const [tabs, settabs] = useState<string[][]>([])
@@ -55,20 +56,22 @@ function App() {
         height: "100%",
         textAlign: "center",
         flexDirection: "row",
-        overflow: "auto"
+        overflow: "auto",
       }}>
         <Editor style={{
           maxWidth: "350px",
           margin: "30px",
-          border: "none",
+          border: "2px solid grey",
           borderRadius: "15px",
           padding: "10px",
-          transition: "box-shadow 200ms linear",
-          boxShadow: `0px 0px 2px 3px lightgrey`,
+          transition: "box-shadow 200ms ease-in",
+          background: "rgb(40,40, 45)",
+          fontSize: "14px",
+          color: "rgb(255,255,255)",
           outline: "none",
         }}
           focusStyle={{
-            boxShadow: `0px 0px 2px 3px red`,
+            boxShadow: `0px 0px 5px 3px red`,
           }}
           selectedLine={selectLine}
           value={input}
@@ -81,37 +84,56 @@ function App() {
           height: "100%",
           flexDirection: "column",
           userSelect: "none",
+          justifyContent: "center",
+          justifyItems: "center",
+          alignItems: "center",
         }}
         >
-          <div
+          <MiddleTab
             style={{
-              display: "flex",
-              flexDirection: "column",
-              border: "4px solid white",
-              backgroundColor: "grey",
-              color: "black",
               fontSize: "150%",
-              padding: "0px",
-              justifyContent: "center",
-              alignContent: "center"
+              fontWeight: "bold",
+              width: "fit-content",
+              marginBottom: "60px",
             }}
           >
-            <span style={{
-              borderBottom: "4px solid white"
+            <ContextButton style={{
+              transition: "box-shadow 250ms linear",
+              boxShadow: "0px 0px 1px 0px white",
+              borderRadius: "10px"
             }}
-              onClick={() => { setpastePopup(true) }}
+              hoverStyle={{
+                color: "inherit",
+                boxShadow: "0px 0px 1px 0px white, 0px 0px 2px 2px red",
+              }}
+              onMouseDown={() => { setpastePopup(true) }}
             >
-              Import paths
-            </span>
-            <ContextButton
+              Import file paths
+            </ContextButton>
+            <ContextButton style={{
+              transition: "box-shadow 250ms linear",
+              boxShadow: "0px 0px 1px 0px white",
+              borderRadius: "10px"
+            }}
+              hoverStyle={{
+                boxShadow: "0px 0px 1px 0px white, 0px 0px 2px 2px red",
+              }}
               onMouseDown={() => { EditorChange(input.split("\n").sort(sortWithNumber).join("\n")) }}
             >
               Sort tab names
             </ContextButton>
-          </div>
+          </MiddleTab>
+          <TabOption
+            tabs={tabs}
+            onChange={setoptions}
+            options={options}
+          />
         </div>
-        <TabOption tabs={tabs} onChange={setoptions} options={options} />
-        <DisplayTabs tabs={tabs} Options={options} setSelectedLine={setselectLine} />
+        <DisplayTabs
+          tabs={tabs}
+          Options={options}
+          setSelectedLine={setselectLine}
+        />
       </div>
     </div >
   );

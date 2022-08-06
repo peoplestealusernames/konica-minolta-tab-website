@@ -15,7 +15,7 @@ export function ContextButton(props: {
     hoverStyle?: React.CSSProperties
 }) {
     //TODO: toggle button option
-    const hoverStyle = props.hoverStyle ? props.hoverStyle : {}
+    const hoverStyle = props.hoverStyle ? props.hoverStyle : { color: "grey" }
     const pressedStyle = props.pressedStyle ? props.pressedStyle : {}
 
     const [Hover, setHoverState] = useState<boolean>(false)
@@ -61,7 +61,7 @@ export function ContextButton(props: {
                 justifyItems: "center",
                 justifyContent: "center",
                 borderRadius: "6px",
-                color: Hover ? "grey" : "white",
+                color: "white",
                 userSelect: "none",
                 transition: "color 100ms ease-in"
             }, ...props.style,
