@@ -8,8 +8,8 @@ export function BlurBackground(props: {
         <div style={{
             display: "flex",
             position: "fixed",
-            top: "0px",
-            left: "0px",
+            top: "0",
+            left: "0",
             background: "rgba(0, 0, 30, 0.5)",
             width: "100vw",
             height: "100vh",

@@ -14,20 +14,20 @@ const SelectionStyle: React.CSSProperties = {
     justifyContent: "center",
     alignItems: "center",
     flex: 1,
-    width: "150px",
+    width: "15rem",
     textAlign: "center",
-    fontSize: "16px",
-    padding: "0px",
-    margin: "0px",
-    borderRadius: "10px",
+    fontSize: "1.6rem",
+    padding: "0",
+    margin: "0",
+    borderRadius: "1rem",
     transition: "box-shadow 250ms ease-out",
 }
 
 const TextStyle: React.CSSProperties = {
     textAlign: "center",
     fontWeight: "bold",
-    fontSize: "20px",
-    width: "175px",
+    fontSize: "2rem",
+    width: "17.5rem",
 }
 
 const ButtonStyle: React.CSSProperties = {
@@ -35,15 +35,15 @@ const ButtonStyle: React.CSSProperties = {
     justifyContent: "center",
     alignItems: "center",
     flexDirection: "column",
-    width: "200px",
-    margin: "4px",
-    borderRadius: "5px",
-    boxShadow: "0px 0px 1px 0px white",
-    padding: "5px",
+    width: "20rem",
+    margin: "0.4rem",
+    borderRadius: "0.5rem",
+    boxShadow: "0 0 0.1rem 0 white",
+    padding: "0.5rem",
 }
 
 const HoverStyle: React.CSSProperties = {
-    boxShadow: "0px 0px 1px 0px white, 0px 0px 1px 1px red",
+    boxShadow: "0 0 0.1rem 0 white, 0 0 0.1rem 0.1rem red",
 }
 
 export function TabOption(props: {

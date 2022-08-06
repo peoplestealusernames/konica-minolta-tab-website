@@ -103,13 +103,13 @@ export function Editor(props: {
         onChange={TextChange}
         style={{
             display: "flex",
-            border: "2px solid white",
+            border: "0.2rem solid white",
             flexGrow: 1,
             backgroundColor: "black",
             color: "white",
             fontSize: "150%",
-            padding: "4px",
-            margin: "0px",
+            padding: "0.4rem",
+            margin: "0",
             overflowY: "scroll",
             ...props.style,
             ...(focus ? props.focusStyle : {}),

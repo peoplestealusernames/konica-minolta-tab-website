@@ -37,28 +37,28 @@ export function PastePopup(props: {
     return <Popup
         active={props.active}
         onClose={() => onClose()}
-        closeStyle={{ right: "20px", top: "20px", width: "30px", height: "30px" }}
+        closeStyle={{ right: "2rem", top: "2rem", width: "3rem", height: "3rem" }}
     >
         <StyledTab style={{
             flexDirection: "column",
             alignItems: "center",
         }}
             masterStyle={{
-                borderRadius: "50px",
-                padding: "15px",
+                borderRadius: "5rem",
+                padding: "1.5rem",
                 backgroundColor: "#282c34",
                 border: "none",
-                boxShadow: `0px 0px 2px 5px lightgrey, 0px 0px 6px 7px black`,
+                boxShadow: `0 0 0.2rem 0.5rem lightgrey, 0 0 0.6rem 0.7rem black`,
             }}
             title={
                 <ContextButton style={{
                     display: "flex",
                     color: "white",
-                    margin: "2px",
-                    border: "4px solid white",
-                    borderRadius: "10px",
-                    padding: "10px",
-                    fontSize: "40px",
+                    margin: "0.2rem",
+                    border: "0.4rem solid white",
+                    borderRadius: "1rem",
+                    padding: "1rem",
+                    fontSize: "4rem",
                     backgroundColor: "black",
                     transition: "color 100ms linear"
                 }}
@@ -77,19 +77,19 @@ export function PastePopup(props: {
                 onChange={setpaths}
                 style={{
                     overflow: "auto",
-                    paddingLeft: "25px",
-                    paddingRight: "25px",
+                    paddingLeft: "2.5rem",
+                    paddingRight: "2.5rem",
                     whiteSpace: "pre",
                     width: "75vw",
                     height: "60vh",
-                    borderRadius: "25px",
+                    borderRadius: "2.5rem",
                     outline: "none",
                     border: "none",
                     transition: "box-shadow 200ms linear",
-                    boxShadow: `0px 0px 2px 3px lightgrey`,
+                    boxShadow: `0 0 0.2rem 0.3rem lightgrey`,
                 }}
                 focusStyle={{
-                    boxShadow: `0px 0px 2px 3px red`,
+                    boxShadow: `0 0 0.2rem 0.3rem red`,
                 }}
                 placeholder={"Paste file paths here\n" +
                     "ex: C:\\\\b\\a\\c.txt or /a/b/c.pdf\n" +

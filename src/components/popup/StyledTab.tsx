@@ -17,9 +17,9 @@ export function StyledTab(props: {
                 flexWrap: "wrap",
                 justifyContent: "center",
                 backgroundColor: "black",
-                borderRadius: "0px",
-                padding: "3px",
-                border: "2px solid white",
+                borderRadius: "0",
+                padding: "0.3rem",
+                border: "0.2rem solid white",
                 width: "fit-content",
             }, ...props.masterStyle
         }}>
@@ -29,10 +29,10 @@ export function StyledTab(props: {
                         display: "flex",
                         justifyContent: "center",
                         color: "white",
-                        borderBottom: "4px solid white",
-                        fontSize: "30px",
-                        padding: "0px",
-                        margin: "14px",
+                        borderBottom: "0.4rem solid white",
+                        fontSize: "3rem",
+                        padding: "0",
+                        margin: "1.4rem",
                         fontWeight: "bold",
                         userSelect: "none",
                     }, ...props.titleStyle

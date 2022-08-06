@@ -15,13 +15,13 @@ export function TopBar(props: {
         display: "flex",
         position: "static",
         width: "100vw",
-        height: "50px",
+        height: "5rem",
         alignItems: "center",
         justifyItems: "center",
         justifyContent: "center",
         background: "black",
-        marginBottom: "6px",
-        boxShadow: "0px 1px 5px 5px white",
+        marginBottom: "0.6rem",
+        boxShadow: "0 0.1rem 0.5rem 0.5rem white",
         userSelect: "none"
     }}>
         <div className='Logo' style={{
@@ -30,25 +30,25 @@ export function TopBar(props: {
             alignItems: "center",
             justifyItems: "center",
             justifyContent: "left",
-            left: "10px",
-            fontSize: "30px",
+            left: "1rem",
+            fontSize: "3rem",
             color: "white",
         }} >
             <img
                 src={process.env.PUBLIC_URL + "/logoWhite.png"}
                 style={{
-                    marginRight: "10px"
+                    marginRight: "1rem"
                 }}
             />
             TabMaker
         </div>
         <div className='LeftSide' style={{
-            display: "flex", position: "absolute", width: "100vw", height: "50px",
+            display: "flex", position: "absolute", width: "100vw", height: "5rem",
             alignItems: "center",
             justifyItems: "center",
             justifyContent: "right",
-            right: "10px",
-            fontSize: "25px",
+            right: "1rem",
+            fontSize: "2.5rem",
             color: "white",
         }} >
             <ContextButton
