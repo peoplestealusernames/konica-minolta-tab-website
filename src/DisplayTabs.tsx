@@ -12,7 +12,7 @@ export function DisplayTabs(props: {
     useEffect(() => {
         settabProp({
             width: `calc(${100 / props.Options.Cut}% + 1.4rem)`,
-            fontSize: `${props.Options.FontSize * 2}px`,
+            fontSize: `${props.Options.FontSize / 5}rem`,
         })
     }, [props.Options])
 
