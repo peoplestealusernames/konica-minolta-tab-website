@@ -8,11 +8,11 @@ export function CloseButton(props: {
 }) {
     const style: React.CSSProperties = {
         position: "absolute",
-        right: "3px",
-        top: "3px",
+        right: "0.3rem",
+        top: "0.3rem",
         color: "grey",
-        height: "20px",
-        width: "20px",
+        height: "2rem",
+        width: "2rem",
         transition: "color 200ms linear",
         ...props.stye
     }

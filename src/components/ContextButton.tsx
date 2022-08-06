@@ -54,13 +54,13 @@ export function ContextButton(props: {
             ...{
                 position: "relative",
                 display: "flex",
-                margin: "4px",
-                padding: "3px",
+                margin: "0.4rem",
+                padding: "0.3rem",
                 flexDirection: "column",
                 alignItems: "center",
                 justifyItems: "center",
                 justifyContent: "center",
-                borderRadius: "6px",
+                borderRadius: "0.6rem",
                 color: "white",
                 userSelect: "none",
                 transition: "color 100ms ease-in"
@@ -81,10 +81,10 @@ export function ContextButton(props: {
                             position: "absolute",
                             whiteSpace: "nowrap",
                             backgroundColor: "black",
-                            padding: "2px",
-                            fontSize: "12px",
-                            border: "1px solid white",
-                            borderRadius: "6px",
+                            padding: "0.2rem",
+                            fontSize: "1.2rem",
+                            border: "0.1rem solid white",
+                            borderRadius: "0.6rem",
                             color: "white",
                         }, ...props.contextStyle
                     }}>

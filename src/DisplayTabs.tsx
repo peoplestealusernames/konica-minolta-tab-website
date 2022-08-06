@@ -11,7 +11,7 @@ export function DisplayTabs(props: {
 
     useEffect(() => {
         settabProp({
-            width: `calc(${100 / props.Options.Cut}% + 14px)`,
+            width: `calc(${100 / props.Options.Cut}% + 1.4rem)`,
             fontSize: `${props.Options.FontSize * 2}px`,
         })
     }, [props.Options])
@@ -23,13 +23,13 @@ export function DisplayTabs(props: {
         flexGrow: 1,
         flexDirection: "row",
         flexWrap: "wrap",
-        padding: "4px",
+        padding: "0.4rem",
         margin: "0",
         color: "white",
         justifyContent: "start",
         alignContent: "start",
         overflowY: "scroll",
-        width: "1000px",
+        width: "100rem",
         zIndex: 1,
         userSelect: "none",
     }}>
@@ -40,14 +40,14 @@ export function DisplayTabs(props: {
                     display: "flex",
                     flexDirection: "row",
                     flexWrap: "wrap",
-                    padding: "6px",
+                    padding: "0.6rem",
                     paddingTop: "0",
                     margin: "0",
                     color: "white",
                     justifyContent: "start",
                     alignContent: "start",
-                    width: "1000px",
-                    marginBottom: "-10px",
+                    width: "100rem",
+                    marginBottom: "-1rem",
                     backgroundColor: "#282c34",
                     zIndex: tabi,
                     overflow: "clip"
@@ -55,16 +55,16 @@ export function DisplayTabs(props: {
                 <span style={{
                     display: "flex",
                     width: "100%",
-                    height: "30px",
+                    height: "3rem",
                     justifyContent: "center",
                     alignItems: "center",
                     backgroundColor: "black",
-                    border: "2px solid white",
-                    fontSize: "20px",
+                    border: "0.2rem solid white",
+                    fontSize: "2rem",
                     fontWeight: "bold",
-                    marginLeft: "-6px",
-                    marginRight: "-6px",
-                    marginBottom: "3px",
+                    marginLeft: "-0.6rem",
+                    marginRight: "-0.6rem",
+                    marginBottom: "0.3rem",
                 }}>
                     Tab File:
                     ({tabi + 1}/{props.tabs.length})
@@ -83,16 +83,16 @@ export function DisplayTabs(props: {
                             zIndex: i,
                             backgroundColor: "white",
                             color: "black",
-                            borderTopLeftRadius: "40px",
-                            borderTopRightRadius: "40px",
-                            paddingTop: "1px",
+                            borderTopLeftRadius: "4rem",
+                            borderTopRightRadius: "4rem",
+                            paddingTop: "0.1rem",
                             fontWeight: "bold",
                             whiteSpace: "nowrap",
-                            marginRight: "-20px",
-                            height: "94px",
-                            backgroundImage: "linear-gradient(to bottom, white 0%, white 32px, grey 45px, black 100%)",
-                            boxShadow: "0 0 4px 4px grey",
-                            marginBottom: "-52px",
+                            marginRight: "-2rem",
+                            height: "9.4rem",
+                            backgroundImage: "linear-gradient(to bottom, white 0%, white 3.2rem, grey 4.5rem, black 100%)",
+                            boxShadow: "0 0 0.4rem 0.4rem grey",
+                            marginBottom: "-5.2rem",
                         }, ...tabProp
                     }}
                 >

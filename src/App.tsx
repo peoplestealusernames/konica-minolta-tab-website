@@ -59,19 +59,19 @@ function App() {
         overflow: "auto",
       }}>
         <Editor style={{
-          maxWidth: "350px",
-          margin: "30px",
-          border: "2px solid grey",
-          borderRadius: "15px",
-          padding: "10px",
+          maxWidth: "35rem",
+          margin: "3rem",
+          border: "0.2rem solid grey",
+          borderRadius: "1.5rem",
+          padding: "1rem",
           transition: "box-shadow 200ms ease-in",
           background: "rgb(40,40, 45)",
-          fontSize: "22px",
+          fontSize: "2.2rem",
           color: "rgb(255,255,255)",
           outline: "none",
         }}
           focusStyle={{
-            boxShadow: `0 0 5px 3px red`,
+            boxShadow: `0 0 0.5rem 0.3rem red`,
           }}
           selectedLine={selectLine}
           value={input}
@@ -80,7 +80,7 @@ function App() {
         />
         <div style={{
           display: "flex",
-          width: "300px",
+          width: "30rem",
           height: "100%",
           flexDirection: "column",
           userSelect: "none",
@@ -94,17 +94,17 @@ function App() {
               fontSize: "150%",
               fontWeight: "bold",
               width: "fit-content",
-              marginBottom: "60px",
+              marginBottom: "6rem",
             }}
           >
             <ContextButton style={{
               transition: "box-shadow 250ms linear",
-              boxShadow: "0 0 1px 0 white",
-              borderRadius: "10px"
+              boxShadow: "0 0 0.1rem 0 white",
+              borderRadius: "1rem"
             }}
               hoverStyle={{
                 color: "inherit",
-                boxShadow: "0 0 1px 0 white, 0 0 2px 2px red",
+                boxShadow: "0 0 0.1rem 0 white, 0 0 0.2rem 0.2rem red",
               }}
               onMouseDown={() => { setpastePopup(true) }}
             >
@@ -112,11 +112,11 @@ function App() {
             </ContextButton>
             <ContextButton style={{
               transition: "box-shadow 250ms linear",
-              boxShadow: "0 0 1px 0 white",
-              borderRadius: "10px"
+              boxShadow: "0 0 0.1rem 0 white",
+              borderRadius: "1rem"
             }}
               hoverStyle={{
-                boxShadow: "0 0 1px 0 white, 0 0 2px 2px red",
+                boxShadow: "0 0 0.1rem 0 white, 0 0 0.2rem 0.2rem red",
               }}
               onMouseDown={() => { EditorChange(input.split("\n").sort(sortWithNumber).join("\n")) }}
             >
