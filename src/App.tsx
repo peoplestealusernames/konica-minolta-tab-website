@@ -66,7 +66,7 @@ function App() {
           padding: "10px",
           transition: "box-shadow 200ms ease-in",
           background: "rgb(40,40, 45)",
-          fontSize: "14px",
+          fontSize: "22px",
           color: "rgb(255,255,255)",
           outline: "none",
         }}
