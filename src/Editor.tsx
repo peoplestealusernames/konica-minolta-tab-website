@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { PrintButton } from "./printing/PrintButton"
 
 
 export function Editor(props: {
@@ -9,6 +10,9 @@ export function Editor(props: {
     focusStyle?: React.CSSProperties
     selectedLine?: number
     placeholder?: string,
+    printButton?: boolean
+    printButtonStyle?: React.CSSProperties
+    textAreaStyle?: React.CSSProperties
 }) {
     const [input, setinput] = useState<string>("")
     const [Selected, setSelected] = useState<[number, number]>([0, 0])
@@ -97,29 +101,51 @@ export function Editor(props: {
         element.setSelectionRange(Selected[0], Selected[1])
     }, [Selected])
 
-    return <textarea
-        ref={inputRef}
-        value={input}
-        onChange={TextChange}
-        style={{
-            display: "flex",
-            border: "0.2rem solid white",
-            flexGrow: 1,
-            backgroundColor: "black",
-            color: "white",
-            fontSize: "150%",
-            padding: "0.4rem",
-            margin: "0",
-            overflowY: "scroll",
-            ...props.style,
-            ...(focus ? props.focusStyle : {}),
-        }}
-        autoComplete="off"
-        autoCorrect="off"
-        autoCapitalize="off"
-        spellCheck="false"
-        onFocus={() => setFocus(true)}
-        onBlur={() => setFocus(false)}
-        placeholder={props.placeholder}
-    />
+    return <div style={{
+        display: "flex",
+        border: "0.2rem solid white",
+        flexGrow: 1,
+        backgroundColor: "black",
+        color: "white",
+        fontSize: "150%",
+        padding: "0.4rem",
+        margin: "0",
+        overflowY: "scroll",
+        ...props.style,
+        ...(focus ? props.focusStyle : {}),
+    }}
+    >
+        {props.printButton && <PrintButton
+            text={input}
+            style={{
+                left: "36rem",
+                top: "3.3rem",
+                width: "2.5rem",
+                height: "2.5rem",
+                color: "white"
+            }} />
+        }
+        <textarea
+            ref={inputRef}
+            value={input}
+            onChange={TextChange}
+            style={{
+                display: "flex",
+                flexGrow: "1",
+                backgroundColor: "transparent",
+                border: "none",
+                outline: "none",
+                color: "inherit",
+                fontSize: "inherit",
+                ...props.textAreaStyle
+            }}
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck="false"
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
+            placeholder={props.placeholder}
+        />
+    </div >
 }

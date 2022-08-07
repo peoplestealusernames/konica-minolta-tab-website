@@ -79,17 +79,9 @@ function App() {
           selectedLine={selectLine}
           value={input}
           onChange={EditorChange}
+          printButton={true}
           placeholder={"Type tabs here."}
         />
-        <PrintButton
-          text={input}
-          style={{
-            left: "36rem",
-            top: "3.3rem",
-            width: "2.5rem",
-            height: "2.5rem",
-            color: "white"
-          }} />
         <div style={{
           display: "flex",
           flexDirection: "column",
