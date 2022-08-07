@@ -60,7 +60,8 @@ export function TopBar(props: {
                 <HiDownload style={{
                     animationFillMode: "both",
                     animationDuration: "100ms",
-                    animation: bounce ? "bounce 500ms linear" : ""
+                    animation: bounce ? "bounce 500ms linear" : "",
+                    cursor: "pointer",
                 }}
                     onAnimationEnd={() => setbounce(false)}
                 />

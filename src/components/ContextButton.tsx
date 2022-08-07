@@ -63,7 +63,8 @@ export function ContextButton(props: {
                 borderRadius: "0.6rem",
                 color: "white",
                 userSelect: "none",
-                transition: "color 100ms ease-in"
+                transition: "color 100ms ease-in",
+                cursor: "pointer"
             }, ...props.style,
             ...Hover ? hoverStyle : {},
             ...Pressed ? pressedStyle : {},

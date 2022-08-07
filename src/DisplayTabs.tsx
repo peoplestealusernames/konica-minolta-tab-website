@@ -97,6 +97,7 @@ export function DisplayTabs(props: {
                     backgroundImage: "linear-gradient(to bottom, white 0%, white 2.4rem, grey 4rem, black 100%)",
                     boxShadow: "0 0 0.2rem 0.2rem grey, 0 0 0.3rem 0.2rem black",
                     marginBottom: "-5.7rem",
+                    cursor: "pointer",
                     ...tabProp
                 }}
             >

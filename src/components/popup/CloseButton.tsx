@@ -14,6 +14,7 @@ export function CloseButton(props: {
         height: "2rem",
         width: "2rem",
         transition: "color 200ms linear",
+        cursor: "pointer",
         ...props.stye
     }
 

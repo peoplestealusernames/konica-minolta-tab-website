@@ -21,6 +21,7 @@ const SelectionStyle: React.CSSProperties = {
     margin: "0",
     borderRadius: "1rem",
     transition: "box-shadow 250ms ease-out",
+    cursor: "pointer",
 }
 
 const TextStyle: React.CSSProperties = {

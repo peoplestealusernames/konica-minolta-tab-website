@@ -111,6 +111,7 @@ export function Editor(props: {
         padding: "0.4rem",
         margin: "0",
         overflowY: "scroll",
+        cursor: "text",
         ...props.style,
         ...(focus ? props.focusStyle : {}),
     }}
@@ -123,7 +124,8 @@ export function Editor(props: {
                 top: "3.3rem",
                 width: "2.5rem",
                 height: "2.5rem",
-                color: "white"
+                color: "white",
+                cursor: "pointer"
             }} />
         }
         <textarea
