@@ -91,7 +91,7 @@ function App() {
         >
           <MiddleTab
             style={{
-              fontSize: "150%",
+              fontSize: "2.5rem",
               fontWeight: "bold",
               width: "fit-content",
               marginBottom: "6rem",
@@ -99,12 +99,12 @@ function App() {
           >
             <ContextButton style={{
               transition: "box-shadow 250ms linear",
-              boxShadow: "0 0 0.1rem 0 white",
-              borderRadius: "1rem"
+              boxShadow: "0 0 0.1rem 0.1rem white",
+              borderRadius: "1rem",
             }}
               hoverStyle={{
                 color: "inherit",
-                boxShadow: "0 0 0.1rem 0 white, 0 0 0.2rem 0.2rem red",
+                boxShadow: "0 0 0.1rem 0.1rem white, 0 0 0.2rem 0.2rem red",
               }}
               onMouseDown={() => { setpastePopup(true) }}
             >
@@ -112,11 +112,12 @@ function App() {
             </ContextButton>
             <ContextButton style={{
               transition: "box-shadow 250ms linear",
-              boxShadow: "0 0 0.1rem 0 white",
-              borderRadius: "1rem"
+              boxShadow: "0 0 0.1rem 0.1rem white",
+              borderRadius: "1rem",
             }}
               hoverStyle={{
-                boxShadow: "0 0 0.1rem 0 white, 0 0 0.2rem 0.2rem red",
+                color: "inherit",
+                boxShadow: "0 0 0.1rem 0.1rem white, 0 0 0.2rem 0.2rem red",
               }}
               onMouseDown={() => { EditorChange(input.split("\n").sort(sortWithNumber).join("\n")) }}
             >
