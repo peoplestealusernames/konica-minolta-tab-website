@@ -11,6 +11,7 @@ import { TopBar } from './components/TopBar';
 import { ContextButton } from './components/ContextButton';
 import { MiddleTab } from './components/MiddleTab';
 import { FilterTab } from './components/FilterTab';
+import { PrintButton } from './printing/PrintButton';
 
 function App() {
   const [tabs, settabs] = useState<string[][]>([])
@@ -60,7 +61,8 @@ function App() {
         overflow: "auto",
       }}>
         <Editor style={{
-          maxWidth: "35rem",
+          width: "35rem",
+          flexGrow: 0,
           margin: "3rem",
           border: "0.2rem solid grey",
           borderRadius: "1.5rem",
@@ -79,6 +81,15 @@ function App() {
           onChange={EditorChange}
           placeholder={"Type tabs here."}
         />
+        <PrintButton
+          text={input}
+          style={{
+            left: "36rem",
+            top: "3.3rem",
+            width: "2.5rem",
+            height: "2.5rem",
+            color: "white"
+          }} />
         <div style={{
           display: "flex",
           flexDirection: "column",
