@@ -40,15 +40,19 @@ export function PastePopup(props: {
                 display: "flex",
                 color: "white",
                 margin: "0.2rem",
-                border: "0.4rem solid white",
-                borderRadius: "1rem",
-                padding: "1rem",
+                marginBottom: "-.1rem",
+                border: "0.1rem solid white",
+                borderRadius: "0",
+                borderTopLeftRadius: "1rem",
+                borderTopRightRadius: "1rem",
+                paddingLeft: "2rem",
+                paddingRight: "2rem",
                 fontSize: "4rem",
-                backgroundColor: "black",
-                transition: "color 100ms linear"
+                transition: "background-color 100ms linear",
+                backgroundColor: "rgb(20,20,30)",
             }}
                 hoverStyle={{
-                    color: "green"
+                    backgroundColor: "rgb(60,60,75)"
                 }}
                 onMouseDown={() => GeneratePaths()}
             >
@@ -61,7 +65,7 @@ export function PastePopup(props: {
             value={paths}
             onChange={setpaths}
             style={{
-                fontSize: "2.2rem",
+                fontSize: "1.8rem",
                 overflow: "auto",
                 paddingLeft: "1.5rem",
                 paddingRight: "1.5rem",
