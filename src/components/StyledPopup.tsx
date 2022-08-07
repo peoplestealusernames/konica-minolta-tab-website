@@ -13,7 +13,20 @@ export function StyledPopup(props: {
     return <Popup
         active={props.active}
         onClose={() => props.onClose()}
-        closeStyle={{ right: "2rem", top: "2rem", width: "3rem", height: "3rem" }}
+        closeStyle={{
+            backgroundImage: `radial-gradient(
+                rgba(65,65,65,255) 0%,
+                rgba(65,65,65,255) 55%,
+                black 60%,
+                black 65%,
+                rgba(0,0,0,0) 70%)
+            `,
+            right: "0rem",
+            top: "0rem",
+            width: "2rem",
+            height: "2rem",
+            color: "rgb(200,200,200)",
+        }}
     >
         <StyledTab style={{
             flexDirection: "column",
