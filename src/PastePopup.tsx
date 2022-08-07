@@ -56,7 +56,7 @@ export function PastePopup(props: {
                 }}
                 onMouseDown={() => GeneratePaths()}
             >
-                Generate Names
+                Generate Tabs
             </ContextButton>
         }
     >
@@ -76,10 +76,10 @@ export function PastePopup(props: {
                 outline: "none",
                 border: "none",
                 transition: "box-shadow 200ms linear",
-                boxShadow: `0 0 0.2rem 0.3rem lightgrey`,
+                boxShadow: `0 0 0.1rem 0.1rem lightgrey`,
             }}
             focusStyle={{
-                boxShadow: `0 0 0.2rem 0.3rem red`,
+                boxShadow: `0 0 0.2rem 0.2rem red`,
             }}
             placeholder={"Paste file paths here\n" +
                 "ex: C:\\\\b\\a\\c.txt or /a/b/c.pdf\n" +
