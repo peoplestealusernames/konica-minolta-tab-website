@@ -24,15 +24,17 @@ export function PrintButton(props: {
 
         let text = lines.join("<br/>")
 
-        printWindow.document.open()
+        printWindow.document.open("text/plain")
         printWindow.document.write("<html><style type='text/css' media='print'>")
-        printWindow.document.write("@page { size: auto; margin: 0; }")
+        printWindow.document.write("@page { size: auto; margin: 30px 20px 30px 20px; }")
+        printWindow.document.write("footer {display:none; }")
+        printWindow.document.write("header {display:none; }")
         printWindow.document.write("html { background-color: #FFFFFF; margin: 0; }")
-        printWindow.document.write("body { border: solid 1px blue; margin 10px 15px 10px 15px;")
-        printWindow.document.write("</style><body>")
+        printWindow.document.write("body { display: block; margin: margin: 0; font-size: 20px;}")
+        printWindow.document.write("</style><title>Index maker</title><body>")
         printWindow.document.write(text);
         printWindow.document.write("</body></html>")
-        printWindow.document.close();
+
         printWindow.focus();
         printWindow.print();
         printWindow.close();
