@@ -10,6 +10,7 @@ import { PastePopup } from './PastePopup';
 import { TopBar } from './components/TopBar';
 import { ContextButton } from './components/ContextButton';
 import { MiddleTab } from './components/MiddleTab';
+import { FilterTab } from './components/FilterTab';
 
 function App() {
   const [tabs, settabs] = useState<string[][]>([])
@@ -86,41 +87,11 @@ function App() {
           justifyContent: "center",
         }}
         >
-          <MiddleTab
-            style={{
-              fontSize: "2.5rem",
-              fontWeight: "bold",
-              width: "fit-content",
-              marginBottom: "10vh",
-            }}
-          >
-            <ContextButton style={{
-              transition: "box-shadow 250ms linear",
-              boxShadow: "0 0 0.1rem 0.1rem white",
-              borderRadius: "1rem",
-            }}
-              hoverStyle={{
-                color: "inherit",
-                boxShadow: "0 0 0.1rem 0.1rem white, 0 0 0.2rem 0.2rem red",
-              }}
-              onMouseDown={() => { setpastePopup(true) }}
-            >
-              Import file paths
-            </ContextButton>
-            <ContextButton style={{
-              transition: "box-shadow 250ms linear",
-              boxShadow: "0 0 0.1rem 0.1rem white",
-              borderRadius: "1rem",
-            }}
-              hoverStyle={{
-                color: "inherit",
-                boxShadow: "0 0 0.1rem 0.1rem white, 0 0 0.2rem 0.2rem red",
-              }}
-              onMouseDown={() => { EditorChange(input.split("\n").sort(sortWithNumber).join("\n")) }}
-            >
-              Sort tab names
-            </ContextButton>
-          </MiddleTab>
+          <FilterTab
+            input={input}
+            onChange={EditorChange}
+            openPastePopup={() => setpastePopup(true)}
+          />
           <TabOption
             tabs={tabs}
             onChange={setoptions}
@@ -139,6 +110,3 @@ function App() {
 
 export default App;
 
-function sortWithNumber(a: string, b: string) {
-  return a.localeCompare(b, undefined, { numeric: true })
-}
