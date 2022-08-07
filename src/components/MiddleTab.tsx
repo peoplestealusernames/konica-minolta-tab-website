@@ -9,7 +9,7 @@ export function MiddleTab(props: {
 }) {
     return <StyledTab
         masterStyle={{
-            margin: "3rem",
+            height: "fit-content",
             border: "0.2rem solid grey",
             borderRadius: "1.5rem",
             padding: "1rem",

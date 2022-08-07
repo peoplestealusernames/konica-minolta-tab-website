@@ -80,13 +80,10 @@ function App() {
         />
         <div style={{
           display: "flex",
-          width: "30rem",
-          height: "100%",
           flexDirection: "column",
-          userSelect: "none",
-          justifyContent: "center",
-          justifyItems: "center",
+          flex: 1,
           alignItems: "center",
+          justifyContent: "center",
         }}
         >
           <MiddleTab
@@ -94,7 +91,7 @@ function App() {
               fontSize: "2.5rem",
               fontWeight: "bold",
               width: "fit-content",
-              marginBottom: "6rem",
+              marginBottom: "10vh",
             }}
           >
             <ContextButton style={{

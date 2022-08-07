@@ -17,8 +17,6 @@ export function DisplayTabs(props: {
     }, [props.Options])
 
     return <div style={{
-        position: "fixed",
-        right: "0",
         display: "flex",
         flexDirection: "row",
         flexWrap: "wrap",
@@ -57,7 +55,7 @@ export function DisplayTabs(props: {
                     alignItems: "center",
                     alignSelf: "center",
                     justifySelf: "center",
-                    backgroundColor: "black",
+                    backgroundColor: "rgb(40, 40, 45)",
                     marginLeft: "-1.4rem",
                     marginRight: "-.4rem",
                     paddingRight: "1.3rem",
