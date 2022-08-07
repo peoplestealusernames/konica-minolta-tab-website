@@ -16,6 +16,13 @@ export function DisplayTabs(props: {
         })
     }, [props.Options])
 
+    if (props.tabs.length === 1 &&
+        props.tabs[0].length === 1 &&
+        props.tabs[0][0] === ""
+    ) {
+        props.tabs[0] = ["Empty,", "Please", "Type", "Tabs"]
+    }
+
     return <div style={{
         display: "flex",
         flexDirection: "row",
