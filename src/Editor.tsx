@@ -114,6 +114,7 @@ export function Editor(props: {
         ...props.style,
         ...(focus ? props.focusStyle : {}),
     }}
+        onClick={(e) => { if (e.target === e.currentTarget) inputRef.current?.focus() }}
     >
         {props.printButton && <PrintButton
             text={input}
