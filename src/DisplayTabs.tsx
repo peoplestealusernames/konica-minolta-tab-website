@@ -11,8 +11,8 @@ export function DisplayTabs(props: {
 
     useEffect(() => {
         settabProp({
-            width: `calc(${100 / props.Options.Cut}% + 2rem)`,
-            fontSize: `${props.Options.FontSize / 5}rem`,
+            width: `calc(${100 / props.Options.Cut}% + 1rem)`,
+            fontSize: `${props.Options.FontSize / 6}rem`,
         })
     }, [props.Options])
 
@@ -23,7 +23,7 @@ export function DisplayTabs(props: {
         flexDirection: "row",
         flexWrap: "wrap",
         padding: "0.4rem",
-        paddingRight: "2rem",
+        paddingRight: "1rem",
         color: "white",
         justifyContent: "start",
         alignContent: "start",
@@ -39,9 +39,8 @@ export function DisplayTabs(props: {
                     display: "flex",
                     flexDirection: "row",
                     flexWrap: "wrap",
-                    padding: "0.6rem",
-                    paddingRight: "2rem",
-                    paddingTop: "0",
+                    paddingLeft: "0.5rem",
+                    paddingRight: "1.3rem",
                     margin: "0",
                     color: "white",
                     justifyContent: "start",
@@ -61,10 +60,11 @@ export function DisplayTabs(props: {
                     alignSelf: "center",
                     justifySelf: "center",
                     backgroundColor: "black",
-                    border: "0.2rem solid white",
-                    paddingRight: "2rem",
-                    marginRight: "-2rem",
+                    border: "0.3rem solid white",
+                    paddingRight: "1.3rem",
+                    marginRight: "-1.3rem",
                     fontSize: "2rem",
+                    borderRadius: "2rem",
                     fontWeight: "bold",
                     marginBottom: "0.3rem",
                 }}>
@@ -74,33 +74,36 @@ export function DisplayTabs(props: {
                     -
                     {tabi * props.tabs[0].length + props.tabs[tabi].length})
                 </span>
-                {tabSection.map((e, i) => <div
-                    onClick={() => {
-                        if (props.setSelectedLine)
-                            props.setSelectedLine(tabi * 20 + i)
-                    }}
-                    key={i}
-                    style={{
-                        ...{
-                            zIndex: i,
-                            backgroundColor: "white",
-                            color: "black",
-                            borderTopLeftRadius: "4rem",
-                            borderTopRightRadius: "4rem",
-                            paddingTop: "0.1rem",
-                            fontWeight: "bold",
-                            whiteSpace: "nowrap",
-                            marginRight: "-2rem",
-                            height: "9.4rem",
-                            backgroundImage: "linear-gradient(to bottom, white 0%, white 3.2rem, grey 4.5rem, black 100%)",
-                            boxShadow: "0 0 0.4rem 0.4rem grey",
-                            marginBottom: "-5.2rem",
-                        }, ...tabProp
-                    }}
-                >
-                    {e}
-                </div>)}
+                {
+                    tabSection.map((e, i) => <div
+                        onClick={() => {
+                            if (props.setSelectedLine)
+                                props.setSelectedLine(tabi * 20 + i)
+                        }}
+                        key={i}
+                        style={{
+                            ...{
+                                zIndex: i,
+                                backgroundColor: "white",
+                                color: "black",
+                                borderTopLeftRadius: "3rem",
+                                borderTopRightRadius: "3rem",
+                                paddingTop: "0.1rem",
+                                fontWeight: "bold",
+                                whiteSpace: "nowrap",
+                                marginRight: "-1rem",
+                                height: "9.4rem",
+                                backgroundImage: "linear-gradient(to bottom, white 0%, white 3.2rem, grey 4.5rem, black 100%)",
+                                boxShadow: "0 0 0.3rem 0.3rem grey",
+                                marginBottom: "-5.2rem",
+                            }, ...tabProp
+                        }}
+                    >
+                        {e}
+                    </div>)
+                }
             </div >
-        )}
+        )
+        }
     </div >
 }
