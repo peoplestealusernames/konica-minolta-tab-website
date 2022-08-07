@@ -14,7 +14,7 @@ import { FilterTab } from './components/FilterTab';
 import { PrintButton } from './printing/PrintButton';
 
 function App() {
-  const [tabs, settabs] = useState<string[][]>([])
+  const [tabs, settabs] = useState<string[][]>([[""]])
   const [pastePopup, setpastePopup] = useState(false)
   const [input, setinput] = useState<string>("")
 
