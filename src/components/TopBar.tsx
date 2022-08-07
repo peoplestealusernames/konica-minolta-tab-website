@@ -46,14 +46,15 @@ export function TopBar(props: {
             justifyContent: "right",
             right: "1rem",
             fontSize: "2.5rem",
-            color: "white",
         }} >
             <ContextButton
                 style={{
+                    color: "rgb(10,90,255)",
+                    boxShadow: "0 0 .2rem .1rem white",
                     backgroundColor: "black",
                     transition: "background-color 300ms linear",
                 }}
-                hoverStyle={{ color: "#1976d2", backgroundColor: "white" }}
+                hoverStyle={{ color: "rgb(0,80,255)", backgroundColor: "white" }}
                 onMouseDown={() => { setbounce(true); DownloadTabs(props.tabs, props.options) }}
             >
                 <HiDownload style={{
