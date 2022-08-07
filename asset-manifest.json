@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/konica-minolta-tab-website/static/css/main.c34082a7.css",
-    "main.js": "/konica-minolta-tab-website/static/js/main.61732890.js",
-    "static/js/787.af59847e.chunk.js": "/konica-minolta-tab-website/static/js/787.af59847e.chunk.js",
+    "main.css": "/konica-minolta-tab-website/static/css/main.0ea63f92.css",
+    "main.js": "/konica-minolta-tab-website/static/js/main.acbf89e0.js",
     "index.html": "/konica-minolta-tab-website/index.html",
-    "main.c34082a7.css.map": "/konica-minolta-tab-website/static/css/main.c34082a7.css.map",
-    "main.61732890.js.map": "/konica-minolta-tab-website/static/js/main.61732890.js.map",
-    "787.af59847e.chunk.js.map": "/konica-minolta-tab-website/static/js/787.af59847e.chunk.js.map"
+    "main.0ea63f92.css.map": "/konica-minolta-tab-website/static/css/main.0ea63f92.css.map",
+    "main.acbf89e0.js.map": "/konica-minolta-tab-website/static/js/main.acbf89e0.js.map"
   },
   "entrypoints": [
-    "static/css/main.c34082a7.css",
-    "static/js/main.61732890.js"
+    "static/css/main.0ea63f92.css",
+    "static/js/main.acbf89e0.js"
   ]
 }
