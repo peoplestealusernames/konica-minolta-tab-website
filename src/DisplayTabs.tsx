@@ -27,14 +27,14 @@ export function DisplayTabs(props: {
         display: "flex",
         flexDirection: "row",
         flexWrap: "wrap",
-        margin: "2rem",
+        margin: "0rem",
+        padding: "2rem",
         color: "white",
         justifyContent: "start",
-        paddingTop: "1.5vh",
+        paddingTop: "3vh",
         alignContent: "start",
         overflowY: "scroll",
         width: "100rem",
-        zIndex: 1,
         userSelect: "none",
     }}>{props.tabs.map((tabSection, tabi) => <div
         key={tabi}
@@ -95,7 +95,7 @@ export function DisplayTabs(props: {
                     marginLeft: "-1rem",
                     height: "9.4rem",
                     backgroundImage: "linear-gradient(to bottom, white 0%, white 2.4rem, grey 4rem, black 100%)",
-                    boxShadow: "0 0 0.2rem 0.2rem grey, 0 0 0.4rem 0.365rem black",
+                    boxShadow: "0 0 0.2rem 0.2rem grey, 0 0 0.3rem 0.2rem black",
                     marginBottom: "-5.7rem",
                     ...tabProp
                 }}

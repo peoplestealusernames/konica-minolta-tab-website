@@ -23,7 +23,7 @@ export function TopBar(props: {
         background: "black",
         marginBottom: "0.6rem",
         boxShadow: "0 0.1rem 0.5rem 0.5rem white",
-        userSelect: "none"
+        userSelect: "none",
     }}>
         <div className='Logo' style={{
             display: "flex",
