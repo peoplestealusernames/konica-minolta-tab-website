@@ -3,6 +3,7 @@ import { HiDownload } from "react-icons/hi"
 import { DownloadTabs } from "../MakeTabs"
 import { Options } from "../TabOptions"
 import { useState } from "react"
+import { IconBase } from "react-icons"
 
 export function TopBar(props: {
     children?: React.ReactNode
@@ -31,16 +32,12 @@ export function TopBar(props: {
             justifyItems: "center",
             justifyContent: "left",
             left: "1rem",
-            fontSize: "3rem",
+            fontSize: "3.5rem",
+            fontWeight: "bold",
             color: "white",
+            marginLeft: ".3rem",
         }} >
-            <img
-                src={process.env.PUBLIC_URL + "/logoWhite.png"}
-                style={{
-                    marginRight: "1rem"
-                }}
-            />
-            TabMaker
+            Konica Tab Maker
         </div>
         <div className='LeftSide' style={{
             display: "flex", position: "absolute", width: "100vw", height: "5rem",
@@ -65,7 +62,6 @@ export function TopBar(props: {
                     animation: bounce ? "bounce 500ms linear" : ""
                 }}
                     onAnimationEnd={() => setbounce(false)}
-                    size={25}
                 />
             </ContextButton>
         </div>
