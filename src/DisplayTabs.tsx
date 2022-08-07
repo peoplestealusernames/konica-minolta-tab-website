@@ -25,7 +25,7 @@ export function DisplayTabs(props: {
         justifyContent: "start",
         alignContent: "start",
         overflowY: "scroll",
-        width: "100rem",
+        width: "110rem",
         zIndex: 1,
         userSelect: "none",
     }}>
