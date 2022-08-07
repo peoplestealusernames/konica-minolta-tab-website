@@ -11,7 +11,7 @@ export function DisplayTabs(props: {
 
     useEffect(() => {
         settabProp({
-            width: `${100 / props.Options.Cut}%`,
+            width: `calc(${100 / props.Options.Cut}% + 1rem)`,
             fontSize: `${props.Options.FontSize / 7}rem`,
         })
     }, [props.Options])
@@ -42,7 +42,8 @@ export function DisplayTabs(props: {
                     color: "white",
                     justifyContent: "start",
                     alignContent: "start",
-                    width: "100rem",
+                    width: "100%",
+                    paddingRight: ".4rem",
                     marginBottom: "-.5rem",
                     backgroundColor: "#282c34",
                     zIndex: tabi,
@@ -58,6 +59,8 @@ export function DisplayTabs(props: {
                     justifySelf: "center",
                     backgroundColor: "black",
                     marginLeft: "-1.4rem",
+                    marginRight: "-.4rem",
+                    paddingRight: "1.3rem",
                     border: "0.3rem solid white",
                     fontSize: "2rem",
                     fontWeight: "bold",
@@ -77,21 +80,20 @@ export function DisplayTabs(props: {
                         }}
                         key={i}
                         style={{
-                            ...{
-                                zIndex: i,
-                                backgroundColor: "white",
-                                color: "black",
-                                borderTopLeftRadius: "3rem",
-                                borderTopRightRadius: "3rem",
-                                paddingTop: "0.1rem",
-                                fontWeight: "bold",
-                                whiteSpace: "nowrap",
-                                marginLeft: "-1rem",
-                                height: "9.4rem",
-                                backgroundImage: "linear-gradient(to bottom, white 0%, white 2.4rem, grey 4rem, black 100%)",
-                                boxShadow: "0 0 0.3rem 0.3rem grey",
-                                marginBottom: "-5.7rem",
-                            }, ...tabProp
+                            zIndex: i,
+                            backgroundColor: "white",
+                            color: "black",
+                            borderTopLeftRadius: "3rem",
+                            borderTopRightRadius: "3rem",
+                            paddingTop: "0.1rem",
+                            fontWeight: "bold",
+                            whiteSpace: "nowrap",
+                            marginLeft: "-1rem",
+                            height: "9.4rem",
+                            backgroundImage: "linear-gradient(to bottom, white 0%, white 2.4rem, grey 4rem, black 100%)",
+                            boxShadow: "0 0 0.2rem 0.2rem grey, 0 0 0.3rem 0.3rem black",
+                            marginBottom: "-5.7rem",
+                            ...tabProp
                         }}
                     >
                         {e}
