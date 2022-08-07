@@ -44,11 +44,15 @@ export function PastePopup(props: {
             alignItems: "center",
         }}
             masterStyle={{
-                borderRadius: "5rem",
-                padding: "1.5rem",
-                backgroundColor: "#282c34",
+                borderRadius: "1rem",
+                padding: "3.5rem",
+                paddingTop: "0rem",
+                backgroundImage: "linear-gradient(to bottom, rgb(40,40,45) 0, rgb(50,100,100) 250%)",
                 border: "none",
-                boxShadow: `0 0 0.2rem 0.5rem lightgrey, 0 0 0.6rem 0.7rem black`,
+                boxShadow:
+                    "0 0 0.2rem 0.3rem lightgrey, " +
+                    "0 0 2rem .5rem black, " +
+                    "0 0 10rem .5rem black"
             }}
             title={
                 <ContextButton style={{
@@ -76,13 +80,14 @@ export function PastePopup(props: {
                 value={paths}
                 onChange={setpaths}
                 style={{
+                    fontSize: "2.2rem",
                     overflow: "auto",
-                    paddingLeft: "2.5rem",
-                    paddingRight: "2.5rem",
+                    paddingLeft: "1.5rem",
+                    paddingRight: "1.5rem",
                     whiteSpace: "pre",
-                    width: "75vw",
-                    height: "60vh",
-                    borderRadius: "2.5rem",
+                    width: "60vw",
+                    height: "50vh",
+                    borderRadius: "2rem",
                     outline: "none",
                     border: "none",
                     transition: "box-shadow 200ms linear",
