@@ -38,7 +38,7 @@ const ButtonStyle: React.CSSProperties = {
     width: "20rem",
     margin: "0.4rem",
     borderRadius: "0.5rem",
-    boxShadow: "0 0 0.1rem 0 white",
+    boxShadow: "0 0 0.2rem 0 white",
     padding: "0.5rem",
 }
 
