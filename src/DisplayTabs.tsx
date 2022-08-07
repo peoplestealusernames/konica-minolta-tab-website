@@ -20,7 +20,7 @@ export function DisplayTabs(props: {
         props.tabs[0].length === 1 &&
         props.tabs[0][0] === ""
     ) {
-        props.tabs[0] = ["Empty,", "Please", "Type", "Tabs"]
+        props.tabs[0] = ["Empty!", "Please", "Type", "Tabs"]
     }
 
     return <div style={{
