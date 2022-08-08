@@ -61,7 +61,6 @@ export function PastePopup(props: {
         }
     >
         <Editor
-            lineLength={1000}
             value={paths}
             onChange={setpaths}
             style={{

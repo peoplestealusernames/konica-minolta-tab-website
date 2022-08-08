@@ -6,7 +6,6 @@ import { PrintButton } from "./printing/PrintButton"
 export function Editor(props: {
     value?: string
     onChange?: (value: string) => void
-    lineLength?: number //TODO: if -1 remove limit
     style?: React.CSSProperties
     focusStyle?: React.CSSProperties
     selectedLine?: number
@@ -21,7 +20,6 @@ export function Editor(props: {
 
     const inputRef = React.createRef<HTMLTextAreaElement>()
 
-    const lineLength = props.lineLength ? props.lineLength : 20
     const onChange = props.onChange ? props.onChange : () => { }
 
     useEffect(() => { setinput(props.value ? props.value : "") }, [props.value])
@@ -53,51 +51,21 @@ export function Editor(props: {
         setSelected([Start, End])
     }
 
-    function TextChange(e: React.ChangeEvent<HTMLTextAreaElement>) {
-        e.preventDefault()
-        const element = e.target
-        const current = element.value
-        const lines = current.split("\n")
+    useEffect(() => {
+        const element = inputRef.current
+        if (!element)
+            return
 
-        let newStart = element.selectionStart
-        let newEnd = element.selectionEnd
-
-        lines.map((line, i) => {
-            if (line.length > lineLength) {
-                line = line.slice(0, lineLength)
-                lines[i] = line
-            }
-        })
-
-        const Out = lines.join("\n")
-
-        newStart = updatePos(current, newStart)
-        newEnd = updatePos(current, newEnd)
-
-        setSelected([newStart, newEnd])
-
-        setinput(Out)
-        onChange(Out)
-    }
-
-    function updatePos(text: string, i: number) {
-        const lastLine = text.lastIndexOf("\n", i - 1)
-
-        if (lastLine === -1) {
-            return i > lineLength ? lineLength : i
-        } else if (i - lastLine >= lineLength + 1) {
-            return lastLine + lineLength + 1
-        }
-
-        return i
-    }
+        onChange(input)
+    }, [input])
 
     useEffect(() => {
         const element = inputRef.current
         if (!element)
             return
-        element.click()
+
         element.focus()
+        console.log(Selected);
 
         element.setSelectionRange(Selected[0], Selected[1])
     }, [Selected])
@@ -145,7 +113,7 @@ export function Editor(props: {
         <textarea
             ref={inputRef}
             value={input}
-            onChange={TextChange}
+            onChange={(e) => { e.preventDefault(); setinput(e.target.value) }}
             style={{
                 display: "flex",
                 flexGrow: "1",
