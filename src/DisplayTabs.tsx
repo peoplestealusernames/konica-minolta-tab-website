@@ -13,6 +13,8 @@ export function DisplayTabs(props: {
         settabProp({
             width: `calc(${100 / props.Options.Cut}% + 1rem)`,
             fontSize: `${props.Options.FontSize / 7}rem`,
+            borderTopLeftRadius: `${1 + (15 / props.Options.Cut) / 2}rem`,
+            borderTopRightRadius: `${1 + (15 / props.Options.Cut) / 2}rem`,
         })
     }, [props.Options])
 
@@ -87,8 +89,6 @@ export function DisplayTabs(props: {
                     zIndex: i,
                     backgroundColor: "white",
                     color: "black",
-                    borderTopLeftRadius: "3rem",
-                    borderTopRightRadius: "3rem",
                     paddingTop: "0.1rem",
                     fontWeight: "bold",
                     whiteSpace: "nowrap",
