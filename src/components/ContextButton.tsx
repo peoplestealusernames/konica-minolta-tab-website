@@ -69,10 +69,10 @@ export function ContextButton(props: {
             ...Hover ? hoverStyle : {},
             ...Pressed ? pressedStyle : {},
         }}
-            onMouseEnter={() => { setHover(true) }}
-            onMouseLeave={() => { setHover(false) }}
-            onMouseDown={() => { setPressed(true) }}
-            onMouseUp={() => { setPressed(false) }}
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+            onMouseDown={() => setPressed(true)}
+            onMouseUp={() => setPressed(false)}
         >
             {props.children}
             {

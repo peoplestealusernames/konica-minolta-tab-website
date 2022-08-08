@@ -91,9 +91,9 @@ export function TabOption(props: {
             </span>
             <select
                 style={SelectionStyle}
-                value={options.Cut} onChange={(Cut) => {
+                value={options.Cut} onChange={(Cut) =>
                     setoptions({ ...options, Cut: parseInt(Cut.target.value) as Options["Cut"] })
-                }}
+                }
             >
                 <option value="5">5</option>
                 <option value="8">8</option>
@@ -107,10 +107,9 @@ export function TabOption(props: {
             <input
                 value={options.Model}
                 style={SelectionStyle}
-                onChange={(e) => {
-                    const val = e.target.value
-                    setModel(val ? val : "")
-                }}
+                onChange={(e) =>
+                    setModel(e.target.value ? e.target.value : "")
+                }
                 type="text"
             />
         </div>
