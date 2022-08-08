@@ -2,12 +2,6 @@ import { useEffect, useState } from "react"
 import { ContextButton } from "./ContextButton"
 import { MiddleTab } from "./MiddleTab"
 
-export type Options = {
-    Model: string
-    FontSize: number
-    Cut: 5 | 10 | 8
-}
-
 export function FilterTab(props: {
     input: string
     onChange: (input: string) => void
