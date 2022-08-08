@@ -49,13 +49,13 @@ export function RegexReplacer(props: {
             justifyContent: "center",
         }}>
             <button
-                style={inputStyle}
+                style={{ cursor: "pointer", ...inputStyle }}
                 onClick={() => runReplacer()}
             >
                 Replace Next
             </button>
             <button
-                style={inputStyle}
+                style={{ cursor: "pointer", ...inputStyle }}
                 onClick={() => runReplacer(true)}
             >
                 Replace All
