@@ -125,7 +125,9 @@ export function Editor(props: {
                 width: "2.5rem",
                 height: "2.5rem",
                 color: "white",
-                cursor: "pointer"
+                cursor: "pointer",
+                padding: ".5rem",
+                backgroundImage: "radial-gradient(black 0%, black 60%, white 65%, rgba(0,0,0,0) 70%)"
             }} />
         }
         <textarea
