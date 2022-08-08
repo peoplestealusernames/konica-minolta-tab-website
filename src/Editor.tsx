@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { RegexReplacer } from "./components/Regex"
 import { PrintButton } from "./printing/PrintButton"
 
 
@@ -103,6 +104,7 @@ export function Editor(props: {
 
     return <div style={{
         display: "flex",
+        flexDirection: "column",
         border: "0.2rem solid white",
         flexGrow: 1,
         backgroundColor: "black",
@@ -130,6 +132,11 @@ export function Editor(props: {
                 backgroundImage: "radial-gradient(black 0%, black 60%, white 65%, rgba(0,0,0,0) 70%)"
             }} />
         }
+        <RegexReplacer
+            input={input}
+            style={{ maxHeight: "60px", marginBottom: ".7rem" }}
+            onChange={setinput}
+        />
         <textarea
             ref={inputRef}
             value={input}
