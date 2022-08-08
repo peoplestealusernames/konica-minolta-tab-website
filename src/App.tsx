@@ -46,6 +46,10 @@ function App() {
     settabs(newTab)
   }
 
+  useEffect(() => {
+    EditorChange(input)
+  }, [options.Cut])
+
   return (
     <div className='App'>
       <TopBar tabs={tabs} options={options} />
