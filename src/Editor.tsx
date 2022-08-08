@@ -68,7 +68,6 @@ export function Editor(props: {
             return
 
         element.focus()
-        console.log(Selected);
 
         element.setSelectionRange(Selected[0], Selected[1])
     }, [Selected])
