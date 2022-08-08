@@ -83,7 +83,6 @@ export function Editor(props: {
         fontSize: "150%",
         padding: "0.4rem",
         margin: "0",
-        overflowY: "scroll",
         cursor: "text",
         ...props.style,
         ...(focus ? props.focusStyle : {}),
@@ -125,6 +124,10 @@ export function Editor(props: {
                 outline: "none",
                 color: "inherit",
                 fontSize: "inherit",
+                textOverflow: "clip",
+                whiteSpace: "pre",
+                overflowY: "scroll",
+                overflowX: "auto",
                 ...props.textAreaStyle
             }}
             autoComplete="off"
