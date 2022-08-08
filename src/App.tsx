@@ -6,6 +6,7 @@ import { Options, TabOption } from './TabOptions';
 import { PastePopup } from './PastePopup';
 import { TopBar } from './components/TopBar';
 import { FilterTab } from './components/FilterTab';
+import { ConvertToTabs } from './ConvertToTabs';
 
 function App() {
   const [tabs, settabs] = useState<string[][]>([[""]])
@@ -21,34 +22,15 @@ function App() {
     Offset: 2,
   })
 
-  function EditorChange(text: string) {
-    setinput(text)
-    const lines = text.split("\n")
-    const newTab: string[][] = []
-    const TabPerFile = Math.floor(20 / options.Cut) * options.Cut
-
-    lines.map((line, i) => {
-      const n = i % TabPerFile
-      const t = (Math.floor(i / TabPerFile))
-
-      if (n === 0)
-        newTab[t] = []
-
-      newTab[t][n] = line
-    })
-
-    settabs(newTab)
-  }
-
   useEffect(() => {
-    EditorChange(input)
-  }, [options.Cut])
+    settabs(ConvertToTabs(input, options))
+  }, [options.Cut, input])
 
   return (
     <div className='App'>
       <TopBar tabs={tabs} options={options} />
       <PastePopup
-        setInput={EditorChange}
+        setInput={setinput}
         active={pastePopup}
         onClose={() => setpastePopup(false)}
       />
@@ -78,7 +60,7 @@ function App() {
           }}
           selectedLine={selectLine}
           value={input}
-          onChange={EditorChange}
+          onChange={setinput}
           printButton={true}
           placeholder={"Type tabs here."}
           replacer={true}
@@ -93,7 +75,7 @@ function App() {
         >
           <FilterTab
             input={input}
-            onChange={EditorChange}
+            onChange={setinput}
             openPastePopup={() => setpastePopup(true)}
           />
           <TabOption
