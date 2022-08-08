@@ -6,6 +6,7 @@ export type Options = {
     Model: string
     FontSize: number
     Cut: 5 | 10 | 8
+    Offset: number
 }
 
 const SelectionStyle: React.CSSProperties = {
@@ -111,6 +112,25 @@ export function TabOption(props: {
                     setModel(val ? val : "")
                 }}
                 type="text"
+            />
+        </div>
+        <div style={ButtonStyle}>
+            <span style={TextStyle}>
+                Vertical Offset:
+            </span>
+            <input
+                value={options.Offset}
+                style={SelectionStyle}
+                onChange={(e) => {
+                    let val = parseInt(e.target.value)
+                    if (val > 10) {
+                        val = 10
+                    } else if (val < -10) {
+                        val = -10
+                    }
+                    setoptions({ ...options, Offset: val })
+                }}
+                type="number"
             />
         </div>
     </MiddleTab >

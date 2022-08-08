@@ -382,7 +382,7 @@ TabPaper.nNumberOfTab={TabCut}\r
 TabPaper.nSpaceAbove=15\r
 TabPaper.nSpaceBelow=15\r
 TabPaper.nGap=5\r
-TabPaper.nTextPosition=0\r
+TabPaper.nTextPosition={VerticalOffset}\r
 \r
 [OEMDEV]\r
 bPassthruOff=0\r

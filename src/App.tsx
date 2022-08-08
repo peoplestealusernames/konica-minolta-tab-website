@@ -23,7 +23,8 @@ function App() {
   const [options, setoptions] = useState<Options>({
     Model: "C754",
     FontSize: 16,
-    Cut: 5
+    Cut: 5,
+    Offset: 2,
   })
 
   function EditorChange(text: string) {

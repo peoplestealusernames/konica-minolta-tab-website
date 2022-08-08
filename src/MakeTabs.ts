@@ -35,6 +35,7 @@ export function MakeTabs(tabNames: string[][], options: Options): fileReturn[] {
         stri = stri.replaceAll("{Model}", options.Model)
         stri = stri.replaceAll("{FontSize}", options.FontSize.toString())
         stri = stri.replaceAll("{TabCut}", options.Cut.toString())
+        stri = stri.replaceAll("{VerticalOffset}", options.Offset.toString())
 
         for (let i = 0; i < tabNames[k].length; i++) {
             stri = stri.replace(`{${i + 1}}`, tabNames[k][i])
