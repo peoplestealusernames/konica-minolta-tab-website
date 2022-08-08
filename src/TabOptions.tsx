@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { ContextButton } from "./components/ContextButton"
 import { MiddleTab } from "./components/MiddleTab"
 
 export type Options = {

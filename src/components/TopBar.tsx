@@ -3,7 +3,6 @@ import { HiDownload } from "react-icons/hi"
 import { DownloadTabs } from "../MakeTabs"
 import { Options } from "../TabOptions"
 import { useState } from "react"
-import { IconBase } from "react-icons"
 
 export function TopBar(props: {
     children?: React.ReactNode

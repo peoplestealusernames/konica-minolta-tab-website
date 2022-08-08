@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
 import { DisplayTabs } from './DisplayTabs';
-import { fileReturn, MakeTabs } from './MakeTabs';
-import { GrDownload } from "react-icons/gr"
 import { Editor } from './Editor';
 import { Options, TabOption } from './TabOptions';
 import { PastePopup } from './PastePopup';
 import { TopBar } from './components/TopBar';
-import { ContextButton } from './components/ContextButton';
-import { MiddleTab } from './components/MiddleTab';
 import { FilterTab } from './components/FilterTab';
-import { PrintButton } from './printing/PrintButton';
 
 function App() {
   const [tabs, settabs] = useState<string[][]>([[""]])
