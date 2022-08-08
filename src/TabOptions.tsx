@@ -4,7 +4,7 @@ import { MiddleTab } from "./components/MiddleTab"
 export type Options = {
     Model: string
     FontSize: number
-    Cut: 5 | 10 | 8
+    Cut: 5 | 8 | 10 | 15
     Offset: number
 }
 
@@ -97,6 +97,7 @@ export function TabOption(props: {
                 <option value="5">5</option>
                 <option value="8">8</option>
                 <option value="10">10</option>
+                <option value="15">15</option>
             </select>
         </div >
         <div style={ButtonStyle}>
