@@ -13,6 +13,7 @@ export function Editor(props: {
     printButton?: boolean
     printButtonStyle?: React.CSSProperties
     textAreaStyle?: React.CSSProperties
+    replacer?: boolean
 }) {
     const [input, setinput] = useState<string>("")
     const [Selected, setSelected] = useState<[number, number]>([0, 0])
@@ -21,6 +22,8 @@ export function Editor(props: {
     const inputRef = React.createRef<HTMLTextAreaElement>()
 
     const onChange = props.onChange ? props.onChange : () => { }
+
+    const replacer = props.replacer ? props.replacer : false
 
     useEffect(() => { setinput(props.value ? props.value : "") }, [props.value])
     useEffect(() => { if (props.selectedLine !== undefined) SelectLine(props.selectedLine) }, [props.selectedLine])
@@ -105,11 +108,11 @@ export function Editor(props: {
                 backgroundImage: "radial-gradient(black 0%, black 60%, white 65%, rgba(0,0,0,0) 70%)"
             }} />
         }
-        <RegexReplacer
+        {replacer && <RegexReplacer
             input={input}
             style={{ maxHeight: "60px", marginBottom: ".7rem" }}
             onChange={setinput}
-        />
+        />}
         <textarea
             ref={inputRef}
             value={input}

@@ -81,6 +81,7 @@ function App() {
           onChange={EditorChange}
           printButton={true}
           placeholder={"Type tabs here."}
+          replacer={true}
         />
         <div style={{
           display: "flex",
