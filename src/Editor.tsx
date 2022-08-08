@@ -117,7 +117,12 @@ export function Editor(props: {
         ...props.style,
         ...(focus ? props.focusStyle : {}),
     }}
-        onClick={(e) => { if (e.target === e.currentTarget) inputRef.current?.focus() }}
+        data-shadowedit={true}
+        onClick={(e) => {
+            const target = e.target as HTMLDivElement
+            if (target.getAttribute("data-shadowedit"))
+                inputRef.current?.focus()
+        }}
     >
         {props.printButton && <PrintButton
             text={input}
