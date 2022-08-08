@@ -31,10 +31,11 @@ function App() {
     setinput(text)
     const lines = text.split("\n")
     const newTab: string[][] = []
+    const TabPerFile = Math.floor(20 / options.Cut) * options.Cut
 
     lines.map((line, i) => {
-      const n = i % 20
-      const t = (Math.floor(i / 20))
+      const n = i % TabPerFile
+      const t = (Math.floor(i / TabPerFile))
 
       if (n === 0)
         newTab[t] = []
