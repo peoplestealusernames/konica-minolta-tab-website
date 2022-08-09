@@ -19,7 +19,7 @@ function App() {
     Model: "C754",
     FontSize: 16,
     Cut: 5,
-    Offset: 2,
+    Offset: 4,
   })
 
   useEffect(() => {
