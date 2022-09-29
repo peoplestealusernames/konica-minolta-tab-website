@@ -38,23 +38,7 @@ export function DisplayTabs(props: {
         overflowY: "scroll",
         width: "100rem",
         userSelect: "none",
-    }}>{props.tabs.map((tab, tabi) => <div
-        key={tabi}
-        style={{
-            display: "flex",
-            flexDirection: "row",
-            flexWrap: "wrap",
-            paddingLeft: "1.4rem",
-            color: "white",
-            justifyContent: "start",
-            alignContent: "start",
-            width: "100%",
-            paddingRight: ".4rem",
-            marginBottom: "-.5rem",
-            backgroundColor: "#282c34",
-            zIndex: tabi,
-            overflow: "clip"
-        }}>
+    }}>{props.tabs.map((tab, tabi) =>
         <div
             onClick={() => {
                 if (props.setSelectedLine)
@@ -78,6 +62,5 @@ export function DisplayTabs(props: {
         >
             {tab}
         </div>
-    </div >
     )}</div >
 }
