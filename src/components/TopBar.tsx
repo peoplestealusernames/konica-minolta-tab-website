@@ -1,12 +1,11 @@
 import { ContextButton } from "./ContextButton"
 import { HiDownload } from "react-icons/hi"
-import { DownloadTabs } from "../MakeTabs"
 import { Options } from "../TabOptions"
 import { useState } from "react"
 
 export function TopBar(props: {
     children?: React.ReactNode
-    tabs: string[][]
+    tabs: string[]
     options: Options
 }) {
     const [bounce, setbounce] = useState(false)
@@ -54,7 +53,7 @@ export function TopBar(props: {
                     transition: "background-color 300ms linear",
                 }}
                 hoverStyle={{ color: "rgb(0,80,255)", backgroundColor: "white" }}
-                onMouseDown={() => { setbounce(true); DownloadTabs(props.tabs, props.options) }}
+                onMouseDown={() => { setbounce(true); /*TODO: print tabs*/ }}
             >
                 <HiDownload style={{
                     animationFillMode: "both",

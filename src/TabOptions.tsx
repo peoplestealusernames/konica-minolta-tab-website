@@ -49,7 +49,7 @@ const HoverStyle: React.CSSProperties = {
 
 export function TabOption(props: {
     options: Options
-    tabs: string[][]
+    tabs: string[]
     onChange?: (newOptions: Options) => void
 }) {
     const [options, setoptions] = useState<Options>(props.options)

@@ -6,10 +6,9 @@ import { Options, TabOption } from './TabOptions';
 import { PastePopup } from './PastePopup';
 import { TopBar } from './components/TopBar';
 import { FilterTab } from './components/FilterTab';
-import { ConvertToTabs } from './ConvertToTabs';
 
 function App() {
-  const [tabs, settabs] = useState<string[][]>([[""]])
+  const [tabs, settabs] = useState<string[]>([])
   const [pastePopup, setpastePopup] = useState(false)
   const [input, setinput] = useState<string>("")
 
@@ -23,8 +22,8 @@ function App() {
   })
 
   useEffect(() => {
-    settabs(ConvertToTabs(input, options))
-  }, [options.Cut, input])
+    settabs(input.split("\n"))
+  }, [input])
 
   return (
     <div className='App'>
