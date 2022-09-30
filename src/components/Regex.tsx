@@ -21,7 +21,7 @@ export function RegexReplacer(props: {
     }
 
     function runReplacer(global = false) {
-        if (!matcher.current?.value || !replacer.current?.value)
+        if (matcher.current?.value === undefined || replacer.current?.value === undefined)
             throw new Error("Could not get matcher or replacer value")
 
         const match = RegExp(matcher.current.value, global ? "g" : "")
