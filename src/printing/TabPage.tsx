@@ -29,7 +29,6 @@ export function TabPage(props: { tabs: string[], options: Options }) {
                     right: ".1in", //TODO: impliment offset
                     textAlign: "center",
                     writingMode: "vertical-lr",
-                    backgroundColor: (i % 2) === 0 ? "gold" : "gray"
                 }}>
                     {tab}
                 </div>
