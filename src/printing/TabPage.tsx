@@ -17,8 +17,8 @@ export function TabPage(props: { tabs: string[], options: Options }) {
         flexDirection: "column",
     }}
     >
-        <Page>
-            {props.tabs.map((tab, i) =>
+        {props.tabs.map((tab, i) =>
+            <Page>
                 <div style={{
                     display: "flex",
                     margin: "0px",
@@ -38,9 +38,8 @@ export function TabPage(props: { tabs: string[], options: Options }) {
                 }}>
                     {tab}
                 </div>
-            )
-            }
-        </Page >
+            </Page >
+        )}
     </div >
 }
 
