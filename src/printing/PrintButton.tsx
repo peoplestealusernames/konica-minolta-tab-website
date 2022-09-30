@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BsFillPrinterFill } from "react-icons/bs"
 import { ContextButton } from "../components/ContextButton";
+import { PrintJSX } from "./PrintJSX";
 
 export function PrintButton(props: {
     text: string
@@ -19,35 +20,16 @@ export function PrintButton(props: {
 
         const padding = Math.floor(Math.log10(lines.length)) + 1
 
-        printWindow.document.open("text/plain")
-        printWindow.document.write("<!DOCTYPE html>")
-        ReactDOM.render(
-            <html>
-                <head>
-                    <style>
-                        {`
-                        @page {
-                            margin: 0px
-                        }
-                        `}
-                    </style>
-                </head>
-                <div style={{ margin: "5px" }}>
-                    {lines.map((e, i) => <div style={{
-                        width: "100%",
-                        borderBottom: "1px solid black",
-                    }}>
-                        {`${(i + 1).toString().padStart(padding, "0")
-                            }:   ${e}`}
-                    </div>
-                    )}
-                </div>
-            </html>
-            , printWindow.document)
-
-        printWindow.focus();
-        printWindow.print();
-        printWindow.close();
+        PrintJSX(<div style={{ margin: "5px" }}>
+            {lines.map((e, i) => <div style={{
+                width: "100%",
+                borderBottom: "1px solid black",
+            }}>
+                {`${(i + 1).toString().padStart(padding, "0")
+                    }:   ${e}`}
+            </div>
+            )}
+        </div>)
     }
 
 
