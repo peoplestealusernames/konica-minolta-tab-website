@@ -20,9 +20,7 @@ export function PrintJSX(element: React.ReactNode) {
                     `}
                 </style>
             </head>
-            <div style={{ margin: "5px" }}>
-                {element}
-            </div>
+            {element}
         </html>
         , printWindow.document)
 
