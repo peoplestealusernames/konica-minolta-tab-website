@@ -2,6 +2,7 @@ import { ContextButton } from "./ContextButton"
 import { HiDownload } from "react-icons/hi"
 import { Options } from "../TabOptions"
 import { useState } from "react"
+import { PrintTab } from "../printing/PrintTab"
 
 export function TopBar(props: {
     children?: React.ReactNode
@@ -45,6 +46,18 @@ export function TopBar(props: {
             right: "1rem",
             fontSize: "2.5rem",
         }} >
+            <PrintTab
+                style={{
+                    position: "relative",
+                    width: "2.5rem",
+                    height: "2.5rem",
+                    color: "white",
+                    cursor: "pointer",
+                    padding: ".5rem",
+                    backgroundImage: "radial-gradient(black 0%, black 60%, white 65%, rgba(0,0,0,0) 70%)"
+                }}
+                options={props.options} tabs={props.tabs}
+            />
             <ContextButton
                 style={{
                     color: "rgb(10,90,255)",
