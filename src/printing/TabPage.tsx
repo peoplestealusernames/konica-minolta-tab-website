@@ -3,7 +3,7 @@ import { Options } from "../TabOptions";
 
 
 export function TabPage(props: { tabs: string[], options: Options }) {
-    const Dist = (10.8) / props.options.Cut
+    const Dist = (10) / props.options.Cut
 
     return <div style={{
         display: "flex",
@@ -25,7 +25,7 @@ export function TabPage(props: { tabs: string[], options: Options }) {
                     position: "absolute",
                     rotate: "",
                     height: `${Dist}in`,
-                    top: `${Dist * (i % props.options.Cut) + .1}in`,
+                    top: `${Dist * (i % props.options.Cut) + .5}in`,
                     right: `${props.options.Offset}mm`, //TODO: impliment offset
                     textAlign: "center",
                     writingMode: "vertical-lr",
