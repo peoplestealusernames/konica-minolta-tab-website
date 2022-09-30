@@ -26,5 +26,4 @@ export function PrintJSX(element: React.ReactNode) {
 
     printWindow.focus();
     printWindow.print();
-    printWindow.close();
 }
