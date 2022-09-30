@@ -46,7 +46,7 @@ function Page(props: {
         position: "relative",
         margin: "0in",
         padding: "0px",
-        width: "8.5in",//TODO: change back
+        width: "9in",
         height: "11in",
         backgroundColor: "white",
         ...props.style
