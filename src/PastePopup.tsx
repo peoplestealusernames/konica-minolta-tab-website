@@ -84,7 +84,8 @@ export function PastePopup(props: {
             placeholder={"Paste file paths here\n" +
                 "ex: C:\\\\b\\a\\c.txt or /a/b/c.pdf\n" +
                 "On windows file explorer\n" +
-                "select files -> shift right click -> copy all paths -> paste here"}
+                "select files -> shift right click -> copy all paths -> paste here\n" +
+                "Files will be arranged in order when generated"}
         />
     </StyledPopup>
 }
