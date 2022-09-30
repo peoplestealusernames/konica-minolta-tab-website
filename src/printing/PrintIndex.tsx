@@ -10,10 +10,6 @@ export function PrintIndex(props: {
 }) {
 
     function Print() {
-        const printWindow = window.open();
-        if (!printWindow)
-            throw new Error("Print error: Cannot open window.")
-
         const lines = props.text.split("\n")
         if (lines.length <= 0)
             throw new Error("Print error: Text is Empty")
