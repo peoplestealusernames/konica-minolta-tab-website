@@ -25,7 +25,7 @@ export function TabPage(props: { tabs: string[], options: Options }) {
                     position: "absolute",
                     rotate: "",
                     height: `${Dist}in`,
-                    top: `${Dist * i + .1}in`,
+                    top: `${Dist * (i % props.options.Cut) + .1}in`,
                     right: ".1in", //TODO: impliment offset
                     textAlign: "center",
                     writingMode: "vertical-lr",
