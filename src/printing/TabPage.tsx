@@ -20,7 +20,6 @@ export function TabPage(props: { tabs: string[], options: Options }) {
         {props.tabs.map((tab, i) =>
             <Page>
                 <div style={{
-                    display: "flex",
                     margin: "0px",
                     padding: "0px",
                     position: "absolute",
@@ -29,10 +28,6 @@ export function TabPage(props: { tabs: string[], options: Options }) {
                     top: `${Dist * i + .1}in`,
                     right: ".1in",
                     textAlign: "center",
-                    alignContent: "center",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    justifyItems: "center",
                     writingMode: "vertical-lr",
                     backgroundColor: (i % 2) === 0 ? "gold" : "gray"
                 }}>
