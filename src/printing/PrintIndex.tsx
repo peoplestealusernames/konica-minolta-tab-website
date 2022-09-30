@@ -4,7 +4,7 @@ import { BsFillPrinterFill } from "react-icons/bs"
 import { ContextButton } from "../components/ContextButton";
 import { PrintJSX } from "./PrintJSX";
 
-export function PrintButton(props: {
+export function PrintIndex(props: {
     text: string
     style?: React.CSSProperties
 }) {

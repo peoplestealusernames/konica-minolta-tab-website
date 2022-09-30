@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { RegexReplacer } from "./components/Regex"
-import { PrintButton } from "./printing/PrintButton"
+import { PrintIndex } from "./printing/PrintIndex"
 
 
 export function Editor(props: {
@@ -93,7 +93,7 @@ export function Editor(props: {
                 inputRef.current?.focus()
         }}
     >
-        {props.printButton && <PrintButton
+        {props.printButton && <PrintIndex
             text={input}
             style={{
                 left: "36rem",
