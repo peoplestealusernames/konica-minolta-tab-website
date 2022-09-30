@@ -46,7 +46,7 @@ function Page(props: {
         position: "relative",
         margin: "0in",
         padding: "0px",
-        width: "9in",
+        width: "9.11in",
         height: "11in",
         backgroundColor: "white",
         ...props.style
