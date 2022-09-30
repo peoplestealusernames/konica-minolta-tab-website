@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { ContextButton } from "./ContextButton"
 import { MiddleTab } from "./MiddleTab"
+import { sortWithNumber } from "./sortWithNumber"
 
 export function FilterTab(props: {
     input: string
@@ -49,8 +50,4 @@ export function FilterTab(props: {
             Sort tab names
         </ContextButton>
     </MiddleTab >
-}
-
-function sortWithNumber(a: string, b: string) {
-    return a.localeCompare(b, undefined, { numeric: true })
 }
