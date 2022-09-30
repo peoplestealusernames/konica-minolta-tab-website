@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ContextButton } from "./components/ContextButton";
 import { StyledTab } from "./components/popup/StyledTab";
+import { sortWithNumber } from "./components/sortWithNumber";
 import { StyledPopup } from "./components/StyledPopup";
 import { Editor } from "./Editor";
 
@@ -24,7 +25,7 @@ export function PastePopup(props: {
             return file
         })
 
-        props.setInput(out.join("\n"))
+        props.setInput(out.sort(sortWithNumber).join("\n"))
         props.onClose()
     }
 
