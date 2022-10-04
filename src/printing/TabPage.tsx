@@ -14,11 +14,16 @@ export function TabPage(props: { tabs: string[], options: Options }) {
         alignItems: "center",
         color: "black",
         fontSize: `${props.options.FontSize}pt`,
+        fontWeight: "bold",
         flexDirection: "column",
     }}
     >
         {props.tabs.map((tab, i) =>
-            <Page>
+            <Page
+                style={{
+                    backgroundColor: i % 2 === 1 ? "gold" : "black"
+                }}
+            >
                 <div style={{
                     margin: "0px",
                     padding: "0px",
@@ -46,7 +51,7 @@ function Page(props: {
         position: "relative",
         margin: "0in",
         padding: "0px",
-        width: "9.11in",
+        width: "8.5in",
         height: "11in",
         backgroundColor: "white",
         ...props.style
