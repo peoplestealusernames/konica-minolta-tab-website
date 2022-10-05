@@ -16,7 +16,7 @@ function App() {
   const [selectLine, setselectLine] = useState<number>(1)
 
   const [options, setoptions] = useState<Options>({
-    Model: "C754",
+    Model: "KONICA MINOLTA C754SeriesPCL",
     FontSize: 16,
     Cut: 5,
     Offset: 4,
