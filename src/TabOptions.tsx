@@ -104,13 +104,16 @@ export function TabOption(props: {
             <span style={TextStyle}>
                 Type Model:<br />(ex: C754 or C759)
             </span>
-            <input
+            <textarea
                 value={options.Model}
-                style={SelectionStyle}
+                style={{ resize: "none", width: "80%" }}
                 onChange={(e) =>
                     setModel(e.target.value ? e.target.value : "")
                 }
-                type="text"
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck="false"
             />
         </div>
         <div style={ButtonStyle}>
