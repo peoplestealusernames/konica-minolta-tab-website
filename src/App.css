@@ -1,0 +1,17 @@
+.App {
+  display: flex;
+  text-align: center;
+  vertical-align: center;
+  flex-direction: column;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.Editor {
+  text-align: left;
+  flex-direction: column;
+  justify-content: center;
+  vertical-align: center;
+}
