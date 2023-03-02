@@ -8,7 +8,7 @@ export function Buttons(props: {
     text: string,
     settext: React.Dispatch<React.SetStateAction<string>>
 }) {
-    return <Grid container spacing={3} style={{ alignItems: "left", margin: "2rem" }}>
+    return <Grid container xs={5} spacing={3} style={{ alignItems: "left", margin: "2rem" }}>
         <Grid item>
             <Imports text={props.text} settext={props.settext} />
         </Grid>
