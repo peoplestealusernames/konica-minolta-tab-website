@@ -33,12 +33,16 @@ export function Tools(props: {
             </Tooltip>
             <Tooltip style={{ marginRight: ".75rem" }}
                 title={<Typography>
-                    Using a setting file autofill settings
+                    Removes tab and spaces at the start of everyline.
                 </Typography>}
                 arrow
             >
-                <Button variant="outlined">
-                    Settings
+                <Button variant="outlined"
+                    onClick={() =>
+                        props.settext(removeLeadingWhitespace(props.text))
+                    }
+                >
+                    Remove spaces
                 </Button>
             </Tooltip>
         </CardContent >
@@ -51,4 +55,10 @@ function orderString(text: string): string {
 
 function sortWithNumber(a: string, b: string) {
     return a.localeCompare(b, undefined, { numeric: true })
+}
+
+function removeLeadingWhitespace(input: string): string {
+    const regex = /^\s*/gm;
+    const output = input.replace(regex, '');
+    return output;
 }
