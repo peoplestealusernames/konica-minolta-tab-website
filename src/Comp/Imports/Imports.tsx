@@ -13,7 +13,7 @@ export function Imports(props: {
     settext: React.Dispatch<React.SetStateAction<string>>
 }) {
     const [pathPopup, setpathPopup] = useState<boolean>(false)
-    const [settingPopup, setsettingPopup] = useState<boolean>(true)
+    const [settingPopup, setsettingPopup] = useState<boolean>(false)
 
     return <Card>
         <CardHeader
@@ -39,7 +39,7 @@ export function Imports(props: {
                 </Typography>}
                 arrow
             >
-                <Button variant="outlined">
+                <Button variant="outlined" onClick={() => setsettingPopup(!settingPopup)}>
                     Settings
                 </Button>
             </Tooltip>
