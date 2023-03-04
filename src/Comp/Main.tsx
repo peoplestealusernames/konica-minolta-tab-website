@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Buttons } from "./Buttons";
 import { Editor } from "./Editor";
+import { Tabs } from "./Tabs";
 
 export function Main() {
 
@@ -12,5 +13,6 @@ export function Main() {
     }}>
         <Editor text={text} settext={settext} />
         <Buttons text={text} settext={settext} />
+        <Tabs text={text} />
     </div>
 }
