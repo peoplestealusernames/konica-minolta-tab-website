@@ -11,6 +11,8 @@ export function PastePopup(props: {
 }) {
     const [paths, setpaths] = useState<string>("")
 
+    const [focus, setFocus] = useState(false)
+
     function GeneratePaths() {
         const out = paths.split("\n").map((e, i) => {
             let file = e.split(/(\\|\/)/).pop()
@@ -60,9 +62,11 @@ export function PastePopup(props: {
             </ContextButton>
         }
     >
-        <Editor
+        <textarea
             value={paths}
-            onChange={setpaths}
+            onChange={(e) => { e.preventDefault(); setpaths(e.target.value) }}
+            onFocus={() => setFocus(true)}
+            onBlur={() => setFocus(false)}
             style={{
                 fontSize: "1.8rem",
                 overflow: "auto",
@@ -76,9 +80,9 @@ export function PastePopup(props: {
                 border: "none",
                 transition: "box-shadow 200ms linear",
                 boxShadow: `0 0 0.1rem 0.1rem lightgrey`,
-            }}
-            focusStyle={{
-                boxShadow: `0 0 0.2rem 0.2rem red`,
+                ...(focus ? {
+                    boxShadow: `0 0 0.2rem 0.2rem red`,
+                } : {})
             }}
             placeholder={"Paste file paths here\n" +
                 "ex: C:\\\\b\\a\\c.txt or /a/b/c.pdf\n" +

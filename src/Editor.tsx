@@ -6,8 +6,6 @@ import { PrintButton } from "./printing/PrintButton"
 export function Editor(props: {
     value?: string
     onChange?: (value: string) => void
-    style?: React.CSSProperties
-    focusStyle?: React.CSSProperties
     selectedLine?: number
     placeholder?: string,
     printButton?: boolean
@@ -75,24 +73,9 @@ export function Editor(props: {
     return <div style={{
         display: "flex",
         flexDirection: "column",
-        border: "0.2rem solid white",
-        flexGrow: 1,
-        backgroundColor: "black",
-        color: "white",
-        fontSize: "150%",
-        padding: "0.4rem",
-        margin: "0",
-        cursor: "text",
-        ...props.style,
-        ...(focus ? props.focusStyle : {}),
-    }}
-        data-shadowedit={true}
-        onClick={(e) => {
-            const target = e.target as HTMLDivElement
-            if (target.getAttribute("data-shadowedit"))
-                inputRef.current?.focus()
-        }}
-    >
+        width: "45rem",
+        margin: "2.5rem",
+    }}>
         {props.printButton && <PrintButton
             text={input}
             style={{
@@ -102,7 +85,7 @@ export function Editor(props: {
                 backgroundColor: "rgb(20,20,20)",
                 outline: "none",
                 border: ".2rem solid rgb(75,75,85)",
-                borderBottom: "",
+                borderBottom: "0",
                 cursor: "pointer",
                 padding: ".5rem",
                 borderRadius: "",
@@ -112,35 +95,66 @@ export function Editor(props: {
         }
         {replacer && <RegexReplacer
             input={input}
-            style={{ maxHeight: "60px", marginBottom: ".7rem" }}
+            style={{
+                flexGrow: "0",
+                borderBottom: ".2rem solid rgb(75,75,85)",
+            }}
+            inputStyle={{
+                border: ".1rem solid rgb(75,75,85)",
+            }}
             onChange={setinput}
         />}
-        <textarea
-            ref={inputRef}
-            value={input}
-            onChange={(e) => { e.preventDefault(); setinput(e.target.value) }}
-            style={{
-                display: "flex",
-                flexGrow: "1",
-                backgroundColor: "transparent",
-                border: "none",
-                outline: "none",
-                color: "inherit",
-                fontSize: "inherit",
-                textOverflow: "clip",
-                whiteSpace: "pre",
-                overflowY: "scroll",
-                overflowX: "auto",
-                resize: "none",
-                ...props.textAreaStyle
+        <div style={{
+            display: "flex",
+            flexDirection: "column",
+            backgroundColor: "black",
+            cursor: "text",
+            flexGrow: 1,
+            border: "0.2rem solid grey",
+            padding: "0.5rem",
+            transition: "border 50ms ease-in",
+            background: "rgb(40,40, 45)",
+            fontSize: "2rem",
+            color: "rgb(255,255,255)",
+            outline: "none",
+            ...(focus ? {
+                border: "0.2rem solid white",
+            } : {})
+        }}
+            data-shadowedit={true}
+            onClick={(e) => {
+                const target = e.target as HTMLDivElement
+                if (target.getAttribute("data-shadowedit"))
+                    inputRef.current?.focus()
             }}
-            autoComplete="off"
-            autoCorrect="off"
-            autoCapitalize="off"
-            spellCheck="false"
-            onFocus={() => setFocus(true)}
-            onBlur={() => setFocus(false)}
-            placeholder={props.placeholder}
-        />
+        >
+            <textarea
+                ref={inputRef}
+                value={input}
+                onChange={(e) => { e.preventDefault(); setinput(e.target.value) }}
+                style={{
+                    display: "flex",
+                    flexGrow: "1",
+                    backgroundColor: "transparent",
+                    border: "none",
+                    outline: "none",
+                    color: "inherit",
+                    fontSize: "inherit",
+                    textOverflow: "clip",
+                    whiteSpace: "pre",
+                    overflowY: "scroll",
+                    overflowX: "auto",
+                    resize: "none",
+                    ...props.textAreaStyle
+                }}
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck="false"
+                onFocus={() => setFocus(true)}
+                onBlur={() => setFocus(false)}
+                placeholder={props.placeholder}
+            />
+        </div>
     </div >
 }

@@ -43,22 +43,7 @@ function App() {
         flexDirection: "row",
         overflow: "auto",
       }}>
-        <Editor style={{
-          width: "40rem",
-          flexGrow: 0,
-          margin: "3rem",
-          border: "0.2rem solid grey",
-          borderRadius: "1.0 rem",
-          padding: "1rem",
-          transition: "border 50ms ease-in",
-          background: "rgb(40,40, 45)",
-          fontSize: "2.2rem",
-          color: "rgb(255,255,255)",
-          outline: "none",
-        }}
-          focusStyle={{
-            border: "0.2rem solid white",
-          }}
+        <Editor
           selectedLine={selectLine}
           value={input}
           onChange={setinput}
