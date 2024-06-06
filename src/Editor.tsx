@@ -31,7 +31,7 @@ export function Editor(props: {
     function SelectLine(lineIndex: number) {
         const lines = input.split("\n")
 
-        if (lines.length == 1) {
+        if (lines.length === 1) {
             setSelected([0, input.length - 1])
             return
         }

@@ -1,4 +1,3 @@
-import { BsFillPrinterFill } from "react-icons/bs"
 import { ContextButton } from "../components/ContextButton";
 
 export function PrintButton(props: {
