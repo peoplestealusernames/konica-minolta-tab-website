@@ -41,17 +41,9 @@ export function PrintButton(props: {
     }
 
 
-    return <ContextButton style={{
-        display: "flex",
-        position: "absolute",
-        top: "0",
-        right: "0",
-        width: "1rem",
-        height: "1rem",
-        ...props.style
-    }}
+    return <ContextButton style={props.style}
         onMouseDown={Print}
     >
-        <BsFillPrinterFill style={{ width: "100%", height: "100%" }} />
-    </ContextButton>
+        Print Index
+    </ContextButton >
 }

@@ -96,14 +96,18 @@ export function Editor(props: {
         {props.printButton && <PrintButton
             text={input}
             style={{
-                left: "36rem",
-                top: "3.3rem",
-                width: "2.5rem",
-                height: "2.5rem",
-                color: "white",
+                display: "flex",
+                height: "1.0rem",
+                color: "rgb(200,200,210)",
+                backgroundColor: "rgb(20,20,20)",
+                outline: "none",
+                border: ".2rem solid rgb(75,75,85)",
+                borderBottom: "",
                 cursor: "pointer",
                 padding: ".5rem",
-                backgroundImage: "radial-gradient(black 0%, black 60%, white 65%, rgba(0,0,0,0) 70%)"
+                borderRadius: "",
+                margin: "0",
+                fontSize: "1.2rem"
             }} />
         }
         {replacer && <RegexReplacer
