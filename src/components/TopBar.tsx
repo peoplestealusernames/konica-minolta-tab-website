@@ -15,13 +15,11 @@ export function TopBar(props: {
         display: "flex",
         position: "static",
         width: "100vw",
-        height: "5rem",
+        height: "4rem",
         alignItems: "center",
         justifyItems: "center",
         justifyContent: "center",
         background: "black",
-        marginBottom: "0.6rem",
-        boxShadow: "0 0.1rem 0.5rem 0.5rem white",
         userSelect: "none",
     }}>
         <div className='Logo' style={{
@@ -31,7 +29,7 @@ export function TopBar(props: {
             justifyItems: "center",
             justifyContent: "left",
             left: "1rem",
-            fontSize: "3.5rem",
+            fontSize: "3.25rem",
             fontWeight: "bold",
             color: "white",
             marginLeft: ".3rem",
