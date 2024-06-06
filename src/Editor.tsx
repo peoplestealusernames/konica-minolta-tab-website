@@ -127,6 +127,7 @@ export function Editor(props: {
                 whiteSpace: "pre",
                 overflowY: "scroll",
                 overflowX: "auto",
+                resize: "none",
                 ...props.textAreaStyle
             }}
             autoComplete="off"
