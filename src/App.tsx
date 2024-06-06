@@ -44,20 +44,20 @@ function App() {
         overflow: "auto",
       }}>
         <Editor style={{
-          width: "35rem",
+          width: "40rem",
           flexGrow: 0,
           margin: "3rem",
           border: "0.2rem solid grey",
-          borderRadius: "1.5rem",
+          borderRadius: "1.0 rem",
           padding: "1rem",
-          transition: "box-shadow 200ms ease-in",
+          transition: "border 50ms ease-in",
           background: "rgb(40,40, 45)",
           fontSize: "2.2rem",
           color: "rgb(255,255,255)",
           outline: "none",
         }}
           focusStyle={{
-            boxShadow: `0 0 0.5rem 0.3rem red`,
+            border: "0.2rem solid white",
           }}
           selectedLine={selectLine}
           value={input}
