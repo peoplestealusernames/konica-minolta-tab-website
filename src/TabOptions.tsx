@@ -6,6 +6,7 @@ export type Options = {
     FontSize: number
     Cut: 5 | 8 | 10 | 15
     Offset: number
+    bold: boolean
 }
 
 const SelectionStyle: React.CSSProperties = {
@@ -13,7 +14,6 @@ const SelectionStyle: React.CSSProperties = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    flex: 1,
     width: "15rem",
     textAlign: "center",
     fontSize: "1.6rem",
@@ -102,7 +102,7 @@ export function TabOption(props: {
         </div >
         <div style={ButtonStyle}>
             <span style={TextStyle}>
-                Type Model:<br />(ex: C754 or C759)
+                Model:
             </span>
             <textarea
                 value={options.Model}
@@ -133,6 +133,19 @@ export function TabOption(props: {
                     setoptions({ ...options, Offset: val })
                 }}
                 type="number"
+            />
+        </div>
+        <div style={{ ...ButtonStyle, flexDirection: "row", justifyContent: "center" }}>
+            <span style={{ ...TextStyle, width: "", paddingRight: "2rem" }}>
+                Bold:
+            </span>
+            <input
+                checked={options.bold}
+                style={{ ...SelectionStyle, width: "" }}
+                onChange={(e) => {
+                    setoptions({ ...options, bold: e.target.checked })
+                }}
+                type="checkbox"
             />
         </div>
     </MiddleTab >

@@ -20,6 +20,7 @@ function App() {
     FontSize: 16,
     Cut: 5,
     Offset: 4,
+    bold: true,
   })
 
   useEffect(() => {
