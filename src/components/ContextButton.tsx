@@ -51,21 +51,20 @@ export function ContextButton(props: {
 
     return (
         <div style={{
-            ...{
-                position: "relative",
-                display: "flex",
-                margin: "0.4rem",
-                padding: "0.3rem",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyItems: "center",
-                justifyContent: "center",
-                borderRadius: "0.6rem",
-                color: "white",
-                userSelect: "none",
-                transition: "color 100ms ease-in",
-                cursor: "pointer"
-            }, ...props.style,
+            position: "relative",
+            display: "flex",
+            margin: "0.4rem",
+            padding: "0.3rem",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyItems: "center",
+            justifyContent: "center",
+            borderRadius: "0.6rem",
+            color: "white",
+            userSelect: "none",
+            transition: "color 100ms ease-in",
+            cursor: "pointer",
+            ...props.style,
             ...Hover ? hoverStyle : {},
             ...Pressed ? pressedStyle : {},
         }}
