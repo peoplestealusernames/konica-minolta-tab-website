@@ -3,14 +3,29 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  background-color: rgb(40, 44, 52);
+  background-color: #17181a;
   padding: 0%;
   margin: 0%;
   width: 100vw;
   height: 100vh;
   border: none;
   scrollbar-color: grey;
-  box-shadow: 0 0 0.2rem 0.3rem lightgrey 0 0 0.3rem 0.5rem black;
+}
+
+input {
+  outline: none;
+  border: none;
+  padding: 0px;
+}
+
+select {
+  outline: none;
+  border: none;
+  padding: 0px;
+}
+
+td {
+  padding: 0px;
 }
 
 .App-logo {

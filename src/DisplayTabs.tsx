@@ -51,7 +51,6 @@ export function DisplayTabs(props: {
             width: "100%",
             paddingRight: ".4rem",
             marginBottom: "-.5rem",
-            backgroundColor: "#282c34",
             zIndex: tabi,
             overflow: "clip"
         }}>
@@ -63,14 +62,13 @@ export function DisplayTabs(props: {
             alignItems: "center",
             alignSelf: "center",
             justifySelf: "center",
-            backgroundColor: "rgb(40, 40, 45)",
+            background: "#202123",
             marginLeft: "-1.4rem",
             marginRight: "-.4rem",
-            paddingRight: "1.3rem",
-            border: "0.3rem solid white",
+            paddingRight: "1.8rem",
             fontSize: "2rem",
             fontWeight: "bold",
-            marginBottom: "0.4rem",
+            marginBottom: "1.0rem",
         }}>
             Tab File:
             ({tabi + 1}/{props.tabs.length})

@@ -1,24 +1,15 @@
-import React, { useRef, useState } from "react";
+import React from "react";
+import { ContextButton } from "./ContextButton";
 
 export function RegexReplacer(props: {
     input: string,
     onChange: (output: string) => void
     style?: React.CSSProperties
     inputStyle?: React.CSSProperties
+    buttonStyle?: React.CSSProperties
 }) {
     const matcher = React.createRef<HTMLInputElement>()
     const replacer = React.createRef<HTMLInputElement>()
-
-    const inputStyle: React.CSSProperties = {
-        display: "flex",
-        flexGrow: 1,
-        flexBasis: 0,
-        color: "rgb(200,200,210)",
-        backgroundColor: "rgb(20,20,20)",
-        outline: "none",
-        border: ".1rem solid rgb(75,75,85)",
-        ...props.inputStyle
-    }
 
     function runReplacer(global = false) {
         if (!matcher.current?.value || !replacer.current?.value)
@@ -32,34 +23,32 @@ export function RegexReplacer(props: {
         display: "flex",
         flex: 1,
         flexDirection: "column",
-        backgroundColor: "black",
-        border: inputStyle.border,
         ...props.style
     }}>
         <input ref={matcher}
-            style={inputStyle}
+            style={props.inputStyle}
             placeholder={"Search for"}
         />
         <input ref={replacer}
-            style={inputStyle}
+            style={props.inputStyle}
             placeholder={"Replace with"}
         />
         <span style={{
             display: "flex",
             justifyContent: "center",
         }}>
-            <button
-                style={{ cursor: "pointer", ...inputStyle }}
-                onClick={() => runReplacer()}
+            <ContextButton
+                style={props.buttonStyle}
+                onMouseDown={() => runReplacer()}
             >
                 Replace Next
-            </button>
-            <button
-                style={{ cursor: "pointer", ...inputStyle }}
-                onClick={() => runReplacer(true)}
+            </ContextButton>
+            <ContextButton
+                style={props.buttonStyle}
+                onMouseDown={() => runReplacer(true)}
             >
                 Replace All
-            </button>
+            </ContextButton>
         </span>
     </div>
 }

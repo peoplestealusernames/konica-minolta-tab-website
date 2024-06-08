@@ -76,50 +76,75 @@ export function Editor(props: {
         width: "45rem",
         margin: "2.5rem",
     }}>
-        {props.printButton && <PrintButton
-            text={input}
-            style={{
-                display: "flex",
-                height: "1.0rem",
-                color: "rgb(200,200,210)",
-                backgroundColor: "rgb(20,20,20)",
-                outline: "none",
-                border: ".2rem solid rgb(75,75,85)",
-                borderBottom: "0",
-                cursor: "pointer",
-                padding: ".5rem",
-                borderRadius: "",
-                margin: "0",
-                fontSize: "1.2rem"
-            }} />
-        }
-        {replacer && <RegexReplacer
-            input={input}
-            style={{
-                flexGrow: "0",
-                borderBottom: ".2rem solid rgb(75,75,85)",
-            }}
-            inputStyle={{
-                border: ".1rem solid rgb(75,75,85)",
-            }}
-            onChange={setinput}
-        />}
+        <div style={{
+            display: "flex",
+            flexDirection: "column",
+            margin: "1.25rem",
+            marginTop: "",
+            backgroundColor: "#202123",
+            borderRadius: "1.25rem",
+        }}>
+            {props.printButton && <PrintButton
+                text={input}
+                style={{
+                    display: "flex",
+                    height: "1.0rem",
+                    color: "white",
+                    backgroundColor: "inherit",
+                    outline: "none",
+                    cursor: "pointer",
+                    padding: ".5rem",
+                    margin: "0.3rem",
+                    marginBottom: "0rem",
+                    fontSize: "1.5rem",
+                    fontWeight: "bold",
+                }} />
+            }
+            {replacer && <RegexReplacer
+                input={input}
+                style={{
+                    flexGrow: "0",
+                    marginTop: "0rem",
+                    margin: "0.2rem"
+                }}
+                inputStyle={{
+                    margin: "0.15rem",
+                    display: "flex",
+                    flexGrow: 1,
+                    color: "rgb(200,200,210)",
+                    backgroundColor: "#494a4c",
+                    outline: "none",
+                    border: "none",
+                    marginRight: "0.5rem",
+                    marginLeft: "0.5rem",
+                }}
+                buttonStyle={{
+                    margin: "0.15rem",
+                    display: "flex",
+                    flexGrow: 1,
+                    backgroundColor: "inherit",
+                    outline: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    fontSize: "1.1rem",
+                    fontWeight: "bold",
+                }}
+                onChange={setinput}
+            />}
+        </div>
         <div style={{
             display: "flex",
             flexDirection: "column",
             backgroundColor: "black",
             cursor: "text",
             flexGrow: 1,
-            border: "0.2rem solid grey",
-            padding: "0.5rem",
+            padding: "1.0rem",
             transition: "border 50ms ease-in",
-            background: "rgb(40,40, 45)",
+            background: "#202123",
             fontSize: "2rem",
-            color: "rgb(255,255,255)",
+            color: "white",
+            borderRadius: "1.5rem",
             outline: "none",
-            ...(focus ? {
-                border: "0.2rem solid white",
-            } : {})
         }}
             data-shadowedit={true}
             onClick={(e) => {
@@ -145,6 +170,7 @@ export function Editor(props: {
                     overflowY: "scroll",
                     overflowX: "auto",
                     resize: "none",
+                    background: "#202123",
                     ...props.textAreaStyle
                 }}
                 autoComplete="off"

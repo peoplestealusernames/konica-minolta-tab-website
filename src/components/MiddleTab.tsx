@@ -10,11 +10,11 @@ export function MiddleTab(props: {
     return <StyledTab
         masterStyle={{
             height: "fit-content",
-            border: "0.2rem solid grey",
+            border: "",
             borderRadius: "1.5rem",
             padding: "1rem",
             transition: "box-shadow 200ms ease-in",
-            background: "rgb(40,40, 45)",
+            background: "#202123",
             fontSize: "1.4rem",
             color: "rgb(255,255,255)",
             outline: "none",
@@ -25,6 +25,9 @@ export function MiddleTab(props: {
             alignContent: "center",
             alignItems: "center"
         }}
+        titleStyle={
+            { color: "#6e6f71" }
+        }
         title={props.title}
     >
         {props.children}

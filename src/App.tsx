@@ -4,7 +4,6 @@ import { DisplayTabs } from './DisplayTabs';
 import { Editor } from './Editor';
 import { Options, TabOption } from './TabOptions';
 import { PastePopup } from './PastePopup';
-import { TopBar } from './components/TopBar';
 import { FilterTab } from './components/FilterTab';
 import { ConvertToTabs } from './ConvertToTabs';
 
@@ -29,7 +28,6 @@ function App() {
 
   return (
     <div className='App'>
-      <TopBar tabs={tabs} options={options} />
       <PastePopup
         setInput={setinput}
         active={pastePopup}
@@ -63,6 +61,8 @@ function App() {
             input={input}
             onChange={setinput}
             openPastePopup={() => setpastePopup(true)}
+            options={options}
+            tabs={tabs}
           />
           <TabOption
             tabs={tabs}
