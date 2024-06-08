@@ -42,8 +42,8 @@ function App() {
         overflow: "auto",
       }}>
         <Editor
-          selectedLine={selectLine}
           value={input}
+          selectedLine={selectLine}
           onChange={setinput}
           printButton={true}
           placeholder={"Type tabs here."}

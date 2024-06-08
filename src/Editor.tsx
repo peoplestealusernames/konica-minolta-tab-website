@@ -4,8 +4,8 @@ import { PrintButton } from "./printing/PrintButton"
 
 
 export function Editor(props: {
-    value?: string
-    onChange?: (value: string) => void
+    value: string
+    onChange: (value: string) => void
     selectedLine?: number
     placeholder?: string,
     printButton?: boolean
@@ -13,7 +13,6 @@ export function Editor(props: {
     textAreaStyle?: React.CSSProperties
     replacer?: boolean
 }) {
-    const [input, setinput] = useState<string>("")
     const [Selected, setSelected] = useState<[number, number]>([0, 0])
     const [focus, setFocus] = useState(false)
 
@@ -23,14 +22,13 @@ export function Editor(props: {
 
     const replacer = props.replacer ? props.replacer : false
 
-    useEffect(() => { setinput(props.value ? props.value : "") }, [props.value])
     useEffect(() => { if (props.selectedLine !== undefined) SelectLine(props.selectedLine) }, [props.selectedLine])
 
     function SelectLine(lineIndex: number) {
-        const lines = input.split("\n")
+        const lines = props.value.split("\n")
 
         if (lines.length === 1) {
-            setSelected([0, input.length - 1])
+            setSelected([0, props.value.length - 1])
             return
         }
 
@@ -39,26 +37,18 @@ export function Editor(props: {
 
         let Start = 0
         for (let i = 0; i < lineIndex; i++) {
-            Start = input.indexOf("\n", Start + 1)
+            Start = props.value.indexOf("\n", Start + 1)
         }
 
-        let End = input.indexOf("\n", Start + 1)
+        let End = props.value.indexOf("\n", Start + 1)
         if (End === -1)
-            End = input.length
+            End = props.value.length
 
         if (Start === -1)
             Start = 0
 
         setSelected([Start, End])
     }
-
-    useEffect(() => {
-        const element = inputRef.current
-        if (!element)
-            return
-
-        onChange(input)
-    }, [input])
 
     useEffect(() => {
         const element = inputRef.current
@@ -85,7 +75,7 @@ export function Editor(props: {
             borderRadius: "1.25rem",
         }}>
             {props.printButton && <PrintButton
-                text={input}
+                text={props.value}
                 style={{
                     display: "flex",
                     height: "1.0rem",
@@ -101,7 +91,7 @@ export function Editor(props: {
                 }} />
             }
             {replacer && <RegexReplacer
-                input={input}
+                input={props.value}
                 style={{
                     flexGrow: "0",
                     marginTop: "0rem",
@@ -129,7 +119,7 @@ export function Editor(props: {
                     fontSize: "1.1rem",
                     fontWeight: "bold",
                 }}
-                onChange={setinput}
+                onChange={onChange}
             />}
         </div>
         <div style={{
@@ -145,18 +135,12 @@ export function Editor(props: {
             color: "white",
             borderRadius: "1.5rem",
             outline: "none",
-        }}
-            data-shadowedit={true}
-            onClick={(e) => {
-                const target = e.target as HTMLDivElement
-                if (target.getAttribute("data-shadowedit"))
-                    inputRef.current?.focus()
-            }}
-        >
+        }}>
             <textarea
                 ref={inputRef}
-                value={input}
-                onChange={(e) => { e.preventDefault(); setinput(e.target.value) }}
+                value={props.value}
+                data-shadowedit={true}
+                onChange={(e) => { e.preventDefault(); onChange(e.target.value) }}
                 style={{
                     display: "flex",
                     flexGrow: "1",
