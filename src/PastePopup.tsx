@@ -41,21 +41,14 @@ export function PastePopup(props: {
             <ContextButton style={{
                 display: "flex",
                 color: "white",
-                margin: "0.2rem",
-                marginBottom: "-.1rem",
-                border: "0.1rem solid white",
-                borderRadius: "0",
-                borderTopLeftRadius: "1rem",
-                borderTopRightRadius: "1rem",
-                paddingLeft: "2rem",
-                paddingRight: "2rem",
-                fontSize: "4rem",
-                transition: "background-color 100ms linear",
-                backgroundColor: "rgb(20,20,30)",
+                margin: "1rem",
+                marginBottom: "1.5rem",
+                borderRadius: "1rem",
+                paddingLeft: "1rem",
+                paddingRight: "1rem",
+                fontSize: "3rem",
+                backgroundColor: "#2b2b2e",
             }}
-                hoverStyle={{
-                    backgroundColor: "rgb(60,60,75)"
-                }}
                 onMouseDown={() => GeneratePaths()}
             >
                 Generate Tabs
@@ -70,19 +63,17 @@ export function PastePopup(props: {
             style={{
                 fontSize: "1.8rem",
                 overflow: "auto",
-                paddingLeft: "1.5rem",
-                paddingRight: "1.5rem",
+                padding: "1.0rem",
                 whiteSpace: "pre",
                 width: "60vw",
                 height: "50vh",
-                borderRadius: "2rem",
+                borderRadius: "1.5rem",
                 outline: "none",
                 border: "none",
-                transition: "box-shadow 200ms linear",
-                boxShadow: `0 0 0.1rem 0.1rem lightgrey`,
-                ...(focus ? {
-                    boxShadow: `0 0 0.2rem 0.2rem red`,
-                } : {})
+                overflowY: "scroll",
+                overflowX: "auto",
+                resize: "none",
+                background: "#2b2b2e",
             }}
             placeholder={"Paste file paths here\n" +
                 "ex: C:\\\\b\\a\\c.txt or /a/b/c.pdf\n" +

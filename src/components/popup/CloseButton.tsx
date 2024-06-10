@@ -19,7 +19,7 @@ export function CloseButton(props: {
     }
 
     return (
-        <ContextButton style={style} hoverStyle={{ color: "red" }}>
+        <ContextButton style={style}>
             <MdOutlineClose
                 style={{ display: "flex", width: "100%", height: "100%" }}
                 onClick={props.onClose}
