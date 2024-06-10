@@ -94,8 +94,7 @@ export function Editor(props: {
                 input={props.value}
                 style={{
                     flexGrow: "0",
-                    marginTop: "0rem",
-                    margin: "0.2rem"
+                    margin: "0.2rem",
                 }}
                 inputStyle={{
                     margin: "0.15rem",
@@ -107,6 +106,7 @@ export function Editor(props: {
                     border: "none",
                     marginRight: "0.5rem",
                     marginLeft: "0.5rem",
+                    padding: "0.2rem",
                 }}
                 buttonStyle={{
                     margin: "0.15rem",
@@ -116,7 +116,7 @@ export function Editor(props: {
                     outline: "none",
                     border: "none",
                     cursor: "pointer",
-                    fontSize: "1.1rem",
+                    fontSize: "1.25rem",
                     fontWeight: "bold",
                 }}
                 onChange={onChange}
