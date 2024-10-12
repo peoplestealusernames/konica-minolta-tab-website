@@ -19,6 +19,7 @@ function App() {
     FontSize: 16,
     Cut: 5,
     Offset: 4,
+    Font: "Times New Roman",
     bold: true,
   })
 

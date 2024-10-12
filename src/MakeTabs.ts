@@ -36,6 +36,7 @@ export function MakeTabs(tabNames: string[][], options: Options): fileReturn[] {
         stri = stri.replaceAll("{FontSize}", options.FontSize.toString())
         stri = stri.replaceAll("{TabCut}", options.Cut.toString())
         stri = stri.replaceAll("{VerticalOffset}", options.Offset.toString())
+        stri = stri.replaceAll("{FontName}", options.Font.toString())
         stri = stri.replaceAll("{BOLD}", (+options.bold).toString())
 
         for (let i = 0; i < tabNames[k].length; i++) {

@@ -6,6 +6,7 @@ export type Options = {
     FontSize: number
     Cut: 5 | 8 | 10 | 15
     Offset: number
+    Font: string
     bold: boolean
 }
 
@@ -82,12 +83,29 @@ export function TabOption(props: {
                 </tr>
                 <tr style={ButtonStyle}>
                     <td style={TextStyle}>
+                        Font
+                    </td>
+                    <td style={MiddleStyle}>:</td>
+                    <td><select
+                        style={{ ...SelectionStyle, cursor: "pointer" }}
+                        value={options.Font}
+                        onChange={(e) =>
+                            setoptions({ ...options, Font: e.target.value })
+                        }
+                    >
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Arial">Arial</option>
+                    </select></td>
+                </tr >
+                <tr style={ButtonStyle}>
+                    <td style={TextStyle}>
                         Tab cut
                     </td>
                     <td style={MiddleStyle}>:</td>
                     <td><select
                         style={{ ...SelectionStyle, cursor: "pointer" }}
-                        value={options.Cut} onChange={(Cut) =>
+                        value={options.Cut}
+                        onChange={(Cut) =>
                             setoptions({ ...options, Cut: parseInt(Cut.target.value) as Options["Cut"] })
                         }
                     >
