@@ -16,6 +16,7 @@ function App() {
 
   const [options, setoptions] = useState<Options>({
     Model: "KONICA MINOLTA C754SeriesPCL",
+    Version: "5.4.0.0",
     FontSize: 16,
     Cut: 5,
     Offset: 4,

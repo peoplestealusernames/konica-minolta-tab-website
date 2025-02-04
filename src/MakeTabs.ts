@@ -33,6 +33,7 @@ export function MakeTabs(tabNames: string[][], options: Options): fileReturn[] {
         console.log(options);
 
         stri = stri.replaceAll("{Model}", options.Model)
+        stri = stri.replaceAll("{Version}", options.Version)
         stri = stri.replaceAll("{FontSize}", options.FontSize.toString())
         stri = stri.replaceAll("{TabCut}", options.Cut.toString())
         stri = stri.replaceAll("{VerticalOffset}", options.Offset.toString())

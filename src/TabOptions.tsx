@@ -3,6 +3,7 @@ import { MiddleTab } from "./components/MiddleTab"
 
 export type Options = {
     Model: string
+    Version: string
     FontSize: number
     Cut: 5 | 8 | 10 | 15
     Offset: number
@@ -54,6 +55,10 @@ export function TabOption(props: {
         setoptions({ ...options, Model })
     }
 
+    function setVersion(Version: string) {
+        setoptions({ ...options, Version })
+    }
+
     useEffect(() => {
         if (props.onChange)
             props.onChange({ ...options })
@@ -74,6 +79,24 @@ export function TabOption(props: {
                         style={SelectionStyle}
                         onChange={(e) =>
                             setModel(e.target.value ? e.target.value : "")
+                        }
+                        autoComplete="off"
+                        autoCorrect="off"
+                        autoCapitalize="off"
+                        spellCheck="false"
+                    /></td>
+                </tr>
+                <tr style={ButtonStyle}>
+                    <td style={TextStyle}>
+                        Version
+                    </td>
+                    <td style={MiddleStyle}>:</td>
+                    <td><input
+                        value={options.Version}
+                        type="text"
+                        style={SelectionStyle}
+                        onChange={(e) =>
+                            setVersion(e.target.value ? e.target.value : "")
                         }
                         autoComplete="off"
                         autoCorrect="off"

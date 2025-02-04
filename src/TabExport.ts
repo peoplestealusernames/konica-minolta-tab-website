@@ -1,7 +1,7 @@
 ﻿export default
     `[DriverInfo]\r
 model="{Model}"\r
-version="5.3.0.EIT1_00"\r
+version="{Version}"\r
 versionnum=1\r
 system="Windows NT x64"\r
 language="EN"\r
