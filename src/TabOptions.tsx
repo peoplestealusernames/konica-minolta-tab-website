@@ -49,8 +49,10 @@ export function TabOption(props: {
     tabs: string[][]
     onChange?: (newOptions: Options) => void
 }) {
-    const defaultPresetKey: keyof typeof presets = "59"
-    const [preset, setPreset] = useState<keyof typeof presets>(defaultPresetKey)
+    const defaultPresetKey: string = "59"
+    const savedPreset = localStorage.getItem("preset") as string || defaultPresetKey
+
+    const [preset, setPreset] = useState<string>(savedPreset)
     const [options, setoptions] = useState<Options>(props.options)
 
     function applyPreset(presetKey: keyof typeof presets) {
@@ -63,6 +65,10 @@ export function TabOption(props: {
         // on mount, apply default preset
         applyPreset(defaultPresetKey)
     }, [])
+
+    useEffect(() => {
+        localStorage.setItem("preset", preset)
+    }, [preset])
 
     useEffect(() => {
         if (props.onChange) props.onChange({ ...options })
@@ -80,7 +86,7 @@ export function TabOption(props: {
                                 style={{ ...SelectionStyle, cursor: "pointer" }}
                                 value={preset}
                                 onChange={(e) => {
-                                    const value = e.target.value as keyof typeof presets
+                                    const value = e.target.value
                                     setPreset(value)
                                     if (value !== "custom") {
                                         applyPreset(value)

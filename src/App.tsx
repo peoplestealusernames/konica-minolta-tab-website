@@ -14,19 +14,26 @@ function App() {
 
   const [selectLine, setselectLine] = useState<number>(1)
 
-  const [options, setoptions] = useState<Options>({
-    Model: "KONICA MINOLTA C754SeriesPCL",
-    Version: "5.4.0.0",
+  const savedOptions = localStorage.getItem("options")
+  const initialOptions = savedOptions ? JSON.parse(savedOptions) : {
+    Model: "", // Should be overridden by preset
+    Version: "", // Should be overridden by preset
     FontSize: 16,
     Cut: 5,
     Offset: 4,
     Font: "Times New Roman",
     bold: true,
-  })
+  }
+
+  const [options, setoptions] = useState<Options>(initialOptions)
 
   useEffect(() => {
     settabs(ConvertToTabs(input, options))
   }, [options.Cut, input])
+
+  useEffect(() => {
+    localStorage.setItem("options", JSON.stringify(options))
+  }, [options])
 
   return (
     <div className='App'>
